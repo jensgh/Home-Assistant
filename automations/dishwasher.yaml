@@ -1,0 +1,12 @@
+- id: 'dishwasher_leak'
+  alias: 'Notification þegar uppþvottavél lekur'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.water_leak_sensor_uppthvottavel
+    to: 'on'
+  action:
+    - service: notify.pushbullet_notify
+      data_template:
+        message: >   
+          Uppþvottavél lekur !!
+        title: "Uppþvottavél lekur !!"
