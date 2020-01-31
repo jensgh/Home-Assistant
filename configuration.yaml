@@ -183,7 +183,7 @@ google:
 
 
 google_assistant:
-  project_id: !secret home-assistant-732b8
+  project_id: !secret google_home_project_id
   service_account: !include Home-assistant-google-home.json
   report_state: true
   exposed_domains:
