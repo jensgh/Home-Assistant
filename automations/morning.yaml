@@ -1,0 +1,44 @@
+# Turn on first morning motion automations
+- alias: 'Kveikja ljós við hreyfingu á morgnana'
+  initial_state: true
+  trigger:
+    - at: 06:30:00
+      platform: time
+  action:
+    service: 'homeassistant.turn_on'
+    entity_id: automation.turn_on_morning_lights_downstairs, automation.turn_on_morning_lights_upstairs
+
+- alias: 'turn_on_morning_lights_downstairs'
+  initial_state: false
+  hide_entity: true
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.motion_sensor_hallway_1st
+      to: 'on'
+  action:
+    - service_template: 'light.turn_on'
+      data_template:
+        entity_id: light.gangur, light.forstofa
+    - service_template: 'homeassistant.turn_off'
+      data_template:
+        entity_id: automation.turn_on_morning_lights_downstairs
+
+
+- alias: 'turn_on_morning_lights_upstairs'
+  initial_state: false
+  hide_entity: true
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.motion_sensor_hallway_second
+      to: 'on'
+  action:
+    - service_template: 'light.turn_on'
+      data_template:
+        entity_id: light.eldhus, light.glass_cabinets
+    - service_template: 'homeassistant.turn_off'
+      data_template:
+        entity_id: automation.turn_on_morning_lights_upstairs
+
+
+
+

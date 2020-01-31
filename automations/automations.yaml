@@ -1,0 +1,91 @@
+# - id: 'alarm'
+#   alias: Þjófavörn niðri
+#   initial_state: False
+#   description: ''
+#   trigger:
+#   - entity_id: binary_sensor.motion_sensor_hallway_1st, binary_sensor.door_window_sensor_forstofa, binary_sensor.door_window_sensor_laundry
+#     platform: state
+#     from: 'off'
+#     to: 'on'
+#   action:
+#   - service: script.turn_on
+#     data:
+#       entity_id: script.alarm_sound_loop
+#   - service: notify.pushbullet_notify
+#     data_template:
+#       title: Þjófavörn!!
+#       message: 'Þjófavörn fór í gang !'
+
+
+# - id: 'alarm_auto_off'
+#   alias: 'Slökkva á þjófavörn kl 06:00'
+#   description: ''
+#   trigger:
+#     platform: time
+#     at: "06:00:00"
+#   action:
+#     service: homeassistant.turn_off
+#     entity_id: 'automation.thjofavorn_nidri'
+
+
+# MorgunÚtvarp
+
+- id: 'bylgjan_morning'  
+  alias: Kveikja á bylgjunni kl 7:00
+  initial_state: True
+  hide_entity: False
+  trigger:
+  - at: 07:00:00
+    platform: time
+  condition:
+    condition: time
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+  action:
+    - service: media_player.turn_on
+      data:
+        entity_id: media_player.google_mini_kitchen_speaker
+    - delay: 00:00:10  
+    - service: media_player.volume_set
+      data:
+        entity_id: media_player.google_mini_kitchen_speaker
+        volume_level: '0.20'
+    - service: media_player.play_media
+      data:
+        entity_id: media_player.google_mini_kitchen_speaker
+        media_content_id: http://icecast.365net.is:8000/orbbylgjan.aac
+        media_content_type: 'audio/mp4'
+      # media_content_type: 'application/x-mpegurl'
+
+- id: 'someone_arrives'
+  alias: 'Kveikja þegar einhver kemur heim'
+  trigger:
+    platform: state
+    entity_id: person.jens
+    from: 'not_home'
+    to: 'home'
+  action:
+    - service: notify.pushbullet_notify
+      data_template:
+        message: >   
+          {{ trigger.to_state.attributes.friendly_name }} is {% if trigger.to_state.state == 'home' %}home{% else %}away{% endif %}.
+        title: "daddara"
+
+
+- id: 'someone_leaves'
+  alias: 'Kveikja þegar einhver fer'
+  trigger:
+    platform: state
+    entity_id: person.jens
+    from: 'home'
+    to: 'not_home'
+  action:
+    - service: notify.pushbullet_notify
+      data_template:
+        message: >   
+          {{ trigger.to_state.attributes.friendly_name }} is {% if trigger.to_state.state == 'home' %}home{% else %}away{% endif %}.
+        title: "daddara"

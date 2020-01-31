@@ -1,0 +1,88 @@
+#Alarm is triggered sequence
+- alias: 'Alarm is triggered'
+  hide_entity: true
+  initial_state: true
+  trigger:
+    - platform: state
+      entity_id: alarm_control_panel.home_alarm
+      to: 'triggered'
+  action:
+  - service: script.turn_on
+    data:
+      entity_id: script.start_alarm
+  #kveikja á xiami alert
+
+
+- alias: 'Alarm is deactivated'
+  hide_entity: true
+  initial_state: true
+  trigger:
+    - platform: state
+      entity_id: alarm_control_panel.home_alarm
+      from: 'triggered'
+      to: 'unarmeed'
+  action:
+  - service: script.turn_on
+    data:
+      entity_id: script.stop_alarm
+  - service: notify.pushbullet_notify
+    data_template:
+      title: Þjófavörn!!
+      message: 'Þjófavörn Tekin af, eftir að hafa farið í gang.'
+  #slökkva á xiami alert
+
+
+#Armed away trigger
+- alias: 'Armed away trigger'
+  hide_entity: true
+  initial_state: true
+  trigger:
+  - entity_id: binary_sensor.motion_sensor_hallway_1st, binary_sensor.door_window_sensor_forstofa, binary_sensor.door_window_sensor_laundry, binary_sensor.door_sensor_svalahurd_nidri, binary_sensor.motion_sensor_garage
+    platform: state
+    from: 'off'
+    to: 'on'
+  condition:
+    - condition: state
+      entity_id: alarm_control_panel.home_alarm
+      state: armed_away
+  action:
+    service: alarm_control_panel.alarm_trigger
+    entity_id: alarm_control_panel.home_alarm
+
+#Someone comes home, wait time before trigger
+# - alias: 'armed_away_before_trigger'
+#   trigger:
+#   - entity_id: alarm_control_panel.alarm_trigger
+#     platform: state
+#     from: 'armed_away'
+#     to: 'pending'
+#   action:
+#     service: light.turn_on
+#     entity_id: light.gateway_light
+
+#Armed night trigger
+- alias: 'Armed night trigger'
+  hide_entity: true
+  initial_state: true
+  trigger:
+  - entity_id: binary_sensor.motion_sensor_hallway_1st, binary_sensor.door_window_sensor_forstofa, binary_sensor.door_window_sensor_laundry, binary_sensor.door_sensor_svalahurd_nidri, binary_sensor.motion_sensor_garage
+    platform: state
+    from: 'off'
+    to: 'on'
+  condition:
+    - condition: state
+      entity_id: alarm_control_panel.home_alarm
+      state: armed_night
+  action:
+    service: alarm_control_panel.alarm_trigger
+    entity_id: alarm_control_panel.home_alarm
+
+- alias: 'Slökkva 06:00'
+  initial_state: true
+  description: ''
+  trigger:
+    platform: time
+    at: "06:00:00"
+  action:
+    - service: alarm_control_panel.alarm_disarm
+      entity_id: alarm_control_panel.home_alarm

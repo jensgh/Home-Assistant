@@ -6,7 +6,8 @@
 !*.yaml
 !.gitignore
 !*.md
-
+!/automations
+!/www/images
 # Ignore folders.
 .storage
 .cloud
