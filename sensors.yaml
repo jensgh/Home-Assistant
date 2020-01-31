@@ -1,0 +1,176 @@
+  - platform: qbittorrent
+    url: !secret qbittorent_host
+    username: !secret qbittorrent_username
+    password: !secret qbittorrent_password
+    
+  - platform: time_date
+    display_options:
+      - 'date_time_iso'
+      - 'date_time'
+      - 'time_date'
+
+  - platform: tautulli
+    api_key: !secret tautulli_aki_key
+    host: !secret tautulli_host
+    ssl: true
+    port: 443
+
+  - platform: sonarr
+    host: 10.0.0.12
+    api_key: !secret sonarr_api_key
+    monitored_conditions:
+    - series
+    - upcoming
+    - wanted
+    - queue
+    - commands
+    - diskspace
+
+  - platform: radarr
+    api_key: !secret radarr_api_key
+    host: 10.0.0.12
+    monitored_conditions:
+    - movies
+    - upcoming
+    - status
+    - commands
+    - diskspace
+    days: 30
+
+  - platform: cert_expiry
+    host: jensinn.com
+    name: Jensinn.com ssl
+
+# https://www.home-assistant.io/integrations/launch_library/
+  - platform: launch_library
+
+# https://www.home-assistant.io/integrations/systemmonitor
+  - platform: systemmonitor
+    resources:
+      - type: disk_use_percent
+        arg: /
+      - type: memory_use_percent
+      - type: processor_use
+      - type: last_boot
+      - type: swap_use_percent
+      - type: load_15m
+      - type: network_in
+        arg: eth0
+      - type: network_out
+        arg: eth0
+      - type: throughput_network_in
+        arg: eth0
+      - type: throughput_network_out
+        arg: eth0
+      - type: packets_in
+        arg: eth0
+      - type: packets_out
+        arg: eth0
+
+  - platform: template
+    sensors: 
+      number_of_lights: 
+        entity_id: []
+        value_template: >-
+          {{ states.light
+            | rejectattr('attributes.is_hue_group')
+            | list
+            | count
+          }}
+      number_of_lights_on:  
+        entity_id: []
+        value_template: >-
+          {{ states.light
+            | selectattr('state', 'eq', 'on')
+            | rejectattr('attributes.is_hue_group')
+            | list
+            | count
+          }}
+      number_of_sensors: 
+        entity_id: []
+        value_template: >-
+          {{ states.sensor
+            | list
+            | count
+          }}
+      number_of_sensors_on: 
+        entity_id: []
+        value_template: >-
+          {{ states.sensor
+            | selectattr('state', 'eq', 'on')
+            | list
+            | count
+          }}
+      number_of_automations: 
+        entity_id: []
+        value_template: >-
+          {{ states.automations
+            | list
+            | count
+          }}
+      number_of_automations_on: 
+        entity_id: []
+        value_template: >-
+          {{ states.automations
+            | selectattr('state', 'eq', 'on')
+            | list
+            | count
+          }}
+      number_of_scripts: 
+        entity_id: []
+        value_template: >-
+          {{ states.scripts
+            | list
+            | count
+          }}
+      number_of_scripts_on: 
+        entity_id: []
+        value_template: >-
+          {{ states.scripts
+            | selectattr('state', 'eq', 'on')
+            | list
+            | count
+          }}
+      number_of_binary_sensor: 
+        entity_id: []
+        value_template: >-
+          {{ states.binary_sensor
+            | list
+            | count
+          }}
+      number_of_binary_sensors_on: 
+        entity_id: []
+        value_template: >-
+          {{ states.binary_sensor
+            | selectattr('state', 'eq', 'on')
+            | list
+            | count
+          }}
+  # https://i.imgur.com/AZ4Ncn1.jpg
+  # Devices
+  # Switches
+
+  # Database size
+  # https://www.home-assistant.io/integrations/sql/#database-size
+  # sensor:
+  #   - platform: sql
+  #     db_url: mysql://user:password@localhost/hass
+  #     queries:
+  #       - name: DB size
+  #         query: 'SELECT table_schema "database", Round(Sum(data_length + index_length) / 1024, 1) "value" FROM information_schema.tables WHERE table_schema="hass" GROUP BY table_schema;'
+  #         column: 'value'
+  #         unit_of_measurement: kB
+
+  # Logfile size 
+  # https://www.home-assistant.io/integrations/filesize/
+  # - platform: filesize
+  #   file_paths:
+  #     - '/home-assistant.log'
+
+  # Uptime
+  # https://www.home-assistant.io/integrations/uptime/
+  - platform: uptime
+
+  # Installed version
+  # https://www.home-assistant.io/integrations/version/
+  - platform: version

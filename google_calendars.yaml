@@ -1,0 +1,79 @@
+
+- cal_id: sagkcmnthsl0bdbpjl91cs9ihg@group.calendar.google.com
+  entities:
+  - device_id: islenskt_almanak_yfir_hatidis_og_tyllidaga
+    ignore_availability: true
+    name: "Íslenskir Hátíðardagar"
+    track: true
+    max_results: 60
+
+- cal_id: jbn165flt0vvacglfseo5maji1m09mei@import.calendar.google.com
+  entities:
+  - device_id: jens_gisli_heidarsson_s_facebook_events
+    ignore_availability: true
+    name: "Jens G\xEDsli Hei\xF0arsson's Facebook Events"
+    track: false
+
+- cal_id: qhu8dtprkppjbpsuoqk2fshfbs@group.calendar.google.com
+  entities:
+  - device_id: trendmakers
+    ignore_availability: true
+    name: Trendmakers
+    track: false
+
+- cal_id: family15794981982263401322@group.calendar.google.com
+  entities:
+  - device_id: fjolskylda
+    ignore_availability: true
+    name: "Fj\xF6lskylda"
+    track: false
+
+- cal_id: ov0dk4m6dedaob7oqse4nrda4s@group.calendar.google.com
+  entities:
+  - device_id: manchester_united_matches
+    ignore_availability: true
+    name: Manchester United Matches
+    track: true
+    max_results: 60
+- cal_id: jensthebens@gmail.com
+  entities:
+  - device_id: jensthebens_gmail_com
+    ignore_availability: true
+    name: jensthebens@gmail.com
+    track: false
+
+- cal_id: iuqm90kv1i98audbs5u9chb0to@group.calendar.google.com
+  entities:
+  - device_id: jenga
+    ignore_availability: true
+    name: Jenga
+    track: true
+    max_results: 60
+- cal_id: addressbook#contacts@group.v.calendar.google.com
+  entities:
+  - device_id: contacts
+    ignore_availability: true
+    name: Contacts
+    track: false
+
+- cal_id: en.is#holiday@group.v.calendar.google.com
+  entities:
+  - device_id: holidays_in_iceland
+    ignore_availability: true
+    name: Holidays in Iceland
+    track: false
+
+- cal_id: ht3jlfaac5lfd6263ulfh4tql8@group.calendar.google.com
+  entities:
+  - device_id: phases_of_the_moon
+    ignore_availability: true
+    name: Phases of the Moon
+    track: false
+
+- cal_id: ml7cmqhma9cmi18s6m4omoqao8@group.calendar.google.com
+  entities:
+  - device_id: sorphirda_mosfellsbaer_2020
+    ignore_availability: true
+    name: "Sorphir\xF0a Mosfellsb\xE6r 2020"
+    track: true
+    max_results: 60

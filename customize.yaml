@@ -1,0 +1,23 @@
+binary_sensor.door_window_sensor_forstofa:
+  device_class: door
+binary_sensor.door_window_sensor_laundry:
+  device_class: door
+device_tracker.lumi_gateway_v3_miio87394487:
+  icon: mdi:wifi
+binary_sensor.door_sensor_svalahurd_nidri:
+  device_class: door
+binary_sensor.door_window_sensor_kitchen:
+  device_class: door
+sensor.network_in_eth0:
+  icon: mdi:download
+sensor.network_out_eth0:
+  icon: mdi:upload
+binary_sensor.ioniq:
+  icon: mdi:car
+switch.shelly_shsw_1_98f4abf283d7:
+  device_class: switch
+  friendly_name: Elisabet Shelly
+switch.shelly_elisabet:
+  device_class: switch
+  friendly_name: Elísabet ljós shelly
+  icon: mdi:lightbulb

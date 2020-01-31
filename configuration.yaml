@@ -1,0 +1,182 @@
+
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+frontend:
+  themes: !include themes.yaml
+
+# Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+# http:
+#   base_url: example.duckdns.org:8123
+mobile_app:
+
+discovery:
+
+# https://www.home-assistant.io/integrations/recorder/
+recorder:
+  purge_interval: 2
+  purge_keep_days: 30
+  db_url: !secret db_url
+  exclude:
+    entities:
+      - sun.sun
+      - sensor.last_boot
+      - sensor.sonarr_wanted
+
+light: !include lights.yaml
+
+shelly:
+
+cloud:
+# Text to speech
+tts:
+  - platform: google_translate
+
+group: !include groups.yaml
+automation: !include_dir_merge_list automations
+# automation: !include automations.yaml
+script: !include scripts.yaml
+homeassistant:
+  customize: !include customize.yaml
+
+xiaomi_aqara:
+  discovery_retry: 5
+  gateways:
+    - host: 10.0.0.7
+      key: !secret aquara_key
+
+sensor: !include sensors.yaml
+
+cloudflare:
+  email: !secret cloudflare_email
+  api_key: !secret cloudflare_api_key
+  zone: jensinn.com
+  records:
+    - jensinn.com
+
+media_player:
+  - platform: braviatv
+    host: 10.0.0.6
+    # https://www.home-assistant.io/integrations/spotify/
+  - platform: spotify
+    client_id: !secret spotify_client_id
+    client_secret: !secret spotify_client_secret
+    # aliases:
+    #     abc123def456: 'Living Room'
+    #     9183abas000: 'Bed Room'
+    
+device_tracker:
+  - platform: netgear
+    host: !secret router_address
+    password: !secret router_password
+    interval_seconds: 10
+    consider_home: 180
+    # new_device_defaults:
+    #   track_new_devices: false
+
+
+notify:
+  - name: pushbullet_notify
+    platform: pushbullet
+    api_key: !secret pushbullet_token
+
+
+alarm_control_panel:
+  - platform: manual
+    name: Home Alarm
+    delay_time: 0
+    pending_time: 0
+    disarmed:
+      trigger_time: 0
+    # armed_night:
+    #   pending_time: 0
+    #   delay_time: 0
+    armed_away:
+      pending_time: 60
+      delay_time: 60
+
+
+ombi:
+  host: !secret ombi_host
+  username: !secret ombi_username
+  api_key: !secret ombi_api_key
+  port: 443
+  ssl: true
+
+# upnp:
+#   sensors: true
+#   local_ip: !secret hass_local_ip
+
+# https://www.home-assistant.io/integrations/hue/
+hue:
+  bridges:
+    - host: !secret hue_hub_ip
+      allow_unreachable: false
+      allow_hue_groups: false
+
+# https://www.home-assistant.io/integrations/speedtestdotnet
+speedtestdotnet:
+  scan_interval:
+    minutes: 60
+  server_id: 4818
+  monitored_conditions:
+    - ping
+    - download
+    - upload
+
+binary_sensor:
+  - platform: ping
+    host: 10.0.0.17
+    name: 'Hertz'
+  - platform: ping
+    host: 10.0.0.7
+    name: 'Xiaomi Gateway'
+  - platform: ping
+    host: 10.0.0.10
+    name: 'Wifi Extender'
+  - platform: ping
+    host: !secret hue_hub_ip
+    name: 'Hue Gateway'
+  - platform: ping
+    host: 10.0.0.12
+    name: 'Bytes'
+  - platform: ping
+    host: 10.0.0.8
+    name: 'Ioniq'
+
+
+# https://www.home-assistant.io/integrations/pi_hole/
+
+# pi_hole:
+#   - host: '10.0.0.14:80'
+#     ssl: false
+#     verify_ssl: false
+#     location: 'admin'
+#   - host: '10.0.0.14:67'
+#     name: "Pihole2"
+#     verify_ssl: false
+#   - host: '10.0.0.12:53'
+#     name: "Pihole3"
+#     verify_ssl: false
+#   - host: '10.0.0.12:67'
+#     name: "Pihole4"
+#     verify_ssl: false
+#   - host: '10.0.0.12:80'
+#     name: "Pihole6"
+#     verify_ssl: false
+#   - host: '10.0.0.12:443'
+#     name: "Pihole7"
+#     verify_ssl: false
+#   - host: '10.0.0.14:80'
+#     name: "Pihole8"
+#     verify_ssl: false
+#   - host: '10.0.0.14:443'
+#     name: "Pihole9"
+#     verify_ssl: false
+
+    # api_key: !secret pihole_api_key
+
+
+google:
+  client_id: !secret google_client_id
+  client_secret: !secret google_client_secret

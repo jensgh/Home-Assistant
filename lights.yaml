@@ -1,0 +1,69 @@
+  - platform: group
+    name: Stofa U
+    entities:
+      - light.stofa_u1
+      - light.stofa_u2
+      - light.stofa_u3
+      - light.stofa_u4
+      - light.stofa_u5
+      - light.stofa_u6
+      - light.stofa_u7
+      - light.stofa_u8
+      
+  - platform: group
+    name: Stofa
+    entities:
+      - light.stofa_1
+      - light.stofa_2
+      - light.stofa_3
+      - light.stofa_4
+
+  - platform: group
+    name: Gangur
+    entities:
+      - light.gangur_1
+      - light.gangur_2
+      - light.gangur_3
+      - light.gangur_4
+      - light.gangur_5
+      - light.gangur_6
+
+  - platform: group
+    name: Forstofa
+    entities:
+      - light.forstofa_1
+      - light.forstofa_2
+
+  - platform: group
+    name: Baðherbergi
+    entities:
+      - light.badherbergi_1
+      - light.badherbergi_2
+      - light.badherbergi_3
+      - light.badherbergi_4
+      - light.badherbergi_5
+
+  - platform: group
+    name: Stigi
+    entities:
+      - light.stairs_l1
+      - light.stairs_l2
+      - light.stairs_l3
+      - light.stairs_l4
+      - light.stairs_l5
+      - light.stairs_r1
+      - light.stairs_r2
+      - light.stairs_r3
+      - light.stairs_r4
+      - light.stairs_r5
+
+  - platform: group
+    name: Eldhús
+    entities:
+      - light.eldhus_1
+      - light.eldhus_2
+      - light.eldhus_3
+      - light.eldhus_4
+      - light.eldhus_5
+      - light.eldhus_6
+      - light.eldhus_7
