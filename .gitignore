@@ -8,6 +8,8 @@
 !*.md
 !/automations
 !/www/images
+!travis.yml
+
 # Ignore folders.
 .storage
 .cloud
