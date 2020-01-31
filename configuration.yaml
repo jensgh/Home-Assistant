@@ -180,3 +180,21 @@ binary_sensor:
 google:
   client_id: !secret google_client_id
   client_secret: !secret google_client_secret
+
+
+google_assistant:
+  project_id: !secret home-assistant-732b8
+  service_account: !include Home-assistant-google-home.json
+  report_state: true
+  exposed_domains:
+    - switch
+    - light
+  # entity_config:
+  #   switch.kitchen:
+  #     name: CUSTOM_NAME_FOR_GOOGLE_ASSISTANT
+  #     aliases:
+  #       - BRIGHT_LIGHTS
+  #       - ENTRY_LIGHTS
+  #   light.living_room:
+  #     expose: false
+  #     room: LIVING_ROOM
