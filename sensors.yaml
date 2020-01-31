@@ -174,3 +174,9 @@
   # Installed version
   # https://www.home-assistant.io/integrations/version/
   - platform: version
+
+
+  - platform: github
+    access_token: !secret github_access_token
+    repositories:
+      - path: 'jensgh/Home-Assistant'
