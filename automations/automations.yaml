@@ -65,7 +65,7 @@
   alias: 'Kveikja þegar einhver kemur heim'
   trigger:
     platform: state
-    entity_id: person.jens
+    entity_id: person.jens, person.olga
     from: 'not_home'
     to: 'home'
   action:
@@ -80,7 +80,7 @@
   alias: 'Kveikja þegar einhver fer'
   trigger:
     platform: state
-    entity_id: person.jens
+    entity_id: person.jens, person.olga
     from: 'home'
     to: 'not_home'
   action:
