@@ -40,7 +40,7 @@ automation: !include_dir_merge_list automations
 script: !include scripts.yaml
 homeassistant:
   customize: !include customize.yaml
-
+shopping_list:
 xiaomi_aqara:
   discovery_retry: 5
   gateways:
