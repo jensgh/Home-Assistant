@@ -3,7 +3,7 @@ python:
   - "3.7"
 before_install:
   - mv travis_secrets.yaml secrets.yaml
-  - mv Home-assistant-google-home-travis.yaml Home-assistant-google-home.yaml
+  - mv Home-assistant-google-home-travis.json Home-assistant-google-home.json
   - sudo apt-get install -y libudev-dev
 install:
   - pip3 install homeassistant
