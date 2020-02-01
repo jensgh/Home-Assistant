@@ -11,12 +11,18 @@
       - light.stofa_u8
       
   - platform: group
-    name: Stofa
+    name: Stofa I
     entities:
       - light.stofa_1
       - light.stofa_2
       - light.stofa_3
       - light.stofa_4
+
+  - platform: group
+    name: Stofa
+    entities:
+      - light.stofa_u
+      - light.stofa_i
 
   - platform: group
     name: Gangur
