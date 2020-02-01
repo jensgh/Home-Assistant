@@ -9,7 +9,7 @@
 !/automations
 !/www/images
 !travis.yml
-!/Home-assistant-google-home.json
+!/Home-assistant-google-home-travis.json
 
 # Ignore folders.
 .storage
