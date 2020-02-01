@@ -8,7 +8,7 @@
 !*.md
 !/automations
 !/www/images
-!travis.yml
+!.travis.yml
 !/Home-assistant-google-home-travis.json
 
 # Ignore folders.
