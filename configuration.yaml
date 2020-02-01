@@ -25,6 +25,8 @@ recorder:
 
 light: !include lights.yaml
 
+zone: !include zones.yaml
+
 shelly:
 
 cloud:
