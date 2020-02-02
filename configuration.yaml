@@ -28,9 +28,9 @@ light: !include lights.yaml
 zone: !include zones.yaml
 
 shelly:
-  discovery: true  #add all devices (default)
-  sensors: #sensors to show, can be override on each device
-    - all
+  # discovery: true  #add all devices (default)
+  # sensors: #sensors to show, can be override on each device
+  #   - all
   # devices:  #configure devices
   #   - id: "420FC7"
   #     light_switch: true  #add this switch as a light
