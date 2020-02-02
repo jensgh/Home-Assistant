@@ -27,7 +27,7 @@ light: !include lights.yaml
 
 zone: !include zones.yaml
 
-# shelly:
+shelly:
   # discovery: true  #add all devices (default)
   # sensors: #sensors to show, can be override on each device
   #   - all
