@@ -12,7 +12,7 @@
   sunset_colortemp: 3000
   stop_colortemp: 1900
   brightness: 185
-  disable_brightness_adjust: true
+  disable_brightness_adjust: false
   mode: xy
   transition: 30
   interval: 60
