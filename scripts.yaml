@@ -101,22 +101,22 @@
 
 
 test_brightnesS_script:
-    alias: test brightness script
-    sequence:
-      - service: script.set_brightness_if_on
-        data:
-          light_id: 'stofa'
-          brightness: 1
+  alias: test brightness script
+  sequence:
+    - service: script.set_brightness_if_on
+      data:
+        light_id: 'stofa'
+        brightness: 1
 
 
 # Set brightness if on 
 set_brightness_if_on:
-    alias: Set brightness if on
-    sequence:
-      - condition: state
+  alias: Set brightness if on
+  sequence:
+    - condition: state
+      entity_id: 'light.{{light_id}}'
+      state: "on"
+    - service: light.turn_on
+      data:
         entity_id: 'light.{{light_id}}'
-        state: "on"
-      - service: light.turn_on
-        data:
-          entity_id: 'light.{{light_id}}'
-          brightness: '{{brightness}}'
+        brightness: '{{brightness}}'
