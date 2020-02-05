@@ -99,13 +99,13 @@
 #       - light.hjonaherbergi_gangur
 #       transition: 10
 
-# 'test_brightness_script':
-#   alias: test brightness script
-#   sequence:
-#   - service: script.set_brightness_if_on
-#     data:
-#       light_id: 'stofa'
-#       brightness: 1
+'test_brightness_script':
+  alias: test brightness script
+  sequence:
+  - service: script.set_brightness_if_on
+    data:
+      light_id: 'stofa'
+      brightness: 1
 
 
 # Set brightness if on 
@@ -113,7 +113,7 @@
   alias: Set brightness if on
   sequence:
   - condition: template
-    value_template: 'light.{{light_id}} == 0'
+    value_template: 'light.{{light_id}}.state == "on"'
     # value_template: "{{ states(light.{{light_id}}) == 'on' }}"
   - service: light.turn_on
     data_template:
