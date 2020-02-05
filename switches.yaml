@@ -13,6 +13,6 @@
   stop_colortemp: 1900
   brightness: 185
   disable_brightness_adjust: false
-  mode: mireds
+  mode: mired
   transition: 30
   interval: 120
