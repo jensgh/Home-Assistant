@@ -1,0 +1,5 @@
+  testgroup:
+    name: testgroup
+    entities:
+      - light.stofa
+      - media_player.kd_65xd8599
