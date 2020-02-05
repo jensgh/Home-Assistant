@@ -1,0 +1,22 @@
+# - id: '5646453548'  
+#   alias: "Rautt ljós þegar útidyrahurð opin"
+#   trigger:
+#   - entity_id: binary_sensor.door_window_sensor_158d00027af3dc
+#     platform: state
+#     to: 'on'
+#   action:
+#     - service: light.turn_on
+#       data_template:
+#         entity_id: light.gateway_light_7c49eb1929ca
+#         color_name: red
+
+# - id: '4645345378'  
+#   alias: "Slökkva Rautt ljós þegar útidyrahurð lokast"
+#   trigger:
+#   - entity_id: binary_sensor.door_window_sensor_158d00027af3dc
+#     platform: state
+#     to: 'off'
+#   action:
+#     - service: light.turn_off
+#       data_template:
+#         entity_id: light.gateway_light_7c49eb1929ca
