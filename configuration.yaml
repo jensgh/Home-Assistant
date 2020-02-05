@@ -11,7 +11,9 @@ frontend:
 mobile_app:
 
 discovery:
-
+  ignore:
+    - igd
+    
 # https://www.home-assistant.io/integrations/recorder/
 recorder:
   purge_interval: 2
