@@ -68,3 +68,55 @@
 
   #Flasha ljósum
   # Kveikja á mini og hækka áður en loopuni er startað?
+
+
+# 'good_night_lights':
+#   alias: Good night light
+#   sequence:
+#   - service: light.turn_off
+#     data:
+#       entity_id:
+#       - light.gangur
+#       - light.forstofa
+#       # Elisabet shelly
+#       - light.hjonaherbergi_gangur
+#       transition: 5
+#   - service: light.turn_on
+#     data:
+#       entity_id:
+#       - light.stofa
+#       - light.eldhus
+#       - light.stigi
+#       brightness: 50
+#       transition: 5
+#   # Waits 1 minute, 30 seconds
+#   - delay: '00:01:30'
+#   - service: light.turn_off
+#     data:
+#       entity_id:
+#       - light.stofa
+#       - light.eldhus
+#       - light.hjonaherbergi_gangur
+#       transition: 10
+
+
+test_brightnesS_script:
+    alias: test brightness script
+    sequence:
+      - service: script.set_brightness_if_on
+        data:
+          light_id: 'stofa'
+          brightness: 1
+
+
+# Set brightness if on 
+set_brightness_if_on:
+    alias: Set brightness if on
+    sequence:
+      - condition: state
+        entity_id: 'light.{{light_id}}'
+        state: "on"
+      - service: light.turn_on
+        data:
+          entity_id: 'light.{{light_id}}'
+          brightness: '{{brightness}}'
