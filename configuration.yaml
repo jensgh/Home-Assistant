@@ -159,6 +159,9 @@ binary_sensor:
     host: 10.0.0.8
     name: 'Ioniq'
 
+shell_command:
+  update: /config/shell_scripts/gitpull.sh
+
 
 # https://www.home-assistant.io/integrations/pi_hole/
 
