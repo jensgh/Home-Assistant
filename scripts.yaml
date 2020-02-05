@@ -108,14 +108,14 @@
 #       brightness: 1
 
 
-# # Set brightness if on 
-# 'set_brightness_if_on':
-#   alias: Set brightness if on
-#   sequence:
-#   - condition: state
-#     entity_id: 'light.{{light_id}}'
-#     state: "on"
-#   - service: light.turn_on
-#     data:
-#       entity_id: 'light.{{light_id}}'
-#       brightness: '{{brightness}}'
+# Set brightness if on 
+'set_brightness_if_on':
+  alias: Set brightness if on
+  sequence:
+  - condition: state
+    entity_id: 'light.{{light_id}}'
+    state: "on"
+  - service: light.turn_on
+    data_template:
+      entity_id: 'light.{{light_id}}'
+      brightness: '{{brightness}}'
