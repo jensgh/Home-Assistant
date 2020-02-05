@@ -15,4 +15,4 @@
   disable_brightness_adjust: false
   mode: xy
   transition: 30
-  interval: 60
+  interval: 120
