@@ -12,7 +12,7 @@
   sunset_colortemp: 3000
   stop_colortemp: 1900
   brightness: 185
-  disable_brightness_adjust: false
+  disable_brightness_adjust: true
   mode: mired
   transition: 30
   interval: 120
