@@ -112,10 +112,10 @@
 'set_brightness_if_on':
   alias: Set brightness if on
   sequence:
-  - condition: 
-    condition: state
-    entity_id: 'light.{{light_id}}'
-    state: 'on'   
+  - condition: state
+    # entity_id: 'light.{{light_id}}'
+    entity_id: light.stofa
+    state: 'on'  
   - service: light.turn_on
     data_template:
       entity_id: 'light.{{light_id}}'
