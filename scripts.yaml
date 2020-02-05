@@ -113,7 +113,7 @@
   alias: Set brightness if on
   sequence:
   - condition: template
-    value_template: 'light.{{light_id}}.state == "on"'
+    value_template: 'states.light.{{light_id}} == "on"'
     # value_template: "{{ states(light.{{light_id}}) == 'on' }}"
   - service: light.turn_on
     data_template:
