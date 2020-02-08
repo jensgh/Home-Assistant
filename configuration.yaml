@@ -220,9 +220,9 @@ google_assistant:
 mqtt:
   discovery: true
   broker: !secret mqtt_ip  # Remove if you want to use builtin-in MQTT broker
-  # birth_message:
-  #   topic: 'hass/status'
-  #   payload: 'online'
-  # will_message:
-  #   topic: 'hass/status'
-  #   payload: 'offline'
+  birth_message:
+    topic: 'hass/status'
+    payload: 'online'
+  will_message:
+    topic: 'hass/status'
+    payload: 'offline'
