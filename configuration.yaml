@@ -218,7 +218,7 @@ google_assistant:
   #     room: LIVING_ROOM
 
 mqtt:
-  discovery: true
+  discovery: false
   broker: !secret mqtt_ip  # Remove if you want to use builtin-in MQTT broker
   birth_message:
     topic: 'hass/status'
