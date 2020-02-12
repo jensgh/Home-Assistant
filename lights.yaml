@@ -34,20 +34,20 @@
       - light.gangur_5
       - light.gangur_6
 
-  - platform: group
-    name: Forstofa
-    entities:
-      - light.forstofa_1
-      - light.forstofa_2
+  # - platform: group
+  #   name: Forstofa
+  #   entities:
+  #     - light.forstofa_1
+  #     - light.forstofa_2
 
-  - platform: group
-    name: Baðherbergi
-    entities:
-      - light.badherbergi_1
-      - light.badherbergi_2
-      - light.badherbergi_3
-      - light.badherbergi_4
-      - light.badherbergi_5
+  # - platform: group
+  #   name: Baðherbergi
+  #   entities:
+  #     - light.badherbergi_1
+  #     - light.badherbergi_2
+  #     - light.badherbergi_3
+  #     - light.badherbergi_4
+  #     - light.badherbergi_5
 
   - platform: group
     name: Stigi
@@ -81,7 +81,7 @@
       - light.bathroom_upstairs_shower_2_light
 
   - platform: group
-    name: Ljós
+    name: Baðherbergi
     entities:
       - light.bathroom_upstairs_1_light
       - light.bathroom_upstairs_2_light
