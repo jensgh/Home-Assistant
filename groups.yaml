@@ -1,5 +1,7 @@
-  testgroup:
-    name: testgroup
+  garage_motion:
+    name: Bílskúr hreyfing
     entities:
-      - light.stofa
-      - media_player.kd_65xd8599
+      - binary_sensor.motion_sensor_garage
+      - binary_sensor.garage_motion_sensor_workstation_occupancy
+
+  
