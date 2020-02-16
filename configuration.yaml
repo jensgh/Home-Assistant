@@ -158,6 +158,17 @@ binary_sensor:
   - platform: ping
     host: 10.0.0.8
     name: 'Ioniq'
+    #Hass Groups
+  - platform: template
+    sensors:
+      garage_motion:
+        friendly_name: "Bílskúr hreyfing"
+        entity_id:
+          - binary_sensor.motion_sensor_garage
+          - binary_sensor.garage_motion_sensor_workstation_occupancy
+        device_class: motion
+        value_template: "{{ expand('group.garage_motion') | selectattr('state','eq','on') | list | count > 0 }}"
+
 
 shell_command:
   update: /config/shell_scripts/gitpull.sh

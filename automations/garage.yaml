@@ -2,7 +2,7 @@
   initial_state: 'on'
   trigger:
     platform: state
-    entity_id: group.garage_motion
+    entity_id: binary_sensor.garage_motion
     to: 'on'
   action:
     service: light.turn_on
@@ -12,7 +12,7 @@
   initial_state: 'on'
   trigger:
     platform: state
-    entity_id: group.garage_motion
+    entity_id: binary_sensor.garage_motion
     to: 'off'
     for:
       minutes: 1
