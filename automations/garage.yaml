@@ -8,14 +8,14 @@
     service: light.turn_on
     entity_id: light.bilskur, light.geymsla
 
-- alias: Turn off corridor light x minutes after last movement
+- alias: Turn off garage lights of there is no movement
   initial_state: 'on'
   trigger:
     platform: state
     entity_id: group.garage_motion
     to: 'off'
     for:
-      minutes: 2
+      minutes: 1
   action:
     service: light.turn_off
     entity_id: light.bilskur, light.geymsla
