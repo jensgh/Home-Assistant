@@ -31,10 +31,11 @@ zone: !include zones.yaml
 
 switch: !include switches.yaml
 
+# https://github.com/StyraHem/ShellyForHASS/issues/72
 shelly:
   # discovery: true  #add all devices (default)
-  # sensors: #sensors to show, can be override on each device
-  #   - all
+  sensors: #sensors to show, can be override on each device
+    - all
   # devices:  #configure devices
   #   - id: "420FC7"
   #     light_switch: true  #add this switch as a light
@@ -164,10 +165,9 @@ binary_sensor:
       garage_motion:
         friendly_name: "Bílskúr hreyfing"
         entity_id:
-          - binary_sensor.motion_sensor_garage
-          - binary_sensor.garage_motion_sensor_workstation_occupancy
+          - group.garage_motion
         device_class: motion
-        value_template: "{{ is_state('binary_sensor.motion_sensor_garage', 'on') or is_state('binary_sensor.motion_sensor_garage', 'on')}}"
+        value_template: "{{ is_state('group.garage_motion', 'on')}}"
 
 
 shell_command:

@@ -1,0 +1,18 @@
+  # - alias: Respond to button click
+  #   trigger:
+  #     platform: state
+  #     entity_id: sensor.0x00158d000237e77d_click
+  #     to: 'single'
+  #   action:
+  #     entity_id: light.gangur
+  #     service: light.on
+
+
+  # - alias: Respond to button click
+  #   trigger:
+  #     platform: state
+  #     entity_id: sensor.0x00158d000237e77d_click
+  #     to: 'double'
+  #   action:
+  #     entity_id: light.gangur
+  #     service: light.off

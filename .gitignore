@@ -6,11 +6,11 @@
 !*.yaml
 !.gitignore
 !*.md
-!/automations
 !/www/images
 !.travis.yml
 !/Home-assistant-google-home-travis.json
-
+!/automations
+!/automations/shellies/
 # Ignore folders.
 .storage
 .cloud

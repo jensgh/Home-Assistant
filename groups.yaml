@@ -1,8 +1,8 @@
-  # garage_motion:
-  #   name: Bílskúr hreyfing
-  #   icon: mdi:motion-sensor
-  #   entities:
-  #     - binary_sensor.motion_sensor_garage
-  #     - binary_sensor.garage_motion_sensor_workstation_occupancy
+  garage_motion:
+    name: Bílskúr hreyfing
+    icon: mdi:motion-sensor
+    entities:
+      - binary_sensor.motion_sensor_garage
+      - binary_sensor.garage_motion_sensor_workstation_occupancy
 
   
