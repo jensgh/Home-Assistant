@@ -37,7 +37,7 @@ shelly:
   sensors: #sensors to show, can be override on each device
     - all
   devices:  #configure devices
-    - id: "D0E58B-1"
+    - id: "D0E58B"
       light_switch: false  #add this switch as a light
       name: "Gangur shelly"
   #     sensors: [ switch ] #Override the global sensor
