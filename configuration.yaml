@@ -168,7 +168,15 @@ binary_sensor:
           - group.garage_motion
         device_class: motion
         value_template: "{{ is_state('group.garage_motion', 'on')}}"
-
+  - platform: mqtt
+    name: “Shelly”
+    state_topic: “shellies/shelly1-D0E58B/relay/0”
+    command_topic: “shellies/shelly1-D0E58B/relay/0/command”
+    qos: 2
+    payload_on: “on”
+    payload_off: “off”
+    retain: true
+    optimistic: false
 
 shell_command:
   update: /config/shell_scripts/gitpull.sh
@@ -230,7 +238,7 @@ google_assistant:
 
 mqtt:
   discovery: true
-  broker: !secret mqtt_ip  # Remove if you want to use builtin-in MQTT broker
+  broker: !secret mqtt_ip
   birth_message:
     topic: 'hass/status'
     payload: 'online'
