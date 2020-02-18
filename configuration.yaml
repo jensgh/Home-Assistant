@@ -33,7 +33,7 @@ switch: !include switches.yaml
 
 # https://github.com/StyraHem/ShellyForHASS/issues/72
 shelly:
-  # discovery: true  #add all devices (default)
+  discovery: true  #add all devices (default)
   sensors: #sensors to show, can be override on each device
     - all
   devices:  #configure devices

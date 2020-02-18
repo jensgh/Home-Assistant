@@ -9,12 +9,12 @@
       entity_id: light.gangur
 
 
-- alias: "Gangur off"
-  trigger:
-  - entity_id: light.shelly_shdm_1_d0e58b
-    platform: state
-    from: 'on'
-    to: 'odd'
-  action:
-    - service: light.turn_off
-      entity_id: light.gangur
+# - alias: "Gangur off"
+#   trigger:
+#   - entity_id: light.shelly_shdm_1_d0e58b
+#     platform: state
+#     from: 'on'
+#     to: 'odd'
+#   action:
+#     - service: light.turn_off
+#       entity_id: light.gangur
