@@ -36,12 +36,12 @@ shelly:
   # discovery: true  #add all devices (default)
   sensors: #sensors to show, can be override on each device
     - all
-  # devices:  #configure devices
-  #   - id: "420FC7"
-  #     light_switch: true  #add this switch as a light
+  devices:  #configure devices
+    - id: "D0E58B-1"
+      light_switch: false  #add this switch as a light
+      name: "Gangur shelly"
   #     sensors: [ switch ] #Override the global sensor
   #   - id: "7BD5F3"
-  #     name: My cool plug #set friendly name
 
 cloud:
 # Text to speech
