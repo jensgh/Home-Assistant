@@ -51,7 +51,7 @@
     - service_template: 'light.turn_off'
       data_template:
         entity_id: light.stairs_l1, light.stairs_r1, light.stairs_l2, light.stairs_r2, light,stairs_l3, light,stairs_r3
-        transition: 10
+        # transition: 10
 
 
 # Kitchen

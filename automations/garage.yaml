@@ -20,4 +20,4 @@
     service: light.turn_off
     data:
       entity_id: light.bilskur, light.geymsla
-      transition: 3
+      # transition: 3
