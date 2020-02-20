@@ -236,7 +236,7 @@ google_assistant:
   #     room: LIVING_ROOM
 
 mqtt:
-  discovery: true
+  discovery: false
   broker: !secret mqtt_ip
   birth_message:
     topic: 'hass/status'
