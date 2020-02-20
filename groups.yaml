@@ -5,4 +5,29 @@
       - binary_sensor.motion_sensor_garage
       - binary_sensor.garage_motion_sensor_workstation_occupancy
 
-  
+  downstairs_lights:
+    name: Ljós niðri
+    entities:
+      - light.bilskur
+      - light.geymsla
+      - light.gangur
+      - light.forstofa
+      - light.badherbergi
+      - light.laundry_light
+
+  upstairs_lights:
+    name: Ljós uppi
+    entities:
+      - light.stofa
+      - light.eldhus
+      - light.eyja
+      - light.matarbord
+      - light.glass_cabinets
+      - light.hjonaherbergi_gangur
+
+  upstairs_devices:
+    name: Tæki uppi
+    entities:
+      - media_player.google_mini_kitchen_speaker
+      - media_player.sony_bravia_tv
+      - media_player.svefnherbergi_chromecast

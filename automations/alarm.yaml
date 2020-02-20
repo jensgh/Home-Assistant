@@ -20,7 +20,7 @@
     - platform: state
       entity_id: alarm_control_panel.home_alarm
       from: 'triggered'
-      to: 'unarmeed'
+      to: 'disarmed'
   action:
   - service: script.turn_on
     data:
@@ -86,3 +86,29 @@
   action:
     - service: alarm_control_panel.alarm_disarm
       entity_id: alarm_control_panel.home_alarm
+
+- alias: 'Slökkva niðri þegar Armed home'
+  trigger:
+    - platform: state
+      entity_id: alarm_control_panel.home_alarm
+      to: 'armed_home'
+  action:
+    - service: homeassistant.turn_off
+      entity_id:
+        - group.downstairs_lights
+
+- alias: 'Slökkva á öllu þegar Armed away'
+  trigger:
+    - platform: state
+      entity_id: alarm_control_panel.home_alarm
+      to: 'armed_away'
+  action:
+    - service: homeassistant.turn_off
+      entity_id:
+        - group.downstairs_lights
+        - group.upstairs_lights
+        - group.upstairs_devices
+    - service: homeassistant.turn_on
+      entity_id:
+        - automation.turn_on_lights_upstairs
+        - automation.turn_on_lights_downstairs
