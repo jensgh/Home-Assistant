@@ -11,6 +11,7 @@
 !/Home-assistant-google-home-travis.json
 !/automations
 !/automations/shellies/
+!/shell_scripts
 # Ignore folders.
 .storage
 .cloud
