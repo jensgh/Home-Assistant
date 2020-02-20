@@ -11,6 +11,7 @@ if [ gitpull | grep "Fast-Forward" -n]; then
 
     if [ check_config == "Successful config (all)" ]; then
         echo "Config check successfull !"
+        restart=$(reboot now 2>&1)
     fi
 
 fi
