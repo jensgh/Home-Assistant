@@ -1,7 +1,5 @@
-group.all_lights.default,0.6,0.2,50
-light.gateway_light.default,0.6,0.2,10
-light.glass_cabinets.default,0.6,0.2,86
 relax,0.5119,0.4147,144
 concentrate,0.5119,0.4147,219
 energize,0.368,0.3686,203
 reading,0.4448,0.4066,240
+group.all_lights.default,0.5119,0.4147,180
