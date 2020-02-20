@@ -12,6 +12,8 @@
 !/automations
 !/automations/shellies/
 !/shell_scripts
+!/gitpull.sh
+
 # Ignore folders.
 .storage
 .cloud
