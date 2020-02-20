@@ -235,6 +235,7 @@ google_assistant:
   #     expose: false
   #     room: LIVING_ROOM
 
+
 mqtt:
   discovery: true
   broker: !secret mqtt_ip

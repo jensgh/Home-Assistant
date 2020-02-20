@@ -18,4 +18,6 @@
       minutes: 1
   action:
     service: light.turn_off
-    entity_id: light.bilskur, light.geymsla
+    data:
+      entity_id: light.bilskur, light.geymsla
+      transition: 3
