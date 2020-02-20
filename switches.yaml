@@ -1,10 +1,14 @@
 - platform: flux
   lights:
+    - light.forstofa
+    - light.bilskur
     - light.gangur
     - light.stigi
-    - light.eldhus
     - light.stofa
-    - light.badherbergi
+    - light.eldhus
+    - light.eyja
+    - light.matarbord
+    - light.hjonaherbergi_gangur
   name: Fluxer
   start_time: '7:00'
   stop_time: '23:00'
