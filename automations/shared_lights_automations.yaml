@@ -1,5 +1,5 @@
 
-- alias: 'turn_on_morning_lights_downstairs'
+- alias: 'turn_on_lights_downstairs'
   initial_state: false
   hide_entity: true
   trigger:
@@ -17,7 +17,7 @@
         entity_id: automation.turn_on_morning_lights_downstairs
 
 
-- alias: 'turn_on_morning_lights_upstairs'
+- alias: 'turn_on_lights_upstairs'
   initial_state: false
   hide_entity: true
   trigger:
