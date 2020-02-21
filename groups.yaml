@@ -1,6 +1,5 @@
   garage_motion:
     name: Bílskúr hreyfing
-    hidden: true
     icon: mdi:motion-sensor
     entities:
       - binary_sensor.motion_sensor_garage
