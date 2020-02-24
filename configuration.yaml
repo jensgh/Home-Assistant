@@ -134,7 +134,7 @@ hue:
 speedtestdotnet:
   scan_interval:
     minutes: 60
-    server_id: 4141
+  server_id: 4141
   monitored_conditions:
     - ping
     - download
