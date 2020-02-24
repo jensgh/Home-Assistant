@@ -104,16 +104,16 @@
     - service: alarm_control_panel.alarm_disarm
       entity_id: alarm_control_panel.home_alarm
 
-- alias: 'Slökkva niðri þegar Armed home'
+- alias: 'Slökkva niðri þegar Armed night'
   trigger:
     - platform: state
       entity_id: alarm_control_panel.home_alarm
-      to: 'armed_home'
+      to: 'armed_night'
   action:
     - service: notify.pushbullet_notify
       data_template:
-        title: Armed home
-        message: 'Þjófavörn sett a armed home'
+        title: Armed night
+        message: 'Þjófavörn sett a armed night'
     - service: homeassistant.turn_off
       entity_id:
         - group.downstairs_lights
