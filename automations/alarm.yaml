@@ -37,7 +37,16 @@
   hide_entity: true
   initial_state: true
   trigger:
-  - entity_id: binary_sensor.motion_sensor_hallway_1st, binary_sensor.door_window_sensor_forstofa, binary_sensor.door_window_sensor_laundry, binary_sensor.door_sensor_svalahurd_nidri, binary_sensor.motion_sensor_garage
+  - entity_id: 
+      - binary_sensor.motion_sensor_hallway_1st
+      - binary_sensor.door_window_sensor_forstofa
+      - binary_sensor.door_window_sensor_laundry
+      - binary_sensor.door_sensor_svalahurd_nidri
+      - binary_sensor.motion_sensor_garage
+      - binary_sensor.office_motion_sensor_occupancy
+      - binary_sensor.forstofa_motion_sensor_occupancy
+      - binary_sensor.garage_motion_sensor_workstation_occupancy
+      - binary_sensor.motion_sensor_hallway_second
     platform: state
     from: 'off'
     to: 'on'
@@ -65,7 +74,15 @@
   hide_entity: true
   initial_state: true
   trigger:
-  - entity_id: binary_sensor.motion_sensor_hallway_1st, binary_sensor.door_window_sensor_forstofa, binary_sensor.door_window_sensor_laundry, binary_sensor.door_sensor_svalahurd_nidri, binary_sensor.motion_sensor_garage
+  - entity_id: 
+    - binary_sensor.motion_sensor_hallway_1st
+    - binary_sensor.door_window_sensor_forstofa
+    - binary_sensor.door_window_sensor_laundry
+    - binary_sensor.door_sensor_svalahurd_nidri
+    - binary_sensor.motion_sensor_garage
+    - binary_sensor.office_motion_sensor_occupancy
+    - binary_sensor.forstofa_motion_sensor_occupancy
+    - binary_sensor.garage_motion_sensor_workstation_occupancy
     platform: state
     from: 'off'
     to: 'on'
@@ -93,6 +110,10 @@
       entity_id: alarm_control_panel.home_alarm
       to: 'armed_home'
   action:
+    - service: notify.pushbullet_notify
+      data_template:
+        title: Armed home
+        message: 'Þjófavörn sett a armed home'
     - service: homeassistant.turn_off
       entity_id:
         - group.downstairs_lights
@@ -103,6 +124,10 @@
       entity_id: alarm_control_panel.home_alarm
       to: 'armed_away'
   action:
+    - service: notify.pushbullet_notify
+      data_template:
+        title: Armed away
+        message: 'Þjófavörn sett a armed away'
     - service: homeassistant.turn_off
       entity_id:
         - group.downstairs_lights
