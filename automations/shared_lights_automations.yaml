@@ -14,7 +14,7 @@
           - light.stigi
     - service_template: 'homeassistant.turn_off'
       data_template:
-        entity_id: automation.turn_on_morning_lights_downstairs
+        entity_id: automation.turn_on_lights_downstairs
 
 
 - alias: 'turn_on_lights_upstairs'
@@ -34,4 +34,4 @@
           - light.matarbord
     - service_template: 'homeassistant.turn_off'
       data_template:
-        entity_id: automation.turn_on_morning_lights_upstairs
+        entity_id: automation.turn_on_lights_upstairs
