@@ -168,7 +168,7 @@ binary_sensor:
           - group.garage_motion
         device_class: motion
         value_template: "{{ is_state('group.garage_motion', 'on')}}"
-  - platform: mqtt
+  # - platform: mqtt
     # name: Shelly Gangur
     # state_topic: “shellies/shellydimmer-D0E58B/relay/0”
     # qos: 0
