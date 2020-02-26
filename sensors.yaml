@@ -204,7 +204,7 @@
   - platform: mqtt
     name: "test light 0"
     state_topic: "shellies/shellydimmer-D0E58B/light/0"
-
+    
   # reports periodic status
   - platform: mqtt
     name: "test light 0 status"
