@@ -169,21 +169,21 @@ binary_sensor:
         device_class: motion
         value_template: "{{ is_state('group.garage_motion', 'on')}}"
   - platform: mqtt
-    name: Shelly Gangur
-    state_topic: “shellies/shellydimmer-D0E58B/relay/0”
-    qos: 0
-    payload_on: “on”
-    payload_off: “off”
+    # name: Shelly Gangur
+    # state_topic: “shellies/shellydimmer-D0E58B/relay/0”
+    # qos: 0
+    # payload_on: “on”
+    # payload_off: “off”
+  - platform: mqtt
+    schema: template
+    name:  Shelly Dimmer
+    state_topic: "shellies/shellydimmer-D0E58B/light/0/status"
+    state_template: '{% if value_json.ison %} on {% else %} off {% endif %}'
+    command_topic: "shellies/shellydimmer-D0E58B/light/0/set"
+    command_on_template: '{"turn": "on"{% if brightness is defined %}, "brightness": {{(brightness | float * 0.3882 + 1) | round(0)}}{% endif %}}'
+    command_off_template: '{"turn": "off"}'
+    brightness_template: '{{ (value_json.brightness | float * 2.55) | round(0) }}'
 
-# platform: mqtt
-#   schema: template
-#   name:  Shelly Dimmer
-#   state_topic: "shellies/shellydimmer-XXXXXX/light/0/status"
-#   state_template: '{% if value_json.ison %} on {% else %} off {% endif %}'
-#   command_topic: "shellies/shellydimmer-XXXXXX/light/0/set"
-#   command_on_template: '{"turn": "on"{% if brightness is defined %}, "brightness": {{(brightness | float * 0.3882 + 1) | round(0)}}{% endif %}}'
-#   command_off_template: '{"turn": "off"}'
-#   brightness_template: '{{ (value_json.brightness | float * 2.55) | round(0) }}'
   # - platform: mqtt
   #   schema: template
   #   name:  Shelly Dimmer
