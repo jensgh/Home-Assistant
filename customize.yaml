@@ -14,10 +14,3 @@ sensor.network_out_eth0:
   icon: mdi:upload
 binary_sensor.ioniq:
   icon: mdi:car
-switch.shelly_shsw_1_98f4abf283d7:
-  device_class: switch
-  friendly_name: Elisabet Shelly
-switch.shelly_elisabet:
-  device_class: switch
-  friendly_name: Elísabet ljós shelly
-  icon: mdi:lightbulb
