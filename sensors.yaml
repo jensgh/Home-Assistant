@@ -212,7 +212,7 @@
 
   # reports power consumption
   - platform: mqtt
-    name: "test light 0"
+    name: "test light power 0"
     state_topic: "shellies/shellydimmer-D0E58B/light/0/power"
  
   # reports device temperature in Celsius
