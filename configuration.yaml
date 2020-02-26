@@ -175,7 +175,6 @@ binary_sensor:
     # payload_on: “on”
     # payload_off: “off”
 
-
   # - platform: mqtt
   #   schema: template
   #   name:  Shelly Dimmer
