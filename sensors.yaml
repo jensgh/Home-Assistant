@@ -204,21 +204,21 @@
   - platform: mqtt
     name: "test light 0"
     state_topic: "shellies/shellydimmer-D0E58B/light/0"
-	
+
   # reports periodic status
   - platform: mqtt
     name: "test light 0 status"
-    state_topic: "shellies/shellydimmer-<deviceid>/light/0/status"
+    state_topic: "shellies/shellydimmer-D0E58B/light/0/status"
 
 	# reports power consumption
   - platform: mqtt
     name: "test light 0"
-    state_topic: "shellies/shellydimmer-<deviceid>/light/0/power"
+    state_topic: "shellies/shellydimmer-D0E58B/light/0/power"
 	# reports device temperature in Celsius
 
   - platform: mqtt
     name: "test temperature 0"
-    state_topic: "shellies/shellydimmer-<deviceid>/temperature"
+    state_topic: "shellies/shellydimmer-D0E58B/temperature"
 
 # eports overtemperature
   - platform: mqtt
