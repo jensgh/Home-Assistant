@@ -200,6 +200,37 @@
     value_template: "{{ value_json.coordinator }}"
     icon: mdi:chip
     
+    # reports on/оff status
   - platform: mqtt
-    name: "Lamp Schakelaar Eettafel"
-    state_topic: "shellies/shellydimmer-D0E58B/input/0"
+    name: "test light 0"
+    state_topic: "shellies/shellydimmer-D0E58B/light/0"
+	
+  # reports periodic status
+  - platform: mqtt
+    name: "test light 0 status"
+    state_topic: "shellies/shellydimmer-<deviceid>/light/0/status"
+
+	# reports power consumption
+  - platform: mqtt
+    name: "test light 0"
+    state_topic: "shellies/shellydimmer-<deviceid>/light/0/power"
+	# reports device temperature in Celsius
+
+  - platform: mqtt
+    name: "test temperature 0"
+    state_topic: "shellies/shellydimmer-<deviceid>/temperature"
+
+# eports overtemperature
+  - platform: mqtt
+    name: "test overtemperature 0"
+    state_topic: "shellies/shellydimmer-D0E58B/overtemperature"
+
+	# reports overload
+  - platform: mqtt
+    name: "test overload"
+    state_topic: "shellies/shellydimmer-D0E58B/overload"
+
+	# reports error
+  - platform: mqtt
+    name: "test loaderror"
+    state_topic: "shellies/shellydimmer-D0E58B/loaderror"
