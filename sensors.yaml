@@ -199,3 +199,7 @@
     state_topic: "zigbee2mqtt/bridge/config"
     value_template: "{{ value_json.coordinator }}"
     icon: mdi:chip
+    
+  - platform: mqtt
+    name: "Lamp Schakelaar Eettafel"
+    state_topic: "shellies/shellydimmer-D0E58B/input/0"
