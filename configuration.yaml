@@ -177,8 +177,8 @@ binary_sensor:
     # retain: true
     # optimistic: false
     
-shell_command:
-  update: /config/shell_scripts/gitpull.sh
+# shell_command:
+#   update: /config/shell_scripts/gitpull.sh
 
 
 # https://www.home-assistant.io/integrations/pi_hole/
