@@ -1,0 +1,13 @@
+- alias: 'Notification on forstofa motion'
+  hide_entity: true
+  initial_state: true
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.forstofa_motion_sensor_occupancy
+      to: 'on'
+  action:
+    - service: notify.pushbullet_notify
+      data_template:
+        message: >   
+          Hreyfing í forstofu
+        title: "Hreyfing í forstofu"
