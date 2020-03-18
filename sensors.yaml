@@ -42,7 +42,7 @@
     name: Jensinn.com ssl
 
 # https://www.home-assistant.io/integrations/launch_library/
-  - platform: launch_library
+  # - platform: launch_library
 
 # https://www.home-assistant.io/integrations/systemmonitor
   - platform: systemmonitor
