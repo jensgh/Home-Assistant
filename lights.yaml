@@ -27,12 +27,12 @@
   - platform: group
     name: Gangur
     entities:
-      - light.gangur_1
-      - light.gangur_2
-      - light.gangur_3
-      - light.gangur_4
-      - light.gangur_5
-      - light.gangur_6
+      - light.hallway_1_light
+      - light.hallway_2_light
+      - light.hallway_3_light
+      - light.hallway_4_light
+      - light.hallway_5_light
+      - light.hallway_6_light
 
   # - platform: group
   #   name: Forstofa
@@ -81,11 +81,17 @@
       - light.bathroom_upstairs_shower_2_light
 
   - platform: group
-    name: Baðherbergi
+    name: Vaskur
     entities:
       - light.bathroom_upstairs_1_light
       - light.bathroom_upstairs_2_light
       - light.bathroom_upstairs_3_light
+
+  - platform: group
+    name: Baðherbergi
+    entities:
+      - light.vaskur
+      - light.sturta
 
   - platform: group
     name: Forstofa
@@ -119,12 +125,12 @@
       - light.garage_storage_1_light
       - light.garage_storage_2_light
 
-  - platform: mqtt
-    schema: template
-    name:  Shelly Dimmer
-    state_topic: "shellies/shellydimmer-D0E58B/light/0/status"
-    state_template: '{% if value_json.ison %} on {% else %} off {% endif %}'
-    command_topic: "shellies/shellydimmer-D0E58B/light/0/set"
-    command_on_template: '{"turn": "on"{% if brightness is defined %}, "brightness": {{(brightness | float * 0.3882 + 1) | round(0)}}{% endif %}}'
-    command_off_template: '{"turn": "off"}'
-    brightness_template: '{{ (value_json.brightness | float * 2.55) | round(0) }}'
+  # - platform: mqtt
+  #   schema: template
+  #   name:  Shelly Dimmer
+  #   state_topic: "shellies/shellydimmer-D0E58B/light/0/status"
+  #   state_template: '{% if value_json.ison %} on {% else %} off {% endif %}'
+  #   command_topic: "shellies/shellydimmer-D0E58B/light/0/set"
+  #   command_on_template: '{"turn": "on"{% if brightness is defined %}, "brightness": {{(brightness | float * 0.3882 + 1) | round(0)}}{% endif %}}'
+  #   command_off_template: '{"turn": "off"}'
+  #   brightness_template: '{{ (value_json.brightness | float * 2.55) | round(0) }}'
