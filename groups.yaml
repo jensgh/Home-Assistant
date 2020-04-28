@@ -24,6 +24,7 @@
       - light.matarbord
       - light.glass_cabinets
       - light.hjonaherbergi_gangur
+      - light.stigi
 
   upstairs_devices:
     name: Tæki uppi
