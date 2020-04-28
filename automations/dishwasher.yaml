@@ -2,7 +2,7 @@
   alias: 'Notification þegar uppþvottavél lekur'
   trigger:
     platform: state
-    entity_id: binary_sensor.water_leak_sensor_uppthvottavel
+    entity_id: binary_sensor.kitchen_water_leak_water_leak
     to: 'on'
   action:
     - service: notify.pushbullet_notify

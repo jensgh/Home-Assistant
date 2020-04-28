@@ -12,6 +12,8 @@
         entity_id: 
           - light.gangur
           - light.stigi
+          - light.bathroom_downstairs_light
+          - light.laundry_light
     - service_template: 'homeassistant.turn_off'
       data_template:
         entity_id: automation.turn_on_lights_downstairs
@@ -32,6 +34,11 @@
           - light.glass_cabinets
           - light.stofa
           - light.matarbord
+          - light.eyja
+          - light.badherbergi
+          - light.olga_lampi
+          - light.master_bedroom1
+          - light.hjonaherbergi_gangur
     - service_template: 'homeassistant.turn_off'
       data_template:
         entity_id: automation.turn_on_lights_upstairs
