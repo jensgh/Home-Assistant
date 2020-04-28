@@ -39,6 +39,7 @@
           - light.olga_lampi
           - light.master_bedroom1
           - light.hjonaherbergi_gangur
+          - light.fataskapur_light
     - service_template: 'homeassistant.turn_off'
       data_template:
         entity_id: automation.turn_on_lights_upstairs
