@@ -1,12 +1,20 @@
-  # - alias: Respond to button click
-  #   trigger:
-  #     platform: state
-  #     entity_id: sensor.0x00158d000237e77d_click
-  #     to: 'single'
-  #   action:
-  #     entity_id: light.gangur
-  #     service: light.on
+  - alias: wirless button left click
+    trigger:
+      platform: state
+      entity_id: sensor.wireless_double_button_click
+      to: 'left'
+    action:
+      entity_id: light.gangur
+      service: light.toggle
 
+  - alias: wirless button right click
+    trigger:
+      platform: state
+      entity_id: sensor.wireless_double_button_click
+      to: 'right'
+    action:
+      entity_id: light.forstofa
+      service: light.toggle
 
   # - alias: Respond to button click
   #   trigger:
