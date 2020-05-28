@@ -101,14 +101,14 @@ alarm_control_panel:
   - platform: manual
     name: Home Alarm
     delay_time: 0
-    pending_time: 0
+    arming_time: 0
     disarmed:
       trigger_time: 0
     # armed_night:
     #   pending_time: 0
     #   delay_time: 0
     armed_away:
-      pending_time: 60
+      arming_time: 60
       delay_time: 60
 
 
