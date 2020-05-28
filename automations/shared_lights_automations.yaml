@@ -1,7 +1,7 @@
 
 - alias: 'turn_on_lights_downstairs'
   initial_state: false
-  hide_entity: true
+  # hide_entity: true
   trigger:
     - platform: state
       entity_id: binary_sensor.motion_sensor_hallway_1st
@@ -21,7 +21,7 @@
 
 - alias: 'turn_on_lights_upstairs'
   initial_state: false
-  hide_entity: true
+  # hide_entity: true
   trigger:
     - platform: state
       entity_id: binary_sensor.motion_sensor_hallway_second

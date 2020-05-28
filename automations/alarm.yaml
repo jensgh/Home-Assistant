@@ -1,6 +1,6 @@
 #Alarm is triggered sequence
 - alias: 'Alarm is triggered'
-  hide_entity: true
+  # hide_entity: true
   initial_state: true
   trigger:
     - platform: state
@@ -14,7 +14,7 @@
 
 # TODO: virkar ekki
 - alias: 'Alarm is deactivated'
-  hide_entity: true
+  # hide_entity: true
   initial_state: true
   trigger:
     - platform: state
@@ -34,7 +34,7 @@
 
 #Armed away trigger
 - alias: 'Armed away trigger'
-  hide_entity: true
+  # hide_entity: true
   initial_state: true
   trigger:
   - entity_id: 
@@ -71,7 +71,7 @@
 
 #Armed night trigger
 - alias: 'Armed night trigger'
-  hide_entity: true
+  # hide_entity: true
   initial_state: true
   trigger:
   - entity_id: 
