@@ -1,5 +1,5 @@
 - alias: 'Kveikja ef hreyfing um nótt'
-  hide_entity: false
+  # hide_entity: false
   trigger:
     - platform: state
       entity_id: binary_sensor.motion_sensor_hallway_second
