@@ -16,7 +16,7 @@ discovery:
     
 # https://www.home-assistant.io/integrations/recorder/
 recorder:
-  purge_interval: 2
+  # purge_interval: 2
   purge_keep_days: 30
   db_url: !secret db_url
   exclude:
@@ -58,7 +58,7 @@ shopping_list:
 xiaomi_aqara:
   discovery_retry: 5
   gateways:
-    - host: 192.168.1.119
+    - host: 192.168.1.7
       key: !secret aquara_key
 
 sensor: !include sensors.yaml
@@ -74,9 +74,9 @@ media_player:
   - platform: braviatv
     host: 10.0.0.6
     # https://www.home-assistant.io/integrations/spotify/
-  - platform: spotify
-    client_id: !secret spotify_client_id
-    client_secret: !secret spotify_client_secret
+  # - platform: spotify
+  #   client_id: !secret spotify_client_id
+  #   client_secret: !secret spotify_client_secret
     # aliases:
     #     abc123def456: 'Living Room'
     #     9183abas000: 'Bed Room'
