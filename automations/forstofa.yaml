@@ -38,3 +38,19 @@
     data:
       entity_id: light.forstofa
       # transition: 3
+
+
+- alias: Notofication forstofa
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.forstofa_motion_sensor_occupancy
+      to: 'on'
+    - platform: state
+      entity_id: binary_sensor.door_window_sensor_forstofa
+      to: 'on'
+  action:
+  - service: notify.mobile_app_hd1913
+    data_template:
+      title: Forstofa!!
+      message: 'Hreyfing i forstofu.'

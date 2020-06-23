@@ -12,7 +12,6 @@
       entity_id: script.start_alarm
   #kveikja á xiami alert
 
-# TODO: virkar ekki
 - alias: 'Alarm is deactivated'
   # hide_entity: true
   initial_state: true

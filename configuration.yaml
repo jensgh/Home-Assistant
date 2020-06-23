@@ -159,6 +159,7 @@ binary_sensor:
   - platform: ping
     host: 10.0.0.8
     name: 'Ioniq'
+
     #Hass Groups
   - platform: template
     sensors:
