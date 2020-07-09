@@ -52,16 +52,16 @@
   - platform: group
     name: Stigi
     entities:
-      - light.stairs_l1
-      - light.stairs_l2
-      - light.stairs_l3
-      - light.stairs_l4
-      - light.stairs_l5
-      - light.stairs_r1
-      - light.stairs_r2
-      - light.stairs_r3
-      - light.stairs_r4
-      - light.stairs_r5
+      - light.stigi_l1
+      - light.stigi_l2
+      - light.stigi_l3
+      - light.stigi_l4
+      - light.stigi_l5
+      - light.stigi_r1
+      - light.stigi_r2
+      - light.stigi_r3
+      - light.stigi_r4
+      - light.stigi_r5
 
   - platform: group
     name: Eldhús
