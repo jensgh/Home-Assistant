@@ -4,8 +4,9 @@
       entity_id: sensor.wireless_double_button_click
       to: 'left'
     action:
-      entity_id: light.gangur
-      service: light.toggle
+      service: notify.mobile_app_jens_mobile
+      data:
+        message: 'Test notification'
 
   - alias: wirless button right click
     trigger:
