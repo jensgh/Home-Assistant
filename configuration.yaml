@@ -95,11 +95,11 @@ notify:
   - name: pushbullet_notify
     platform: pushbullet
     api_key: !secret pushbullet_token
-  - name: Phones
+  - name: all_phones
     platform: group
     services:
-    - service: notify.mobile_app_jens_mobile
-    - service: notify.mobile_app_pixel_2_xl
+    - service: mobile_app_jens_mobile
+    - service: mobile_app_pixel_2_xl
 
 alarm_control_panel:
   - platform: manual
