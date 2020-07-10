@@ -15,8 +15,9 @@
       entity_id: sensor.wireless_double_button_click
       to: 'right'
     action:
-      service: notify.phones
+      service: notify.all_phones
       data:
+        title: "Notification"
         message: 'Test notification'
 
   # - alias: Respond to button click
