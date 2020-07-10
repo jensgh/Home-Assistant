@@ -14,6 +14,10 @@
     data_template:
       title: Þjófavörn!!
       message: 'Þjófavörn fór í gang !'
+  - service: notify.all_phones
+    data_template:
+      title: Þjófavörn!!
+      message: 'Þjófavörn fór í gang !'
 
 
 'stop_alarm':
