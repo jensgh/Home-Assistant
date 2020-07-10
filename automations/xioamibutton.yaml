@@ -6,6 +6,7 @@
     action:
       service: notify.mobile_app_jens_mobile
       data:
+        title: "Notification"
         message: 'Test notification'
 
   - alias: wirless button right click
@@ -14,8 +15,9 @@
       entity_id: sensor.wireless_double_button_click
       to: 'right'
     action:
-      entity_id: light.forstofa
-      service: light.toggle
+      service: notify.phones
+      data:
+        message: 'Test notification'
 
   # - alias: Respond to button click
   #   trigger:
