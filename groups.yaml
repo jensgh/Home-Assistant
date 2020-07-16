@@ -25,6 +25,9 @@
       - light.glass_cabinets
       - light.hjonaherbergi_gangur
       - light.stigi
+      - light.hjonaherbergi
+      - light.fataskapur_light
+      - light.olga_lampi
 
   upstairs_devices:
     name: Tæki uppi

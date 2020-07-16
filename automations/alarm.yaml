@@ -74,14 +74,14 @@
   initial_state: true
   trigger:
   - entity_id: 
-    - binary_sensor.motion_sensor_hallway_1st
+    # - binary_sensor.motion_sensor_hallway_1st
     - binary_sensor.door_window_sensor_forstofa
     - binary_sensor.door_window_sensor_laundry
     - binary_sensor.door_sensor_svalahurd_nidri
     - binary_sensor.motion_sensor_garage
-    - binary_sensor.office_motion_sensor_occupancy
-    - binary_sensor.forstofa_motion_sensor_occupancy
     - binary_sensor.garage_motion_sensor_workstation_occupancy
+    - binary_sensor.office_motion_sensor_occupancy
+    # - binary_sensor.forstofa_motion_sensor_occupancy
     platform: state
     from: 'off'
     to: 'on'
@@ -127,6 +127,7 @@
         - light.stofa
         - light.eldhus
         - light.matarbord
+        - light.hjonaherbergi_gangur
         transition: 10
 
 - alias: 'Slökkva á öllu þegar Armed away'

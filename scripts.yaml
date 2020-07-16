@@ -15,7 +15,7 @@
       title: Þjófavörn!!
       message: 'Þjófavörn fór í gang !'
   - service: notify.all_phones
-    data_template:
+    data:
       title: Þjófavörn!!
       message: 'Þjófavörn fór í gang !'
 
