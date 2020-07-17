@@ -32,16 +32,16 @@ zone: !include zones.yaml
 switch: !include switches.yaml
 
 # https://github.com/StyraHem/ShellyForHASS/issues/72
-# shelly:
-#   discovery: true  #add all devices (default)
-#   sensors: #sensors to show, can be override on each device
-#     - all
-#   devices:  #configure devices
-#     - id: "D0E58B"
-#       light_switch: false  #add this switch as a light
-#       name: "Gangur shelly"
-#   #     sensors: [ switch ] #Override the global sensor
-#   #   - id: "7BD5F3"
+shelly:
+  discovery: true  #add all devices (default)
+  sensors: #sensors to show, can be override on each device
+    - all
+  devices:  #configure devices
+    - id: "D0E58B"
+      light_switch: true  #add this switch as a light
+      name: "Gangur shelly"
+  #     sensors: [ switch ] #Override the global sensor
+  #   - id: "7BD5F3"
 
 cloud:
 # Text to speech
