@@ -13,9 +13,9 @@
 !/automations/shellies/
 !/shell_scripts
 !/gitpull.sh
-!/images/
-!images/jens.jpg
-!images/olga.jpg
+!/www/
+!www/jens.jpg
+!www/olga.jpg
 
 # Ignore folders.
 .storage

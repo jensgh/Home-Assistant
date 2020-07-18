@@ -15,6 +15,6 @@ sensor.network_out_eth0:
 binary_sensor.ioniq:
   icon: mdi:car
 person.jens:
-  entity_picture: /images/jens.jpg
+  entity_picture: /local/jens.jpg
 person.olga:
-  entity_picture: /images/olga.jpg
+  entity_picture: /local/olga.jpg
