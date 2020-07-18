@@ -126,12 +126,12 @@
       - light.garage_storage_2_light
       
   - platform: group
-      name: Ljós frammi
-      entities:
-        - light.stofa
-        - light.eldhus
-        - light.hjonaherbergi_gangur
-        - light.stigi
+    name: Ljós frammi
+    entities:
+      - light.stofa
+      - light.eldhus
+      - light.hjonaherbergi_gangur
+      - light.stigi
         
   # - platform: mqtt
   #   schema: template
