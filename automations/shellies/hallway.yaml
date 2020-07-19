@@ -2,6 +2,7 @@
   trigger:
   - entity_id: binary_sensor.shelly_shdm_1_d0e58b_1_switch
     platform: state
+    to: 'on'
   action:
     - service: light.toggle
       entity_id: light.gangur
