@@ -1,11 +1,9 @@
-- alias: "Gangur On"
+- alias: "Gangur shelly automation"
   trigger:
-  - entity_id: light.shelly_shdm_1_d0e58b
+  - entity_id: binary_sensor.shelly_shdm_1_d0e58b_1_switch
     platform: state
-    from: 'off'
-    to: 'on'
   action:
-    - service: light.turn_on
+    - service: light.toggle
       entity_id: light.gangur
 
 

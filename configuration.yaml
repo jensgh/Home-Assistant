@@ -145,24 +145,24 @@ speedtestdotnet:
     - upload
 
 binary_sensor:
-  - platform: ping
-    host: 10.0.0.17
-    name: 'Hertz'
-  - platform: ping
-    host: 10.0.0.7
-    name: 'Xiaomi Gateway'
-  - platform: ping
-    host: 10.0.0.10
-    name: 'Wifi Extender'
-  - platform: ping
-    host: !secret hue_hub_ip
-    name: 'Hue Gateway'
-  - platform: ping
-    host: 10.0.0.12
-    name: 'Bytes'
-  - platform: ping
-    host: 10.0.0.8
-    name: 'Ioniq'
+#   - platform: ping
+#     host: 10.0.0.17
+#     name: 'Hertz'
+#   - platform: ping
+#     host: 10.0.0.7
+#     name: 'Xiaomi Gateway'
+#   - platform: ping
+#     host: 10.0.0.10
+#     name: 'Wifi Extender'
+#   - platform: ping
+#     host: !secret hue_hub_ip
+#     name: 'Hue Gateway'
+#   - platform: ping
+#     host: 10.0.0.12
+#     name: 'Bytes'
+#   - platform: ping
+#     host: 10.0.0.8
+#     name: 'Ioniq'
 
     #Hass Groups
   - platform: template
