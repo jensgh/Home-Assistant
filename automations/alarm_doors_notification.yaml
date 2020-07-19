@@ -18,7 +18,7 @@
         title: "Hurð opin !!"
         message: >-
           {% for state in states.group.all_doors %}
-            {% if is_state('{{state.entity_id}}', 'on') %}
+            {% if {{state.state}} is 'on') %}
               {{ state.name }} er opin!
             {% endif %}
           {% endfor %}
