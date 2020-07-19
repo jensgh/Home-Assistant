@@ -173,6 +173,12 @@ binary_sensor:
           - group.garage_motion
         device_class: motion
         value_template: "{{ is_state('group.garage_motion', 'on')}}"
+      hallway_motion:
+        friendly_name: "Gangur hreyfing"
+        entity_id:
+          - group.hallway_motion
+        device_class: motion
+        value_template: "{{ is_state('group.hallway_motion', 'on')}}"
   # - platform: mqtt
     # name: Shelly Gangur
     # state_topic: “shellies/shellydimmer-D0E58B/relay/0”

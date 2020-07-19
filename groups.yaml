@@ -5,6 +5,13 @@
       - binary_sensor.motion_sensor_garage
       - binary_sensor.garage_motion_sensor_workstation_occupancy
 
+  hallway_motion:
+    name: Gangur hreyfing
+    icon: mdi:motion-sensor
+    entities:
+      - binary_sensor.motion_hallway_2_occupancy
+      - binary_sensor.motion_sensor_hallway_1st
+      
   downstairs_lights:
     name: Ljós niðri
     entities:
