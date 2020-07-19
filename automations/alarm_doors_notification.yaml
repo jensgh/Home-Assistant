@@ -2,9 +2,10 @@
   trigger:
     - platform: state
       entity_id: alarm_control_panel.home_alarm
-      to: 
-        - 'armed_night'
-        - 'armed_away'
+      to: 'armed_night'
+    - platform: state
+      entity_id: alarm_control_panel.home_alarm
+      to: 'armed_away'
   condition:
     condition: or
     conditions:
