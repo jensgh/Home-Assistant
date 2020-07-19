@@ -17,12 +17,7 @@
       data_template:
         title: "Hurð opin !!"
         message: >-
-          {%- for entity_id in states.group.all_doors.attributes.entity_id -%}
-            {% set parts = entity_id.split('.') -%}
-            {%- if states(entity_id) == 'on' %}
-              {{ states[parts[0]][parts[1]].name }} er opin!
-            {% endif -%}
-          {%- endfor %}
+          Það er hurð opin !
       # data_template:
       #   title: Hurð opin!
       #   message: 'Það er hurð opin'
