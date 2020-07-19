@@ -26,8 +26,8 @@
       entity_id: script.stop_alarm
   - service: notify.pushbullet_notify
     data_template:
-      title: Þjófavörn!!
-      message: 'Þjófavörn Tekin af, eftir að hafa farið í gang.'
+      title: Þjófavörn tekin af!
+      message: 'Þjófavörn tekin af, eftir að hafa farið í gang.'
   #slökkva á xiami alert
 
 

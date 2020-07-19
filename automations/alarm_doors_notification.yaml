@@ -22,7 +22,13 @@
         entity_id: binary_sensor.door_window_sensor_forstofa
         state: 'on'
   action:
-    - service: notify.all_phones
+    - service: notify.mobile_app_jens_mobile
       data_template:
-        title: Hurð opin!
-        message: 'Það er hurð opin'
+        title: "{{ 'Hurð opin !!'"
+        message: >-
+          {% for state in states.sensor %}
+            {{ state.entity_id }} = {{ state.state }},
+          {% endfor %}
+      # data_template:
+      #   title: Hurð opin!
+      #   message: 'Það er hurð opin'
