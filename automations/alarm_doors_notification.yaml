@@ -24,7 +24,7 @@
   action:
     - service: notify.mobile_app_jens_mobile
       data_template:
-        title: "{{ 'Hurð opin !!'"
+        title: "Hurð opin !!"
         message: >-
           {% for state in states.sensor %}
             {{ state.entity_id }} = {{ state.state }},
