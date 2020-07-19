@@ -27,7 +27,7 @@
         title: "Hurð opin !!"
         message: >-
           {% for state in states.binary_sensor %}
-            {% if is_state({{state.entity_id}}, 'on') %}
+            {% if is_state('{{state.entity_id}}', 'on') %}
               {{state.name}} er opin!
             {% endif %}
             {{ state.entity_id }} = {{ state.state }},
