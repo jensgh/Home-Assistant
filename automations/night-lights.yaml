@@ -38,7 +38,59 @@
           - light.eyja
           - light.glass_cabinets
           - light.badherbergi
+        transition: 5
+
+# Downstairs
+- alias: 'Kveikja niðri - nótt'
+  # hide_entity: false
+  trigger:
+    - platform: state
+      entity_id: 
+        - binary_sensor.motion_hallway_2_occupancy
+        - binary_sensor.motion_sensor_hallway_1st
+      to: 'on'
+  condition:
+    - condition: state
+      entity_id: alarm_control_panel.home_alarm
+      state: 'armed_night'
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: 
+          - light.gangur
+        brightness: 50
+        kelvin: 2200
+        transition: 3
+
+  
+- alias: 'Slökkva niðri - nótt'
+  initial_state: true
+  trigger:
+    - platform: state
+      entity_id: 
+        - binary_sensor.motion_hallway_2_occupancy
+        - binary_sensor.motion_sensor_hallway_1st
+      to: 'off'
+      for:
+        minutes: 2
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: alarm_control_panel.home_alarm
+        state: 'armed_night'
+      - condition: state
+        entity_id:
+          - binary_sensor.motion_hallway_2_occupancy
+          - binary_sensor.motion_sensor_hallway_1st
+        state: 'off'  
+  action:
+    - service_template: 'light.turn_off'
+      data:
+        entity_id: 
+          - light.gangur
         transition: 10
+      
 
 # Stairs
 # - alias: 'Kveikja í stiga ef hreyfing um nótt'
