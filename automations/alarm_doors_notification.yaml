@@ -26,7 +26,7 @@
       data_template:
         title: "Hurð opin !!"
         message: >-
-          {% for state in states.sensor %}
+          {% for state in states.binary_sensor %}
             {{ state.entity_id }} = {{ state.state }},
           {% endfor %}
       # data_template:
