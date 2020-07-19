@@ -80,9 +80,10 @@
         entity_id: alarm_control_panel.home_alarm
         state: 'armed_night'
       - condition: state
-        entity_id:
-          - binary_sensor.motion_hallway_2_occupancy
-          - binary_sensor.motion_sensor_hallway_1st
+        entity_id: binary_sensor.motion_hallway_2_occupancy
+        state: 'off'  
+      - condition: state
+        entity_id: binary_sensor.motion_sensor_hallway_1st
         state: 'off'  
   action:
     - service_template: 'light.turn_off'
