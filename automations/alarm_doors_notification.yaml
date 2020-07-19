@@ -7,11 +7,9 @@
       entity_id: alarm_control_panel.home_alarm
       to: 'armed_away'
   condition:
-    condition: or
-    conditions:
-      - condition: state
-        entity_id: group.all_doors
-        state: 'on'
+    - condition: state
+      entity_id: group.all_doors
+      state: 'on'
   action:
     - service: notify.all_phones
       data_template:
