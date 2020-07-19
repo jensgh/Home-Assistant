@@ -11,7 +11,7 @@
     entities:
       - binary_sensor.motion_hallway_2_occupancy
       - binary_sensor.motion_sensor_hallway_1st
-      
+
   downstairs_lights:
     name: Ljós niðri
     entities:
@@ -38,6 +38,13 @@
 
   upstairs_devices:
     name: Tæki uppi
+    entities:
+      - media_player.google_mini_kitchen_speaker
+      - media_player.sony_bravia_tv
+      - media_player.svefnherbergi_chromecast
+
+  all_doors:
+    name: Útihurðir
     entities:
       - media_player.google_mini_kitchen_speaker
       - media_player.sony_bravia_tv
