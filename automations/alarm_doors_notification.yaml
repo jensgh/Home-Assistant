@@ -1,0 +1,27 @@
+- alias: 'Notify if doors open when armed'
+  trigger:
+    - platform: state
+      entity_id: alarm_control_panel.home_alarm
+      to: 
+        - 'armed_night'
+        - 'armed_away'
+  condition:
+    condition: or
+    conditions:
+      - condition: state
+        entity_id: binary_sensor.door_window_sensor_kitchen
+        state: 'on'
+      - condition: state
+        entity_id: binary_sensor.door_window_sensor_laundry
+        state: 'on'
+      - condition: state
+        entity_id: binary_sensor.door_sensor_svalahurd_nidri
+        state: 'on'
+      - condition: state
+        entity_id: binary_sensor.door_window_sensor_forstofa
+        state: 'on'
+  action:
+    - service: notify.all_phones
+      data_template:
+        title: Hurð opin!
+        message: 'Það er hurð opin'
