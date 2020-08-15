@@ -120,8 +120,8 @@ ombi:
   host: !secret ombi_host
   username: !secret ombi_username
   api_key: !secret ombi_api_key
-  port: 443
-  ssl: true
+  port: 3579
+  # ssl: true
 
 # upnp:
 #   sensors: true
