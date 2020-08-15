@@ -18,13 +18,13 @@
   - platform: sonarr
     host: 192.168.1.9
     api_key: !secret sonarr_api_key
-    monitored_conditions:
-    - series
-    - upcoming
-    - wanted
-    - queue
-    - commands
-    - diskspace
+    # monitored_conditions:
+    # - series
+    # - upcoming
+    # - wanted
+    # - queue
+    # - commands
+    # - diskspace
 
   - platform: radarr
     api_key: !secret radarr_api_key
