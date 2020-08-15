@@ -133,6 +133,7 @@
         - light.laundry_light
         - light.badherbergi
         - light.bjorn_lampi
+        - light.elisabet_shelly
         transition: 5
     - service: light.turn_on
       data:
