@@ -19,7 +19,7 @@
       - light.geymsla
       - light.gangur
       - light.forstofa
-      - light.badherbergi
+      - light.bathroom_downstairs_light
       - light.laundry_light
 
   upstairs_lights:
@@ -34,7 +34,7 @@
       - light.stigi
       - light.hjonaherbergi
       - light.fataskapur_light
-      - light.olga_lampi
+      - light.badherbergi
 
   upstairs_devices:
     name: Tæki uppi

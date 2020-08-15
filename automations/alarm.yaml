@@ -118,9 +118,6 @@
       data_template:
         title: Armed night
         message: 'Þjófavörn sett a armed night'
-    - service: homeassistant.turn_off
-      entity_id:
-        - group.downstairs_lights
     - service: light.turn_off
       data:
         entity_id: 
@@ -129,7 +126,21 @@
         - light.eldhus
         - light.matarbord
         - light.hjonaherbergi_gangur
-        transition: 10
+        - light.bilskur
+        - light.geymsla
+        - light.forstofa
+        - light.bathroom_downstairs_light
+        - light.laundry_light
+        - light.badherbergi
+        - light.bjorn_lampi
+        transition: 5
+    - service: light.turn_on
+      data:
+        entity_id: 
+        - light.gangur
+        transition: 5
+        brightness: 1
+
 
 - alias: 'Slökkva á öllu þegar Armed away'
   trigger:
