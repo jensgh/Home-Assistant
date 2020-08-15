@@ -9,33 +9,33 @@
       - 'date_time'
       - 'time_date'
 
-  # - platform: tautulli
-  #   api_key: !secret tautulli_aki_key
-  #   host: !secret tautulli_host
-  #   ssl: true
-  #   port: 443
+  - platform: tautulli
+    api_key: !secret tautulli_aki_key
+    host: !secret tautulli_host
+    # ssl: true
+    port: 8181
 
-  # - platform: sonarr
-  #   host: 10.0.0.12
-  #   api_key: !secret sonarr_api_key
-  #   monitored_conditions:
-  #   - series
-  #   - upcoming
-  #   - wanted
-  #   - queue
-  #   - commands
-  #   - diskspace
+  - platform: sonarr
+    host: 192.168.1.9
+    api_key: !secret sonarr_api_key
+    monitored_conditions:
+    - series
+    - upcoming
+    - wanted
+    - queue
+    - commands
+    - diskspace
 
-  # - platform: radarr
-  #   api_key: !secret radarr_api_key
-  #   host: 10.0.0.12
-  #   monitored_conditions:
-  #   - movies
-  #   - upcoming
-  #   - status
-  #   - commands
-  #   - diskspace
-  #   days: 30
+  - platform: radarr
+    api_key: !secret radarr_api_key
+    host: 192.168.1.9
+    monitored_conditions:
+    - movies
+    - upcoming
+    - status
+    - commands
+    - diskspace
+    days: 30
 
   # - platform: cert_expiry
   #   host: jensinn.com
