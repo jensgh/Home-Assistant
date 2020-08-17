@@ -132,13 +132,13 @@
         - light.bathroom_downstairs_light
         - light.laundry_light
         - light.badherbergi
-        - light.bjorn_lampi
         - light.elisabet_shelly
+        - light.gangur
         transition: 5
     - service: light.turn_on
       data:
         entity_id: 
-        - light.gangur
+        - light.bjorn_lampi
         transition: 5
         brightness: 1
 
