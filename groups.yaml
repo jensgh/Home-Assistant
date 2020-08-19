@@ -46,6 +46,7 @@
   all_doors:
     name: Útihurðir
     entities:
-      - media_player.google_mini_kitchen_speaker
-      - media_player.sony_bravia_tv
-      - media_player.svefnherbergi_chromecast
+      - binary_sensor.door_window_sensor_forstofa
+      - binary_sensor.door_sensor_svalahurd_nidri
+      - binary_sensor.door_window_sensor_laundry
+      - binary_sensor.door_window_sensor_kitchen
