@@ -1,0 +1,12 @@
+- alias: 'Doorbell Ding'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.front_door_ding
+      from: 'off'
+      to: 'on'
+  action:
+   -  service: notify.mobile_app_jens_mobile
+      data_template:
+        title: "Doorbell"
+        message: >-
+          Someone at the door, open it!
