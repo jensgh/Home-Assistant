@@ -4,11 +4,11 @@
     platform: state
     to: 'on'
   action:
-    - service: notify.mobile_app_jens_mobile
-      data_template:
-        title: Switch i gang 'on'
-    - service: light.toggle
-      entity_id: light.gangur
+  - service: notify.mobile_app_jens_mobile
+    data_template:
+      title: Switch i gang 'on'
+  - service: light.toggle
+    entity_id: light.gangur
 
 
 # - alias: "Gangur off"
