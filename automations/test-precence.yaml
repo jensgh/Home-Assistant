@@ -1,0 +1,39 @@
+- id: 'jens_arrives'
+  alias: 'Jens kemur heim'
+  trigger:
+    platform: state
+    entity_id: person.jens
+    to: 'home'
+  action:
+    - service: notify.mobile_app_jens_mobile
+      data_template:
+        message: >   
+          Jens kominn heim
+        title: "Jens kominn heim"
+
+- id: 'jens_leaves'
+  alias: 'Jens farinn að heiman'
+  trigger:
+    platform: state
+    entity_id: person.jens
+    to: 'not_home'
+  action:
+    - service: notify.mobile_app_jens_mobile
+      data_template:
+        message: >   
+          Jens farinn
+        title: "Jens farinn"
+
+- id: 'ioniq_leaves'
+  alias: 'Bíll farinn'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.ioniq
+    from: 'on'
+    to: 'off'
+  action:
+    - service: notify.pushbullet_notify
+      data_template:
+        message: >   
+          Ioniq farinn að heiman
+        title: "Ioniq"
