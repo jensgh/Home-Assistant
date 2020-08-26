@@ -23,5 +23,5 @@
   action:
     service: light.turn_off
     data:
-      entity_id: light.forstofa
+      entity_id: light.gangur
       transition: 3
