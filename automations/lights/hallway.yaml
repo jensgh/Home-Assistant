@@ -1,0 +1,27 @@
+- alias: "Gangur kveikja ljós"
+  description: "Kveikja á ljósum sjálfkrafa á gangi"
+  trigger:
+    - platform: state
+      entity_id:
+        - binary_sensor.hallway_motion
+      to: "on"
+  action:
+      service: light.turn_on
+      entity_id: light.gangur
+      data_template:
+        brightness: "{% if now().hour > 20 %}50{% elif now().hour < 8 %}50{% else %}180{% endif %}"
+
+- alias: "Gangur slökkva ljós"
+  description: "Slökkva á ljósum sjálfkrafa á gangi"
+  trigger:
+    - platform: state
+      entity_id:
+        - binary_sensor.hallway_motion
+      to: "off"
+      for:
+        minutes: 5
+  action:
+    service: light.turn_off
+    data:
+      entity_id: light.forstofa
+      transition: 3
