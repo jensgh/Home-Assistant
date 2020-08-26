@@ -9,7 +9,7 @@
       service: light.turn_on
       entity_id: light.gangur
       data_template:
-        brightness: "{% if now().hour > 20 %}50{% elif now().hour < 8 %}50{% else %}180{% endif %}"
+        brightness: "{% if now().hour > 19 %}50{% elif now().hour < 8 %}50{% else %}180{% endif %}"
 
 - alias: "Gangur slökkva ljós"
   description: "Slökkva á ljósum sjálfkrafa á gangi"
