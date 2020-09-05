@@ -11,7 +11,7 @@
       data_template:
         brightness_pct: >-
           {%- set hour = now().hour | int -%}
-          {%- if   hour >  19 and hour <  8                  -%}10
+          {%- if   hour >  19 or hour <  8                   -%}10
           {%- else                                           -%}70  
           {%- endif -%}
 
