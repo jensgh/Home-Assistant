@@ -5,6 +5,10 @@
       entity_id:
         - sensor.bjorn_button_click
       to: "single"
+  condition:
+    - condition: state
+      entity_id: light.gangur
+      state: 'off'
   action:
     - service: light.turn_on
       entity_id: light.gangur
