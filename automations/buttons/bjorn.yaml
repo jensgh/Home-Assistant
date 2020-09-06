@@ -1,0 +1,23 @@
+- alias: "Turn on hallway lights"
+  description: "Kveikja á ljósum á gangi 10 min"
+  trigger:
+    - platform: state
+      entity_id:
+        - sensor.bjorn_button_click
+      to: "single"
+  action:
+    - service: light.turn_on
+      entity_id: light.gangur
+      data_template: #TODO setja í script? sama og turn on automation
+        brightness_pct: >-
+          {%- set hour = now().hour | int -%}
+          {%- if   hour >  19 or hour <  8                   -%}10
+          {%- else                                           -%}70  
+          {%- endif -%}
+    - delay: 00:02:00
+    - condition: state
+      entity_id: 'binary_sensor.hallway_motion'
+      state: 'off'
+    - service: light.turn_off
+      data:
+        entity_id: light.gangur
