@@ -2,14 +2,17 @@
   alias: Alarm start
   sequence:
     # - service: notify.pushbullet_notify
-  - service: notify.mobile_app_jens_mobile
+  - service: notify.pushbullet_notify
     data_template:
       title: Þjófavörn!!
       message: 'Þjófavörn fór í gang !'
-  - service: notify.all_phones
+  - service: notify.mobile_app_jens_mobile
     data:
       title: Þjófavörn!!
       message: 'Þjófavörn fór í gang !'
+      data:
+        ttl: 0
+        priority: high
   - service: xiaomi_aqara.play_ringtone
     data:
       gw_mac: !secret aquara_mac
