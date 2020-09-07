@@ -76,25 +76,12 @@ cloudflare:
     - jensinn.com
 
 # media_player:
-#   - platform: braviatv
-#     host: !secret bravia_ip
-    # https://www.home-assistant.io/integrations/spotify/
   # - platform: spotify
   #   client_id: !secret spotify_client_id
   #   client_secret: !secret spotify_client_secret
     # aliases:
     #     abc123def456: 'Living Room'
     #     9183abas000: 'Bed Room'
-    
-# device_tracker:
-#   - platform: netgear
-#     host: !secret router_address
-#     password: !secret router_password
-#     interval_seconds: 10
-#     consider_home: 180
-    # new_device_defaults:
-    #   track_new_devices: false
-
 
 notify:
   - name: pushbullet_notify
@@ -127,17 +114,6 @@ ombi:
   api_key: !secret ombi_api_key
   port: 3579
   # ssl: true
-
-# upnp:
-#   sensors: true
-#   local_ip: !secret hass_local_ip
-
-# https://www.home-assistant.io/integrations/hue/
-# hue:
-#   bridges:
-#     - host: !secret hue_hub_ip
-#       allow_unreachable: false
-#       allow_hue_groups: false
 
 # https://www.home-assistant.io/integrations/speedtestdotnet
 speedtestdotnet:
@@ -206,43 +182,9 @@ binary_sensor:
 # shell_command:
 #   update: /config/shell_scripts/gitpull.sh
 
-
-# https://www.home-assistant.io/integrations/pi_hole/
-
-# pi_hole:
-#   - host: '10.0.0.14:80'
-#     ssl: false
-#     verify_ssl: false
-#     location: 'admin'
-#   - host: '10.0.0.14:67'
-#     name: "Pihole2"
-#     verify_ssl: false
-#   - host: '10.0.0.12:53'
-#     name: "Pihole3"
-#     verify_ssl: false
-#   - host: '10.0.0.12:67'
-#     name: "Pihole4"
-#     verify_ssl: false
-#   - host: '10.0.0.12:80'
-#     name: "Pihole6"
-#     verify_ssl: false
-#   - host: '10.0.0.12:443'
-#     name: "Pihole7"
-#     verify_ssl: false
-#   - host: '10.0.0.14:80'
-#     name: "Pihole8"
-#     verify_ssl: false
-#   - host: '10.0.0.14:443'
-#     name: "Pihole9"
-#     verify_ssl: false
-
-    # api_key: !secret pihole_api_key
-
-
 google:
   client_id: !secret google_client_id
   client_secret: !secret google_client_secret
-
 
 google_assistant:
   project_id: !secret google_home_project_id
