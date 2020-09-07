@@ -38,7 +38,7 @@
   - service: script.turn_off
     entity_id: script.alarm_sound_loop
   - service: script.turn_off
-    entity_id: alarm_sound
+    entity_id: script.alarm_sound
   - service: media_player.media_stop
     data:
       entity_id: media_player.google_mini_kitchen_speaker
