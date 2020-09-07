@@ -2,7 +2,9 @@
   trigger:
     - platform: state
       entity_id: alarm_control_panel.home_alarm
-      to: 'pending'
+      to: 
+        - 'pending'
+        - 'arming'
   action:
     service: script.turn_on
     entity_id: script.forstofa_light_flash
@@ -11,7 +13,9 @@
   trigger:
     platform: state
     entity_id: alarm_control_panel.home_alarm
-    from: 'pending'
+    from:
+      - 'pending'
+      - 'arming'
   action:
     service: script.turn_on
     entity_id: script.forstofa_light_flash_cancel
