@@ -1,0 +1,20 @@
+# Slökkva uppi
+turn_off_lights_upstairs_before_bed:
+  alias: Slökkva uppi frammi
+  sequence:
+    - service: light.turn_off
+      data:
+        entity_id: 
+        - light.stofa
+        - light.eldhus
+        - light.matarbord
+        - light.stigi
+        - light.hjonaherbergi_gangur
+    - condition: state
+      entity_id: binary_sensor.motion_sensor_hallway_second
+      state: 'off'
+    - service: light.turn_off
+      data:
+        entity_id: 
+        - light.eyja
+        - light.badherbergi
