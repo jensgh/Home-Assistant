@@ -6,7 +6,7 @@
     data_template:
       title: Þjófavörn!!
       message: 'Þjófavörn fór í gang !'
-  - service: notify.mobile_app_jens_mobile
+  - service: notify.all_phones
     data:
       title: Þjófavörn!!
       message: 'Þjófavörn fór í gang !'
@@ -18,8 +18,8 @@
     data:
       gw_mac: !secret aquara_mac
       ringtone_id: 0
-      # ringtone_vol: 100
-      ringtone_vol: 3
+      ringtone_vol: 100
+      # ringtone_vol: 3
   - service: media_player.turn_on
     data:
       entity_id: media_player.google_mini_kitchen_speaker
@@ -28,8 +28,8 @@
   - service: media_player.volume_set
     data:
       entity_id:  media_player.google_mini_kitchen_speaker
-      # volume_level: '1.00'
-      volume_level: '0.20'
+      volume_level: '1.00'
+      # volume_level: '0.20'
   - delay:
       seconds: 1
   - service: script.turn_on
