@@ -1,77 +1,11 @@
 
-'start_alarm':
-  alias: Alarm start
-  sequence:
-  - service: script.turn_on
-    data:
-      entity_id: script.alarm_sound_loop
-  - service: xiaomi_aqara.play_ringtone
-    data:
-      gw_mac: !secret aquara_mac
-      ringtone_id: 0
-      # ringtone_vol: 100
-      ringtone_vol: 3
-  # - service: notify.pushbullet_notify
-  - service: notify.mobile_app_jens_mobile
-    data_template:
-      title: Þjófavörn!!
-      message: 'Þjófavörn fór í gang !'
-  - service: notify.all_phones
-    data:
-      title: Þjófavörn!!
-      message: 'Þjófavörn fór í gang !'
 
 
-'stop_alarm':
-  alias: Alarm Stop
-  sequence:
-  # - service: script.turn_off
-  #   data:
-  #     entity_id: script.alarm_sound_loop, alarm_sound
-  - service: xiaomi_aqara.stop_ringtone
-    data:
-      gw_mac: !secret aquara_mac
-      #Slöökva á mini
 
 
-'alarm_sound':
-  alias: Alarm mini
-  sequence:
-  - condition: state
-    entity_id: alarm_control_panel.home_alarm
-    state: 'triggered'
-  - service: media_player.turn_on
-    data:
-      entity_id: media_player.google_mini_kitchen_speaker
-  - delay:
-      seconds: 2
-  - service: media_player.volume_set
-    data:
-      entity_id:  media_player.google_mini_kitchen_speaker
-      volume_level: '1.00'
-      # volume_level: '0.02'
-  - delay:
-      seconds: 1
-  - service: media_player.play_media
-    data:
-      entity_id: media_player.google_mini_kitchen_speaker
-      media_content_id: http://www.raypinson.com/ringtones/alarm2.mp3
-      media_content_type: 'audio/mp3'
-  - delay:
-      seconds: 5   
-  - service: script.turn_on
-    data:
-      entity_id: script.alarm_sound_loop
 
-'alarm_sound_loop':
-  alias: Alarm mini loop
-  sequence:
-  # - delay:
-  #     # time for flash light off
-  #     seconds: 2
-  - service: script.turn_on
-    data:
-      entity_id: script.alarm_sound
+
+
 
   #Flasha ljósum
   # Kveikja á mini og hækka áður en loopuni er startað?
