@@ -4,7 +4,10 @@
     - platform: state
       entity_id:
         - sensor.bjorn_button_click
-      to: "single"
+      to: 
+        - "single"
+        - "double"
+        - "long"
   condition:
     - condition: state
       entity_id: light.gangur
