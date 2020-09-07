@@ -18,3 +18,5 @@ person.jens:
   entity_picture: /local/jens.jpg
 person.olga:
   entity_picture: /local/olga.jpg
+device_tracker.xiaomi_gateway:
+  icon: mdi:access-point
