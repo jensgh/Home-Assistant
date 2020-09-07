@@ -1,0 +1,16 @@
+- alias: "Baðherbergi kveikja ljós"
+  description: "Kveikja á ljósum á baðherberginu"
+  trigger:
+    - platform: state
+      entity_id:
+        - binary_sensor.motion_sensor_hallway_second
+      to: "on"
+  action:
+      service: light.turn_on
+      entity_id: light.badherbergi
+      data_template:
+        brightness_pct: >-
+          {%- set hour = now().hour | int -%}
+          {%- if   hour >  19 or hour <  8                   -%}15
+          {%- else                                           -%}70  
+          {%- endif -%}
