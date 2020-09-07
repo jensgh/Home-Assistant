@@ -24,11 +24,15 @@
   - service: script.turn_on
     data:
       entity_id: script.stop_alarm
-  - service: notify.pushbullet_notify
-    data_template:
-      title: Þjófavörn tekin af!
-      message: 'Þjófavörn tekin af, eftir að hafa farið í gang.'
-  #slökkva á xiami alert
+  # - service: notify.pushbullet_notify
+  #   data_template:
+  #     title: Þjófavörn tekin af!
+  #     message: 'Þjófavörn tekin af, eftir að hafa farið í gang.'
+  - service: notify.all_phones
+    data:
+      message: clear_notification
+      data:
+        tag: alarm_on
 
 
 #Armed away trigger
