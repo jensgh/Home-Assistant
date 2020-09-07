@@ -11,7 +11,7 @@ forstofa_light_flash:
         entity_id: light.forstofa
     - delay:
 #### time for flash light on
-        seconds: 3
+        seconds: 2
     - service: light.turn_off
       data:
         entity_id: light.forstofa
@@ -24,7 +24,7 @@ forstofa_light_flash_loop:
   sequence:
     - delay:
 #### time for flash light off
-        seconds: 3
+        seconds: 2
     - service: script.turn_on
       data:
         entity_id: script.forstofa_light_flash
