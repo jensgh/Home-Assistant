@@ -24,8 +24,8 @@
   - service: media_player.volume_set
     data:
       entity_id:  media_player.google_mini_kitchen_speaker
-      volume_level: '1.00'
-      # volume_level: '0.02'
+      # volume_level: '1.00'
+      volume_level: '0.20'
   - delay:
       seconds: 1
   - service: script.turn_on
@@ -37,10 +37,13 @@
   sequence:
   - service: script.turn_off
     data:
-      entity_id: script.alarm_sound_loop, alarm_sound
+      entity_id: script.alarm_sound_loop
+  - service: script.turn_off
+    data:
+      entity_id: alarm_sound
   - service: media_player.media_stop
     data:
-      entity_id:  media_player.google_mini_kitchen_speaker
+      entity_id: media_player.google_mini_kitchen_speaker
   - service: xiaomi_aqara.stop_ringtone
     data:
       gw_mac: !secret aquara_mac
