@@ -27,7 +27,7 @@ forstofa_light_flash_loop:
         seconds: 3
     - service: script.turn_on
       data:
-        entity_id: script.light_flash
+        entity_id: script.forstofa_light_flash
 
 # CANCEL FLASHING 
 forstofa_light_flash_cancel:
@@ -35,7 +35,7 @@ forstofa_light_flash_cancel:
   sequence:
     -  service: script.turn_off
        data:
-         entity_id: script.forstofa_light_flash_flash
+         entity_id: script.forstofa_light_flash
     -  service: script.turn_off
        data:
          entity_id: script.forstofa_light_flash_loop
