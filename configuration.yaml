@@ -131,11 +131,11 @@ ombi:
 #   local_ip: !secret hass_local_ip
 
 # https://www.home-assistant.io/integrations/hue/
-hue:
-  bridges:
-    - host: !secret hue_hub_ip
-      allow_unreachable: false
-      allow_hue_groups: false
+# hue:
+#   bridges:
+#     - host: !secret hue_hub_ip
+#       allow_unreachable: false
+#       allow_hue_groups: false
 
 # https://www.home-assistant.io/integrations/speedtestdotnet
 speedtestdotnet:
