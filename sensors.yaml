@@ -1,7 +1,7 @@
-  # - platform: qbittorrent
-  #   url: !secret qbittorent_host
-  #   username: !secret qbittorrent_username
-  #   password: !secret qbittorrent_password
+  - platform: qbittorrent
+    url: !secret qbittorent_host
+    username: !secret qbittorrent_username
+    password: !secret qbittorrent_password
     
   - platform: time_date
     display_options:
@@ -15,17 +15,6 @@
     # ssl: true
     port: 8181
 
-  # - platform: sonarr
-  #   host: 192.168.1.9
-  #   api_key: !secret sonarr_api_key
-    # monitored_conditions:
-    # - series
-    # - upcoming
-    # - wanted
-    # - queue
-    # - commands
-    # - diskspace
-
   - platform: radarr
     api_key: !secret radarr_api_key
     host: 192.168.1.9
@@ -36,13 +25,6 @@
     - commands
     - diskspace
     days: 30
-
-  # - platform: cert_expiry
-  #   host: jensinn.com
-  #   name: Jensinn.com ssl
-
-# https://www.home-assistant.io/integrations/launch_library/
-  # - platform: launch_library
 
 # https://www.home-assistant.io/integrations/systemmonitor
   - platform: systemmonitor
