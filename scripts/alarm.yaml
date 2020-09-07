@@ -10,9 +10,9 @@
     data:
       title: Þjófavörn!!
       message: 'Þjófavörn fór í gang !'
-      data:
-        group: alarm
-        tag: alarm_on
+      # data:
+      #   group: alarm
+      #   tag: alarm_on
   - service: xiaomi_aqara.play_ringtone
     data:
       gw_mac: !secret aquara_mac
