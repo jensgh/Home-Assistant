@@ -56,8 +56,10 @@
     state: 'triggered'
   - service: media_player.play_media
     data:
-      entity_id: media_player.google_mini_kitchen_speaker
-      media_content_id: /local/alarm.mp3
+      entity_id: 
+        - media_player.google_mini_kitchen_speaker
+      # media_content_id: /local/alarm.mp3
+      media_content_id: 'http:/192.168.1.10:8123/local/alarm.mp3'
       media_content_type: 'audio/mp3'
   - delay:
       seconds: 5   
