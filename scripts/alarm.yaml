@@ -36,11 +36,9 @@
   alias: Alarm Stop
   sequence:
   - service: script.turn_off
-    data: 
-        entity_id: script.alarm_sound_loop
+    entity_id: script.alarm_sound_loop
   - service: script.turn_off
-    data:
-        entity_id: alarm_sound
+    entity_id: alarm_sound
   - service: media_player.media_stop
     data:
       entity_id: media_player.google_mini_kitchen_speaker
