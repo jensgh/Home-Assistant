@@ -1,0 +1,19 @@
+- alias: 'Alarm pending - start flash'
+  trigger:
+    - platform: state
+      entity_id: alarm_control_panel.home_alarm
+      to: 'pending'
+  action:
+    service: script.turn_on
+    entity_id: script.forstofa_light_flash
+
+- alias: 'Alarm pending - Stop flash'
+  trigger:
+    platform: state
+    entity_id: alarm_control_panel.home_alarm
+    from: 'pending'
+  action:
+    service: script.turn_on
+    entity_id: script.forstofa_light_flash_cancel
+
+        #lika senda notifications ef allir fara og kerfi ekki á

@@ -1,0 +1,41 @@
+#####################################
+### Forstofa lights flash ###
+#####################################
+
+# START FLASH  
+forstofa_light_flash:
+  alias: Light flash on
+  sequence:
+    - service: light.turn_on
+      data:
+        entity_id: light.forstofa
+    - delay:
+#### time for flash light on
+        seconds: 3
+    - service: light.turn_off
+      data:
+        entity_id: light.forstofa
+    - service: script.turn_on
+      data:
+        entity_id: script.forstofa_light_flash_loop
+# LOOP BACK TO START FLASH AGAIN         
+forstofa_light_flash_loop:
+  alias: Light flash loop
+  sequence:
+    - delay:
+#### time for flash light off
+        seconds: 3
+    - service: script.turn_on
+      data:
+        entity_id: script.light_flash
+
+# CANCEL FLASHING 
+forstofa_light_flash_cancel:
+  alias: Cancel Light Flash
+  sequence:
+    -  service: script.turn_off
+       data:
+         entity_id: script.forstofa_light_flash_flash
+    -  service: script.turn_off
+       data:
+         entity_id: script.forstofa_light_flash_loop

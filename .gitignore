@@ -13,6 +13,8 @@
 !/automations/shellies/
 !/automations/lights/
 !/automations/buttons/
+!/scripts
+
 !/shell_scripts
 !/gitpull.sh
 !/www/
