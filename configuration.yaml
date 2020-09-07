@@ -73,9 +73,9 @@ cloudflare:
   records:
     - jensinn.com
 
-media_player:
-  - platform: braviatv
-    host: !secret bravia_ip
+# media_player:
+#   - platform: braviatv
+#     host: !secret bravia_ip
     # https://www.home-assistant.io/integrations/spotify/
   # - platform: spotify
   #   client_id: !secret spotify_client_id
