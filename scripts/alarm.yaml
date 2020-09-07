@@ -59,7 +59,7 @@
       entity_id: 
         - media_player.google_mini_kitchen_speaker
       # media_content_id: /local/alarm.mp3
-      media_content_id: 'http:/192.168.1.10:8123/local/alarm.mp3'
+      media_content_id: 'https://www.dropbox.com/s/bqvs5ft5oknnt8r/alarm.mp3?dl=1'
       media_content_type: 'audio/mp3'
   - delay:
       seconds: 5   
