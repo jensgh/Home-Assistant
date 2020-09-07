@@ -70,9 +70,8 @@
 'alarm_sound_loop':
   alias: Alarm mini loop
   sequence:
-  # - delay:
-  #     # time for flash light off
-  #     seconds: 2
+  - delay:
+      seconds: 2
   - service: script.turn_on
     data:
       entity_id: script.alarm_sound
