@@ -52,3 +52,9 @@
       - binary_sensor.door_window_sensor_laundry
       - binary_sensor.door_window_sensor_kitchen
       - binary_sensor.living_room_door_contact
+
+  all_persons:
+    name: Allir heimilismeðlimir
+    entities:
+      - person.jens
+      - person.olga

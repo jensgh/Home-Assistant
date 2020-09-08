@@ -1,0 +1,21 @@
+# If nobody is home, remind of alarm
+- alias: "Minna á að setja á kerfið"
+  trigger:
+    - platform: state
+      entity_id: group.all_persons
+      from: home
+      to: not_home
+      for:
+        minutes: 10
+  condition:
+    - condition: state
+      entity_id: group.all_persons
+      state: not_home 
+    - condition: state
+      entity_id: alarm_control_panel.home_alarm
+      state: 'not_armed'
+  action:
+    - service: notify.all_phones
+      data:
+        title: Þjófavörn
+        message: 'Gleymdist að setja þjófavörn á :)'
