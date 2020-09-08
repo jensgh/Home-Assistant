@@ -51,3 +51,4 @@
       - binary_sensor.door_sensor_svalahurd_nidri
       - binary_sensor.door_window_sensor_laundry
       - binary_sensor.door_window_sensor_kitchen
+      - binary_sensor.living_room_door_contact

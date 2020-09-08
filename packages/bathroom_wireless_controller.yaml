@@ -3,7 +3,7 @@ automation:
   ## Toggle the light
   ###################
   - id: bathroom_wireless_controller_toggle
-    alias: Ikea Controller - Toggle
+    alias: Bathroom Ikea Controller - Toggle
     trigger:
       - platform: state
         entity_id: sensor.bathroom_wireless_switch_action
@@ -17,7 +17,7 @@ automation:
   ## Dim up/down and warm up/down with clicks
   ###########################################
   - id: bathroom_wireless_controller_dim_up
-    alias: Ikea controller dim up
+    alias: Bathroom Ikea Controller dim up
     trigger:
       platform: state
       entity_id: sensor.bathroom_wireless_switch_action
@@ -29,7 +29,7 @@ automation:
       service: light.turn_on
 
   - id: bathroom_wireless_controller_dim_down
-    alias: Ikea controller dim down
+    alias: Bathroom Ikea Controller dim down
     trigger:
       platform: state
       entity_id: sensor.bathroom_wireless_switch_action
@@ -41,7 +41,7 @@ automation:
       service: light.turn_on
 
   - id: bathroom_wireless_controller_warm_up
-    alias: Ikea controller warm up
+    alias: Bathroom Ikea Controller warm up
     trigger:
       platform: state
       entity_id: sensor.bathroom_wireless_switch_action
@@ -53,7 +53,7 @@ automation:
       service: light.turn_on
 
   - id: bathroom_wireless_controller_warm_down
-    alias: Ikea controller warm down
+    alias: Bathroom Ikea Controller warm down
     trigger:
       platform: state
       entity_id: sensor.bathroom_wireless_switch_action
@@ -69,7 +69,7 @@ automation:
   ###############################################
 
   - id: bathroom_wireless_controller_brighten_on
-    alias: Ikea Controller - Brighten on
+    alias: Bathroom Ikea Controller - Brighten on
     trigger:
       - platform: state
         entity_id: sensor.bathroom_wireless_switch_action
@@ -87,7 +87,7 @@ automation:
           input_boolean: input_boolean.bathroom_light_brightness
           delta: 20
   - id: bathroom_wireless_controller_dim_on
-    alias: Ikea Controller - Dim on
+    alias: Bathroom Ikea Controller - Dim on
     trigger:
       - platform: state
         entity_id: sensor.bathroom_wireless_switch_action
@@ -106,7 +106,7 @@ automation:
           delta: -20
 
   - id: bathroom_wireless_controller_brighten_dim_off
-    alias: Ikea Controller - Brighten/Dim off
+    alias: Bathroom Ikea Controller - Brighten/Dim off
     initial_state: on
     trigger:
       - platform: state
@@ -133,7 +133,7 @@ automation:
   ###############################################
 
   - id: bathroom_wireless_controller_warm_on
-    alias: Ikea Controller - Warm on
+    alias: Bathroom Ikea Controller - Warm on
     trigger:
       - platform: state
         entity_id: sensor.bathroom_wireless_switch_action
@@ -152,7 +152,7 @@ automation:
           light_attribute: color_temp
           delta: 40
   - id: bathroom_wireless_controller_col_on
-    alias: Ikea Controller - Cold on
+    alias: Bathroom Ikea Controller - Cold on
     trigger:
       - platform: state
         entity_id: sensor.bathroom_wireless_switch_action
@@ -172,7 +172,7 @@ automation:
           delta: -40
 
   - id: bathroom_wireless_controller_warm_cold_off
-    alias: Ikea Controller - Warm/Cold off
+    alias: Bathroom Ikea Controller - Warm/Cold off
     initial_state: on
     trigger:
       - platform: state
