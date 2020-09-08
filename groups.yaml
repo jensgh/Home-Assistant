@@ -21,7 +21,7 @@
       - light.forstofa
       - light.bathroom_downstairs_light
       - light.laundry_light
-      - light.bjorn_lampi
+      - light.bjorn_lampi_light
 
   upstairs_lights:
     name: Ljós uppi

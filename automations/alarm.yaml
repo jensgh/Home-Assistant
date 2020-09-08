@@ -142,7 +142,7 @@
     - service: light.turn_on
       data:
         entity_id: 
-        - light.bjorn_lampi
+        - light.bjorn_lampi_light
         transition: 5
         brightness: 1
 
