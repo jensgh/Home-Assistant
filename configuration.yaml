@@ -60,7 +60,7 @@ script: !include_dir_merge_named scripts
 homeassistant:
   customize: !include customize.yaml
   packages: !include_dir_named packages
-
+python_script:
 shopping_list:
 xiaomi_aqara:
   discovery_retry: 5
