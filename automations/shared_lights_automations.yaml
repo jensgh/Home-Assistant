@@ -36,7 +36,7 @@
           - light.eyja
           - light.badherbergi
           - light.master_bedroom1
-          - light.hjonaherbergi_gangur
+          - light.stairs_master_bedroom
           - light.fataskapur_light
     - service_template: 'homeassistant.turn_off'
       data_template:
