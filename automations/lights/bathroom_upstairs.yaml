@@ -1,3 +1,5 @@
+# Kveikja ef það er hreyfing og ljósin slökt
+
 - alias: "Baðherbergi kveikja ljós"
   description: "Kveikja á ljósum á baðherberginu"
   trigger:
@@ -5,6 +7,10 @@
       entity_id:
         - binary_sensor.motion_sensor_hallway_second
       to: "on"
+  condition:
+    - condition: state
+      entity_id: light.badherbergi
+      state: 'off'
   action:
       service: light.turn_on
       entity_id: light.badherbergi

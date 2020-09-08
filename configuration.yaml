@@ -59,6 +59,8 @@ script: !include_dir_merge_named scripts
 
 homeassistant:
   customize: !include customize.yaml
+  packages: !include_dir_named packages
+
 shopping_list:
 xiaomi_aqara:
   discovery_retry: 5
@@ -224,3 +226,4 @@ webhook:
 #     url: '/local/community/zigbee2mqtt_networkmap/map.html'
 #     icon: 'mdi:graphql'
 
+input_boolean: !include input_booleans.yaml
