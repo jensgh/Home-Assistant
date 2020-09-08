@@ -130,7 +130,7 @@
     entities:
       - light.stofa
       - light.eldhus
-      - light.stairs_master_bedroom
+      - light.stairs_master_bedroom_light
       - light.stigi
         
   # - platform: mqtt

@@ -9,7 +9,7 @@ good_night_olga_turn_off_upstairs:
         - light.eldhus
         - light.matarbord
         - light.stigi
-        - light.stairs_master_bedroom
+        - light.stairs_master_bedroom_light
         transition: 5
     - service: media_player.turn_off
       data:
