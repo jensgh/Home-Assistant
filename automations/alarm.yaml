@@ -50,6 +50,9 @@
       # - binary_sensor.forstofa_motion_sensor_occupancy  #posturinn fer stundum í það
       - binary_sensor.garage_motion_sensor_workstation_occupancy
       - binary_sensor.motion_sensor_hallway_second
+      - binary_sensor.door_window_sensor_kitchen
+      - binary_sensor.living_room_door_contact
+      - binary_sensor.motion_hallway_2_occupancy
     platform: state
     from: 'off'
     to: 'on'
@@ -86,6 +89,7 @@
     - binary_sensor.motion_sensor_garage
     - binary_sensor.garage_motion_sensor_workstation_occupancy
     - binary_sensor.office_motion_sensor_occupancy
+    - binary_sensor.living_room_door_contact
     # - binary_sensor.forstofa_motion_sensor_occupancy
     platform: state
     from: 'off'
