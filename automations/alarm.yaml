@@ -148,7 +148,7 @@
         entity_id: 
         - light.bjorn_lampi_light
         transition: 5
-        brightness: 1
+        brightness: 10
 
 
 - alias: 'Slökkva á öllu þegar Armed away'

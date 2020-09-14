@@ -14,7 +14,6 @@
           {%- if   hour >  19 or hour <  8                   -%}10
           {%- else                                           -%}70  
           {%- endif -%}
-
 - alias: "Gangur slökkva ljós"
   description: "Slökkva á ljósum sjálfkrafa á gangi"
   trigger:
