@@ -15,7 +15,13 @@
           {%- else                                           -%}70  
           {%- endif -%}
 - alias: "Gangur slökkva ljós"
-  description: "Slökkva á ljósum sjálfkrafa á gangi"
+  description: "Slökkva á ljósum sjálfkrafa á gangi" 
+  condition: #Ekki slökkva á næturnar
+    condition: not
+    conditions:
+      - condition: state
+        entity_id: alarm_control_panel.home_alarm
+        state: 'armed_night'
   trigger:
     - platform: state
       entity_id:
