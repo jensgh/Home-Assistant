@@ -1,0 +1,11 @@
+- alias: "Björn setja brightness á lampa"
+  trigger:
+    - platform: state
+      entity_id:
+        - light.bjorn_lampi_light
+      to: "on"
+  action:
+      service: light.turn_on
+      entity_id: light.bjorn_lampi_light
+      data:
+        brightness: 10
