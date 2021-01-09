@@ -70,12 +70,6 @@ xiaomi_aqara:
 
 sensor: !include sensors.yaml
 
-cloudflare:
-  api_key: !secret cloudflare_api_key
-  zone: jensinn.com
-  records:
-    - jensinn.com
-
 # media_player:
   # - platform: spotify
   #   client_id: !secret spotify_client_id
