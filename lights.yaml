@@ -52,16 +52,16 @@
   - platform: group
     name: Stigi
     entities:
-      - light.stairs_l1_light
-      - light.stairs_l2_light
-      - light.stairs_l3_light
-      - light.stairs_l4_light
-      - light.stairs_l5_light
-      - light.stairs_r1_light
-      - light.stairs_r2_light
-      - light.stairs_r3_light
-      - light.stairs_r4_light
-      - light.stairs_r5_light
+      - light.stairs_l1
+      - light.stairs_l2
+      - light.stairs_l3
+      - light.stairs_l4
+      - light.stairs_l5
+      - light.stairs_r1
+      - light.stairs_r2
+      - light.stairs_r3
+      - light.stairs_r4
+      - light.stairs_r5
 
   - platform: group
     name: Eldhús
@@ -77,15 +77,15 @@
   - platform: group
     name: Sturta
     entities:
-      - light.bathroom_upstairs_shower_1_light
-      - light.bathroom_upstairs_shower_2_light
+      - light.bathroom_upstairs_shower_1
+      - light.bathroom_upstairs_shower_2
 
   - platform: group
     name: Vaskur
     entities:
-      - light.bathroom_upstairs_1_light
-      - light.bathroom_upstairs_2_light
-      - light.bathroom_upstairs_3_light
+      - light.bathroom_upstairs_1
+      - light.bathroom_upstairs_2
+      - light.bathroom_upstairs_3
 
   - platform: group
     name: Baðherbergi
@@ -102,14 +102,14 @@
   - platform: group
     name: Eyja
     entities:
-      - light.kitchen_island_1_light
-      - light.kitchen_island_2_light
+      - light.kitchen_island_1
+      - light.kitchen_island_2
 
   - platform: group
     name: Matarborð
     entities:
-      - light.dining_table_1_light
-      - light.dining_table_2_light
+      - light.dining_table_1
+      - light.dining_table_2
 
   - platform: group
     name: Bílskúr
@@ -130,7 +130,7 @@
     entities:
       - light.stofa
       - light.eldhus
-      - light.stairs_master_bedroom_light
+      - light.stairs_master_bedroom
       - light.stigi
         
   # - platform: mqtt
