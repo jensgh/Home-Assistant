@@ -71,7 +71,6 @@ xiaomi_aqara:
 sensor: !include sensors.yaml
 
 cloudflare:
-  email: !secret cloudflare_email
   api_key: !secret cloudflare_api_key
   zone: jensinn.com
   records:
@@ -152,14 +151,14 @@ binary_sensor:
     sensors:
       garage_motion:
         friendly_name: "Bílskúr hreyfing"
-        entity_id:
-          - group.garage_motion
+        # entity_id:
+        #   - group.garage_motion
         device_class: motion
         value_template: "{{ is_state('group.garage_motion', 'on')}}"
       hallway_motion:
         friendly_name: "Gangur hreyfing"
-        entity_id:
-          - group.hallway_motion
+        # entity_id:
+        #   - group.hallway_motion
         device_class: motion
         value_template: "{{ is_state('group.hallway_motion', 'on')}}"
   # - platform: mqtt
