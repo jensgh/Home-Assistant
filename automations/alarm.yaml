@@ -122,10 +122,6 @@
       entity_id: alarm_control_panel.home_alarm
       to: 'armed_night'
   action:
-    - service: notify.mobile_app_jens_mobile
-      data_template:
-        title: Armed night
-        message: 'Þjófavörn sett a armed night'
     - service: light.turn_off
       data:
         entity_id: 
@@ -133,20 +129,17 @@
         - light.stofa
         - light.eldhus
         - light.matarbord
-        - light.stairs_master_bedroom_light
+        - light.stairs_master_bedroom
         - light.bilskur
         - light.geymsla
         - light.forstofa
-        - light.bathroom_downstairs_light
         - light.laundry_light
-        - light.badherbergi
         - light.elisabet_shelly
-        # - light.gangur
+        - light.hue_white_lamp_1
         transition: 5
     - service: light.turn_on
       data:
         entity_id: 
-        - light.bjorn_lampi_light
         - light.gangur
         transition: 5
         brightness: 10

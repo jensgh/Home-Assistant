@@ -13,7 +13,7 @@
       data:
         entity_id: 
           - light.eyja
-          - light.glass_cabinets
+          - light.kitchen_glass_cabinets
           - light.badherbergi
         brightness: 50
         kelvin: 2200
@@ -32,11 +32,11 @@
       entity_id: alarm_control_panel.home_alarm
       state: 'armed_night'
   action:
-    - service_template: 'light.turn_off'
+    - service: 'light.turn_off'
       data:
         entity_id: 
           - light.eyja
-          - light.glass_cabinets
+          - light.kitchen_glass_cabinets
           - light.badherbergi
         transition: 5
 

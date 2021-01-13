@@ -9,7 +9,7 @@
     - light.eldhus
     - light.eyja
     - light.matarbord
-    - light.stairs_master_bedroom_light
+    - light.stairs_master_bedroom
   name: Fluxer
   start_time: '7:00'
   stop_time: '23:00'

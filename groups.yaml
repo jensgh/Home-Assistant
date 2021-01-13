@@ -21,7 +21,6 @@
       - light.forstofa
       - light.bathroom_downstairs_light
       - light.laundry_light
-      - light.bjorn_lampi_light
 
   upstairs_lights:
     name: Ljós uppi
@@ -30,11 +29,12 @@
       - light.eldhus
       - light.eyja
       - light.matarbord
-      - light.glass_cabinets
-      - light.stairs_master_bedroom_light
+      - light.kitchen_glass_cabinets
+      - light.stairs_master_bedroom
       - light.stigi
-      - light.fataskapur_light
+      - light.fataskapur
       - light.badherbergi
+      - light.master_bedroom
 
   upstairs_devices:
     name: Tæki uppi
