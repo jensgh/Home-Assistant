@@ -57,3 +57,10 @@
     entities:
       - person.jens
       - person.olga
+
+  fan_humidity_sensors:
+    name: Rakaskynjarar fyrir viftu
+    entities:
+      - sensor.bathroom_downstairs_temp_humidity
+      - sensor.bathroom_upstairs_temp_humidity
+      - sensor.laundry_temp_humidity
