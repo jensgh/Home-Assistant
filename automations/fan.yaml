@@ -1,13 +1,45 @@
-# - alias: turn_on_fan
-#   description: "Kveikja á viftu"
-#   trigger:
-#     - platform: state
-#       entity_id:
-#         - binary_sensor.bathroom_downstairs_motion_occupancy
-#       to: "on"
-#   action:
-#       service: light.turn_on
-#       entity_id: light.bathroom_downstairs_light
+- alias: turn_on_fan
+  description: "Vifta - Kveikja"
+  trigger:
+    - platform: numeric_state
+      entity_id:
+        - sensor.bathroom_downstairs_temp_humidity
+        - sensor.bathroom_upstairs_temp_humidity
+        - sensor.laundry_temp_humidity
+      above: 60
+      for:
+        seconds: 30
+  action:
+    - service: notify.mobile_app_jens_mobile
+      data_template:
+        title: Kveikja á viftu
+        message: '{{ trigger.to_state.name }} of hátt ({{ trigger.to_state.state }}) í {{ trigger.for }} sec!'
+    # - service: persistent_notification.create
+    #   data:
+    #     message: >
+    #       {{ trigger.to_state.name }} too high {{ trigger.to_state.state }} for {{ trigger.for }}!
+
+- alias: turn_off_fan
+  description: "Vifta - Slökkva"
+  trigger:
+    - platform: numeric_state
+      entity_id:
+        - sensor.bathroom_downstairs_temp_humidity
+        - sensor.bathroom_upstairs_temp_humidity
+        - sensor.laundry_temp_humidity
+      below: 60
+      for:
+        minutes: 5
+  action:
+    - service: notify.mobile_app_jens_mobile
+      data_template:
+        title: Slökkva á viftu
+        message: '{{ trigger.to_state.name }} fyrir neðan 60% raka ({{ trigger.to_state.state }}) í {{ trigger.for }} sec!'
+    # - service: persistent_notification.create
+    #   data:
+    #     message: >
+    #       {{ trigger.to_state.name }} too high {{ trigger.to_state.state }} for {{ trigger.for }}!
+
 
 # - alias: "Baðherbergi niðri slökkva"
 #   description: "Slökkva á ljósum sjálfkrafa á gangi" 
