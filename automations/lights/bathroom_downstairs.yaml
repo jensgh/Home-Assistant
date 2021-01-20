@@ -11,6 +11,12 @@
 
 - alias: "Baðherbergi niðri slökkva"
   description: "Slökkva á ljósum sjálfkrafa á gangi" 
+  condition: #Ekki slökkva á næturnar
+    condition: not
+    conditions:
+      - condition: state
+        entity_id: alarm_control_panel.home_alarm
+        state: 'armed_night'
   trigger:
     - platform: state
       entity_id:

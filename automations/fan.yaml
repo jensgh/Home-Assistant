@@ -13,7 +13,7 @@
     - service: notify.mobile_app_jens_mobile
       data_template:
         title: Kveikja á viftu
-        message: '{{ trigger.to_state.name }} of hátt ({{ trigger.to_state.state }}) í {{ trigger.for }} sec!'
+        message: '{{ trigger.to_state.name }} of hátt ({{ trigger.to_state.state }}) í {{ trigger.for }}!'
     # - service: persistent_notification.create
     #   data:
     #     message: >
@@ -34,7 +34,7 @@
     - service: notify.mobile_app_jens_mobile
       data_template:
         title: Slökkva á viftu
-        message: '{{ trigger.to_state.name }} fyrir neðan 60% raka ({{ trigger.to_state.state }}) í {{ trigger.for }} sec!'
+        message: '{{ trigger.to_state.name }} fyrir neðan 60% raka ({{ trigger.to_state.state }}) í {{ trigger.for }}!'
     # - service: persistent_notification.create
     #   data:
     #     message: >

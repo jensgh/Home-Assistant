@@ -141,6 +141,7 @@
       data:
         entity_id: 
         - light.gangur
+        - light.bathroom_downstairs_light
         transition: 5
         brightness: 10
 
