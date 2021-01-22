@@ -13,7 +13,6 @@
       data:
         entity_id: 
           - light.eyja
-          - light.kitchen_glass_cabinets
           - light.badherbergi
         brightness: 50
         kelvin: 2200
@@ -36,7 +35,6 @@
       data:
         entity_id: 
           - light.eyja
-          - light.kitchen_glass_cabinets
           - light.badherbergi
         transition: 5
 

@@ -30,7 +30,6 @@
       data_template:
         entity_id: 
           - light.eldhus
-          - light.kitchen_glass_cabinets
           - light.stofa
           - light.matarbord
           - light.eyja
