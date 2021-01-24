@@ -8,7 +8,7 @@
         - sensor.laundry_temp_humidity
       above: 60
       for:
-        seconds: 30
+        seconds: 20
   action:
     - service: notify.mobile_app_jens_mobile
       data_template:
@@ -24,9 +24,6 @@
 - alias: turn_off_fan
   description: "Vifta - Slökkva"
   condition:
-    - condition: state
-      entity_id: switch.vifta
-      state: 'on'
     - condition: numeric_state
       entity_id: 
         - sensor.bathroom_downstairs_temp_humidity
@@ -41,7 +38,7 @@
         - sensor.laundry_temp_humidity
       below: 60
       for:
-        minutes: 5
+        minutes: 2
   action:
     - service: notify.mobile_app_jens_mobile
       data_template:
