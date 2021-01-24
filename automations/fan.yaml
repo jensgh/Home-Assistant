@@ -14,6 +14,8 @@
       data_template:
         title: Kveikja á viftu
         message: '{{ trigger.to_state.name }} of hátt ({{ trigger.to_state.state }}) í {{ trigger.for }}!'
+    - service: switch.turn_on
+      entity_id: switch.vifta
     # - service: persistent_notification.create
     #   data:
     #     message: >
@@ -35,6 +37,8 @@
       data_template:
         title: Slökkva á viftu
         message: '{{ trigger.to_state.name }} fyrir neðan 60% raka ({{ trigger.to_state.state }}) í {{ trigger.for }}!'
+    - service: switch.turn_off
+      entity_id: switch.vifta
     # - service: persistent_notification.create
     #   data:
     #     message: >
