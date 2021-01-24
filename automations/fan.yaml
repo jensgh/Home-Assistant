@@ -8,7 +8,7 @@
         - sensor.laundry_temp_humidity
       above: 60
       for:
-        seconds: 20
+        seconds: 30
   action:
     - service: notify.mobile_app_jens_mobile
       data_template:
@@ -29,7 +29,7 @@
         - sensor.bathroom_downstairs_temp_humidity
         - sensor.bathroom_upstairs_temp_humidity
         - sensor.laundry_temp_humidity
-      above: 60
+      below: 60
   trigger:
     - platform: numeric_state
       entity_id:
