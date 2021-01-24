@@ -41,8 +41,7 @@ shelly:
       light_switch: true  #add this switch as a light
       name: "Gangur shelly"
     - id: "98f4abf283d7"
-      light_switch: true  #add this switch as a light
-      name: "Elísabet shelly"
+      name: "Vifta"
   #     sensors: [ switch ] #Override the global sensor
   #   - id: "7BD5F3"
 
