@@ -43,7 +43,7 @@
     - service: notify.mobile_app_jens_mobile
       data_template:
         title: Slökkva á viftu
-        message: '{{ trigger.to_state.name }} fyrir neðan 60% raka ({{ trigger.to_state.state }}) í {{ trigger.for }}!'
+        message: '{{ trigger.to_state.name }} fyrir neðan 40% raka ({{ trigger.to_state.state }}) í {{ trigger.for }}!'
     - service: switch.turn_off
       entity_id: switch.vifta
     # - service: persistent_notification.create
