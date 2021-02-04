@@ -24,9 +24,6 @@ recorder:
       - sun.sun
       - sensor.last_boot
       - sensor.sonarr_wanted
-media_dirs:
-  local: /media
-  radio: /radio
 
 light: !include lights.yaml
 
@@ -69,7 +66,9 @@ xiaomi_aqara:
   gateways:
     - host: 192.168.1.7
       key: !secret aquara_key
-
+  media_dirs:
+    local: /media
+    recording: /mnt/recordings
 sensor: !include sensors.yaml
 
 # media_player:
