@@ -68,7 +68,6 @@ xiaomi_aqara:
       key: !secret aquara_key
   media_dirs:
     local: /media
-    recording: /mnt/recordings
 sensor: !include sensors.yaml
 
 # media_player:

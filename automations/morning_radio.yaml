@@ -33,4 +33,6 @@
         entity_id: media_player.google_mini_kitchen_speaker
         media_content_id: http://icecast.365net.is:8000/orbbylgjan.aac
         media_content_type: 'audio/mp4'
-      # media_content_type: 'application/x-mpegurl'
+        extra:
+          thumb: "https://www.visir.is/mi/1280x576/ci/a7ca4737-666d-461c-acfa-aaef7a1d87a3.jpg"
+          title: Bylgjan
