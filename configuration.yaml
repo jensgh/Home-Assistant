@@ -24,6 +24,9 @@ recorder:
       - sun.sun
       - sensor.last_boot
       - sensor.sonarr_wanted
+media_dirs:
+  local: /media
+  radio: /radio
 
 light: !include lights.yaml
 
