@@ -57,6 +57,8 @@ script: !include_dir_merge_named scripts
 # script: !include scripts.yaml
 
 homeassistant:
+  media_dirs:
+    local: /media
   customize: !include customize.yaml
   packages: !include_dir_named packages
 python_script:
@@ -66,8 +68,7 @@ xiaomi_aqara:
   gateways:
     - host: 192.168.1.7
       key: !secret aquara_key
-  media_dirs:
-    local: /media
+
 sensor: !include sensors.yaml
 
 # media_player:
