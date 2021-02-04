@@ -7,13 +7,18 @@
   - at: 07:00:00
     platform: time
   condition:
-    condition: time
-    weekday:
-      - mon
-      - tue
-      - wed
-      - thu
-      - fri
+    - condition: time
+      weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
+    - condition: not
+      conditions:
+        - condition: state
+          entity_id: alarm_control_panel.home_alarm
+          state: 'armed_away'
   action:
     - service: media_player.turn_on
       data:
