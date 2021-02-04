@@ -78,6 +78,10 @@ sensor: !include sensors.yaml
     #     abc123def456: 'Living Room'
     #     9183abas000: 'Bed Room'
 
+spotify:
+  client_id: !secret spotify_client_id
+  client_secret: !secret spotify_client_secret
+
 notify:
   - name: pushbullet_notify
     platform: pushbullet
