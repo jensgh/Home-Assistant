@@ -6,7 +6,7 @@
         - sensor.bathroom_downstairs_temp_humidity
         - sensor.bathroom_upstairs_temp_humidity
         - sensor.laundry_temp_humidity
-      above: 30
+      above: 35
       for:
         seconds: 30
   action:
@@ -29,21 +29,21 @@
         - sensor.bathroom_downstairs_temp_humidity
         - sensor.bathroom_upstairs_temp_humidity
         - sensor.laundry_temp_humidity
-      below: 30
+      below: 35
   trigger:
     - platform: numeric_state
       entity_id:
         - sensor.bathroom_downstairs_temp_humidity
         - sensor.bathroom_upstairs_temp_humidity
         - sensor.laundry_temp_humidity
-      below: 30
+      below: 35
       for:
         minutes: 1
   action:
     - service: notify.mobile_app_jens_mobile
       data_template:
         title: Slökkva á viftu
-        message: '{{ trigger.to_state.name }} fyrir neðan 30% raka ({{ trigger.to_state.state }}) í {{ trigger.for }}!'
+        message: '{{ trigger.to_state.name }} fyrir neðan 35% raka ({{ trigger.to_state.state }}) í {{ trigger.for }}!'
     - service: switch.turn_off
       entity_id: switch.vifta
     # - service: persistent_notification.create
