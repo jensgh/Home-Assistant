@@ -38,7 +38,7 @@
         - sensor.laundry_temp_humidity
       below: 40
       for:
-        minutes: 2
+        minutes: 1
   action:
     - service: notify.mobile_app_jens_mobile
       data_template:
