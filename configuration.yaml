@@ -6,7 +6,13 @@ frontend:
   themes: !include themes.yaml
 
 # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
-# http:
+http:
+  use_x_forwarded_for: true
+  trusted_proxies:
+    - 172.30.33.3
+    - 127.0.0.1
+    - ::1
+    - 172.20.0.2
 #   base_url: example.duckdns.org:8123
 mobile_app:
 
@@ -108,22 +114,22 @@ alarm_control_panel:
       delay_time: 60
 
 
-ombi:
-  host: !secret ombi_host
-  username: !secret ombi_username
-  api_key: !secret ombi_api_key
-  port: 3579
+#ombi:
+#  host: !secret ombi_host
+#  username: !secret ombi_username
+#  api_key: !secret ombi_api_key
+#  port: 3579
   # ssl: true
 
 # https://www.home-assistant.io/integrations/speedtestdotnet
-speedtestdotnet:
-  scan_interval:
-    minutes: 60
-  server_id: 6471
-  monitored_conditions:
-    - ping
-    - download
-    - upload
+#speedtestdotnet:
+#  scan_interval:
+#    minutes: 60
+#  server_id: 6471
+#  monitored_conditions:
+#    - ping
+#    - download
+#    - upload
 
 binary_sensor:
 #   - platform: ping
