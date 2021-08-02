@@ -188,6 +188,7 @@ binary_sensor:
 # shell_command:
 #   update: /config/shell_scripts/gitpull.sh
 
+
 google:
   client_id: !secret google_client_id
   client_secret: !secret google_client_secret
@@ -219,6 +220,9 @@ mqtt:
   will_message:
     topic: 'hass/status'
     payload: 'offline'
+
+hacs:
+  token: !secret hacs_git_token
 
 webhook:
 
