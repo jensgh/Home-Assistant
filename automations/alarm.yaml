@@ -134,7 +134,6 @@
         - light.geymsla
         - light.forstofa
         - light.laundry_light
-        - light.elisabet_shelly
         - light.hue_white_lamp_1
         # transition: 5
     - service: light.turn_on
