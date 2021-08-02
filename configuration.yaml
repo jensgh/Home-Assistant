@@ -221,8 +221,8 @@ mqtt:
     topic: 'hass/status'
     payload: 'offline'
 
-hacs:
-  token: !secret hacs_git_token
+# hacs:
+#   token: !secret hacs_git_token
 
 webhook:
 
