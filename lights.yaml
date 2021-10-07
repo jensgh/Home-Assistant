@@ -34,35 +34,6 @@
       - light.hallway_5_light
       - light.hallway_6_light
 
-  # - platform: group
-  #   name: Forstofa
-  #   entities:
-  #     - light.forstofa_1
-  #     - light.forstofa_2
-
-  # - platform: group
-  #   name: Baðherbergi
-  #   entities:
-  #     - light.badherbergi_1
-  #     - light.badherbergi_2
-  #     - light.badherbergi_3
-  #     - light.badherbergi_4
-  #     - light.badherbergi_5
-
-  - platform: group
-    name: Stigi
-    entities:
-      - light.stairs_l1
-      - light.stairs_l2
-      - light.stairs_l3
-      - light.stairs_l4
-      - light.stairs_l5
-      - light.stairs_r1
-      - light.stairs_r2
-      - light.stairs_r3
-      - light.stairs_r4
-      - light.stairs_r5
-
   - platform: group
     name: Eldhús
     entities:
@@ -131,7 +102,7 @@
       - light.stofa
       - light.eldhus
       - light.stairs_master_bedroom
-      - light.stigi
+      - light.stairs
         
   # - platform: mqtt
   #   schema: template

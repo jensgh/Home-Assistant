@@ -17,7 +17,7 @@
 #       entity_id:
 #       - light.stofa
 #       - light.eldhus
-#       - light.stigi
+#       - light.stairs
 #       brightness: 50
 #       transition: 5
 #   # Waits 1 minute, 30 seconds
