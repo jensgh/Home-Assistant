@@ -35,8 +35,8 @@
         tag: alarm_on
 
 
-#Armed away trigger
-- alias: 'Armed away trigger'
+#Armed away trigger not vacuming
+- alias: 'Armed away trigger not vacuming'
   # hide_entity: true
   initial_state: true
   trigger:
@@ -60,9 +60,44 @@
     - condition: state
       entity_id: alarm_control_panel.home_alarm
       state: armed_away
+    - condition: not
+      conditions:
+      - condition: state
+        entity_id: vacuum.alfred
+        state: 
+          - "cleaning"
+          - "returning"
   action:
     service: alarm_control_panel.alarm_trigger
     entity_id: alarm_control_panel.home_alarm
+
+#Armed away trigger while vacuming
+- alias: 'Armed away trigger while vacuming'
+  # hide_entity: true
+  initial_state: true
+  trigger:
+  - entity_id: 
+      - binary_sensor.door_window_sensor_forstofa
+      - binary_sensor.door_window_sensor_laundry
+      - binary_sensor.door_sensor_svalahurd_nidri
+      - binary_sensor.door_window_sensor_kitchen
+      - binary_sensor.living_room_door_contact
+    platform: state
+    from: 'off'
+    to: 'on'
+  condition:
+    - condition: state
+      entity_id: alarm_control_panel.home_alarm
+      state: armed_away
+    - condition: state
+      entity_id: vacuum.alfred
+      state: 
+        - "cleaning"
+        - "returning"
+  action:
+    service: alarm_control_panel.alarm_trigger
+    entity_id: alarm_control_panel.home_alarm
+
 
 #Someone comes home, wait time before trigger
 # - alias: 'armed_away_before_trigger'
@@ -125,7 +160,7 @@
     - service: light.turn_off
       data:
         entity_id: 
-        - light.stigi
+        - light.stairs
         - light.stofa
         - light.eldhus
         - light.matarbord
@@ -140,9 +175,8 @@
       data:
         entity_id: 
         - light.gangur
-        - light.bathroom_downstairs_light
         transition: 5
-        brightness: 10
+        brightness: 20
 
 
 - alias: 'Slökkva á öllu þegar Armed away'
