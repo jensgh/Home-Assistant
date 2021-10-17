@@ -16,11 +16,8 @@
     to: 'off'
     for:
       minutes: 1
-    action:
-      service: light.turn_off
+  action:
+    service: light.turn_off
+    data:
       entity_id: light.bilskur, light.geymsla
-  # action:
-  #   service: light.turn_off
-  #   data:
-  #     entity_id: light.bilskur, light.geymsla
       # transition: 3
