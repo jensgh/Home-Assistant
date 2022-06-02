@@ -170,7 +170,6 @@
         - light.forstofa
         - light.laundry_light
         - light.hue_white_lamp_1
-        # transition: 5
     - service: light.turn_on
       data:
         entity_id: 

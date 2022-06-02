@@ -13,6 +13,7 @@
           - light.stairs
           - light.bathroom_downstairs_light
           - light.laundry_light
+        brightness: 185
     - service: 'homeassistant.turn_off'
       data_template:
         entity_id: automation.turn_on_lights_downstairs
@@ -38,6 +39,7 @@
           # - light.stairs_master_bedroom
           # - light.fataskapur
         transition: 120
+        brightness: 185
     - service: 'homeassistant.turn_off'
       data_template:
         entity_id: automation.turn_on_lights_upstairs
