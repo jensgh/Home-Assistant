@@ -240,3 +240,4 @@ camera:
   - platform: uvc
     nvr: 192.168.1.9
     key: !secret uvc-apikey
+    password: !secret uvc-camerapass
