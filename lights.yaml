@@ -93,7 +93,7 @@
   - platform: group
     name: Geymsla
     entities:
-      - light.garage_storage_1_light
+      # - light.garage_storage_1_light
       - light.garage_storage_2_light
       
   - platform: group
