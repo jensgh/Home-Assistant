@@ -85,19 +85,19 @@ sensor: !include sensors.yaml
     #     abc123def456: 'Living Room'
     #     9183abas000: 'Bed Room'
 
-spotify:
-  client_id: !secret spotify_client_id
-  client_secret: !secret spotify_client_secret
+# spotify:
+#   client_id: !secret spotify_client_id
+#   client_secret: !secret spotify_client_secret
 
-notify:
-  - name: pushbullet_notify
-    platform: pushbullet
-    api_key: !secret pushbullet_token
-  - name: all_phones
-    platform: group
-    services:
-    - service: mobile_app_jens_mobile
-    - service: mobile_app_pixel_2_xl
+# notify:
+#   - name: pushbullet_notify
+#     platform: pushbullet
+#     api_key: !secret pushbullet_token
+#   - name: all_phones
+#     platform: group
+#     services:
+#     - service: mobile_app_jens_mobile
+#     - service: mobile_app_pixel_2_xl
 
 alarm_control_panel:
   - platform: manual
@@ -189,9 +189,9 @@ binary_sensor:
 #   update: /config/shell_scripts/gitpull.sh
 
 
-google:
-  client_id: !secret google_client_id
-  client_secret: !secret google_client_secret
+# google:
+#   client_id: !secret google_client_id
+#   client_secret: !secret google_client_secret
 
 google_assistant:
   project_id: !secret google_home_project_id
@@ -211,15 +211,15 @@ google_assistant:
   #     room: LIVING_ROOM
 
 
-mqtt:
-  discovery: true
-  broker: !secret mqtt_ip
-  birth_message:
-    topic: 'hass/status'
-    payload: 'online'
-  will_message:
-    topic: 'hass/status'
-    payload: 'offline'
+# mqtt:
+#   discovery: true
+#   broker: !secret mqtt_ip
+#   birth_message:
+#     topic: 'hass/status'
+#     payload: 'online'
+#   will_message:
+#     topic: 'hass/status'
+#     payload: 'offline'
 
 # hacs:
 #   token: !secret hacs_git_token
@@ -235,3 +235,9 @@ webhook:
 #     icon: 'mdi:graphql'
 
 input_boolean: !include input_booleans.yaml
+
+camera:
+  - platform: uvc
+    nvr: 192.168.1.9
+    key: !secret uvc-apikey
+    password: !secret uvc-camerapass

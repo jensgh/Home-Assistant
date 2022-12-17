@@ -89,12 +89,12 @@
       - light.garage_door_right_light
       - light.garage_mid_1_light
       - light.garage_mid_2_light
+      - light.garage_end_1
 
   - platform: group
     name: Geymsla
     entities:
-      - light.garage_storage_1_light
-      - light.garage_storage_2_light
+      - light.garage_ofiice
       
   - platform: group
     name: Ljós frammi

@@ -15,16 +15,16 @@
     # ssl: true
     port: 8181
 
-  - platform: radarr
-    api_key: !secret radarr_api_key
-    host: 192.168.1.9
-    monitored_conditions:
-    - movies
-    - upcoming
-    - status
-    - commands
-    - diskspace
-    days: 30
+  # - platform: radarr
+  #   api_key: !secret radarr_api_key
+  #   host: 192.168.1.9
+  #   monitored_conditions:
+  #   - movies
+  #   - upcoming
+  #   - status
+  #   - commands
+  #   - diskspace
+  #   days: 30
 
 # https://www.home-assistant.io/integrations/systemmonitor
   - platform: systemmonitor
@@ -151,36 +151,36 @@
 
   # Uptime
   # https://www.home-assistant.io/integrations/uptime/
-  - platform: uptime
+  # - platform: uptime
 
   # Installed version
   # https://www.home-assistant.io/integrations/version/
-  - platform: version
+  # - platform: version
 
 
-  - platform: github
-    access_token: !secret github_access_token
-    repositories:
-      - path: 'jensgh/Home-Assistant'
+  # - platform: github
+  #   access_token: !secret github_access_token
+  #   repositories:
+  #     - path: 'jensgh/Home-Assistant'
 
     # Zigbee2mqtt
   # Sensor for monitoring the bridge state
-  - platform: mqtt
-    name: Zigbee2mqtt Bridge state
-    state_topic: "zigbee2mqtt/bridge/state"
-    icon: mdi:router-wireless
-  # Sensor for Showing the Zigbee2mqtt Version
-  - platform: mqtt
-    name: Zigbee2mqtt Version
-    state_topic: "zigbee2mqtt/bridge/config"
-    value_template: "{{ value_json.version }}"
-    icon: mdi:zigbee
-  # Sensor for Showing the Coordinator Version
-  - platform: mqtt
-    name: Coordinator Version
-    state_topic: "zigbee2mqtt/bridge/config"
-    value_template: "{{ value_json.coordinator }}"
-    icon: mdi:chip
+  # - platform: mqtt
+  #   name: Zigbee2mqtt Bridge state
+  #   state_topic: "zigbee2mqtt/bridge/state"
+  #   icon: mdi:router-wireless
+  # # Sensor for Showing the Zigbee2mqtt Version
+  # - platform: mqtt
+  #   name: Zigbee2mqtt Version
+  #   state_topic: "zigbee2mqtt/bridge/config"
+  #   value_template: "{{ value_json.version }}"
+  #   icon: mdi:zigbee
+  # # Sensor for Showing the Coordinator Version
+  # - platform: mqtt
+  #   name: Coordinator Version
+  #   state_topic: "zigbee2mqtt/bridge/config"
+  #   value_template: "{{ value_json.coordinator }}"
+  #   icon: mdi:chip
     
 #     # reports on/оff status
 #   - platform: mqtt

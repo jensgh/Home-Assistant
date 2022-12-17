@@ -36,7 +36,6 @@
         entity_id: 
           - light.eyja
           - light.badherbergi
-        transition: 5
 
 # # Downstairs
 # - alias: 'Kveikja niðri - nótt'
