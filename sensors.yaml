@@ -155,13 +155,13 @@
 
   # Installed version
   # https://www.home-assistant.io/integrations/version/
-  - platform: version
+  # - platform: version
 
 
-  - platform: github
-    access_token: !secret github_access_token
-    repositories:
-      - path: 'jensgh/Home-Assistant'
+  # - platform: github
+  #   access_token: !secret github_access_token
+  #   repositories:
+  #     - path: 'jensgh/Home-Assistant'
 
     # Zigbee2mqtt
   # Sensor for monitoring the bridge state
