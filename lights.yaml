@@ -94,7 +94,7 @@
   - platform: group
     name: Geymsla
     entities:
-      - light.garage_storage_2_light
+      - light.garage_ofiice
       
   - platform: group
     name: Ljós frammi
