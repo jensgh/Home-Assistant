@@ -9,11 +9,11 @@
       - 'date_time'
       - 'time_date'
 
-  - platform: tautulli
-    api_key: !secret tautulli_aki_key
-    host: !secret tautulli_host
-    # ssl: true
-    port: 8181
+  # - platform: tautulli
+  #   api_key: !secret tautulli_aki_key
+  #   host: !secret tautulli_host
+  #   # ssl: true
+  #   port: 8181
 
   # - platform: radarr
   #   api_key: !secret radarr_api_key
