@@ -1,4 +1,4 @@
-- alias: "Gangur kveikja ljós"
+- alias: "Office ljós brightnes -"
   description: "Skrifstofa ljós brightness down"
   trigger:
     - platform: state
@@ -12,8 +12,8 @@
         brightness_step_pct: -10
 
 
-- alias: "Gangur kveikja ljós"
-  description: "Skrifstofa ljós brightness down"
+- alias: "Office ljós brightnes +"
+  description: "Skrifstofa ljós brightness up"
   trigger:
     - platform: state
       entity_id:
@@ -26,8 +26,8 @@
         brightness_step_pct: 10
 
 
-- alias: "Gangur kveikja ljós"
-  description: "Skrifstofa ljós brightness down"
+- alias: "Office ljós toggle"
+  description: "Skrifstofa ljós toggle"
   trigger:
     - platform: state
       entity_id:
