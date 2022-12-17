@@ -89,15 +89,15 @@ sensor: !include sensors.yaml
 #   client_id: !secret spotify_client_id
 #   client_secret: !secret spotify_client_secret
 
-notify:
-  - name: pushbullet_notify
-    platform: pushbullet
-    api_key: !secret pushbullet_token
-  - name: all_phones
-    platform: group
-    services:
-    - service: mobile_app_jens_mobile
-    - service: mobile_app_pixel_2_xl
+# notify:
+#   - name: pushbullet_notify
+#     platform: pushbullet
+#     api_key: !secret pushbullet_token
+#   - name: all_phones
+#     platform: group
+#     services:
+#     - service: mobile_app_jens_mobile
+#     - service: mobile_app_pixel_2_xl
 
 alarm_control_panel:
   - platform: manual
