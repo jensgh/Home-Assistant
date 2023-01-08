@@ -28,7 +28,7 @@
   #   data_template:
   #     title: Þjófavörn tekin af!
   #     message: 'Þjófavörn tekin af, eftir að hafa farið í gang.'
-  - service: notify.all_phones
+  - service: notify.mobile_app_jens_mobile, notify.mobile_app_olgas_iphone
     data:
       message: clear_notification
       data:

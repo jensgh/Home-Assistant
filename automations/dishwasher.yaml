@@ -5,7 +5,7 @@
     entity_id: binary_sensor.kitchen_water_leak_water_leak
     to: 'on'
   action:
-    - service: notify.all_phones
+    - service: notify.mobile_app_jens_mobile
       data_template:
         message: >   
           Uppþvottavél lekur !!

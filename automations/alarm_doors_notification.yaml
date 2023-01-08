@@ -11,7 +11,7 @@
       entity_id: group.all_doors
       state: 'on'
   action:
-    - service: notify.all_phones
+    - service: notify.mobile_app_jens_mobile
       data_template:
         title: "Hurð opin !!"
         message: >-

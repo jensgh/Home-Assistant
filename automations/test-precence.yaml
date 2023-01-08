@@ -23,17 +23,3 @@
         message: >   
           Jens farinn
         title: "Jens farinn"
-
-- id: 'ioniq_leaves'
-  alias: 'Bíll farinn'
-  trigger:
-    platform: state
-    entity_id: binary_sensor.ioniq
-    from: 'on'
-    to: 'off'
-  action:
-    - service: notify.pushbullet_notify
-      data_template:
-        message: >   
-          Ioniq farinn að heiman
-        title: "Ioniq"

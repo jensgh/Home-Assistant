@@ -1,12 +1,11 @@
 'start_alarm':
   alias: Alarm start
   sequence:
-    # - service: notify.pushbullet_notify
   - service: notify.pushbullet_notify
     data_template:
       title: Þjófavörn!!
       message: 'Þjófavörn fór í gang !'
-  - service: notify.all_phones
+  - service: notify.mobile_app_jens_mobile, notify.mobile_app_olgas_iphone
     data:
       title: Þjófavörn!!
       message: 'Þjófavörn fór í gang !'
