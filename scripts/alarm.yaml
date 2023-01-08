@@ -5,7 +5,15 @@
     data_template:
       title: Þjófavörn!!
       message: 'Þjófavörn fór í gang !'
-  - service: notify.mobile_app_jens_mobile, notify.mobile_app_olgas_iphone
+  - service: notify.mobile_app_jens_mobile
+    data:
+      title: Þjófavörn!!
+      message: 'Þjófavörn fór í gang !'
+      data:
+        group: alarm
+        tag: alarm_on
+        color: red
+  - service: notify.mobile_app_olgas_iphone
     data:
       title: Þjófavörn!!
       message: 'Þjófavörn fór í gang !'
