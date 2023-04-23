@@ -1,0 +1,64 @@
+# Play webradio on smart speaker(s)
+#
+# Based on https://community.home-assistant.io/t/chromecast-radio-with-station-and-player-selection/12732
+#
+# https://www.home-assistant.io/integrations/media_player
+# https://www.home-assistant.io/integrations/input_select/
+#
+webradio:
+  script:
+    play_radio:
+      alias: Play radio
+      icon: mdi:play
+      description: Play web radio on Chromecast
+      mode: restart
+      sequence:
+        - service: media_player.volume_set
+          data:
+            entity_id: media_player.kitchen_display
+            volume_level: 0.20
+        - service: media_player.play_media
+          data:
+            entity_id: media_player.kitchen_display
+            media_content_type: music
+            media_content_id: >
+              {%- set station = states('input_select.radio_station') -%}
+              {% if station == "Rás 1" %} http://netradio.ruv.is:80/ras1.mp3
+              {% elif station == "Rás 2" %} http://netradio.ruv.is:80/ras2.mp3
+              {% elif station == "Kiss FM" %} http://stream3.radio.is:443/kissfm
+              {% elif station == "X-ið" %} https://ice-11.spilarinn.is/zx977
+              {% elif station == "Bylgjan" %} https://ice-11.spilarinn.is/tfmx
+              {% elif station == "FM 957" %} https://ice-11.spilarinn.is/tfm957
+              {% endif %}              
+            extra:
+              thumb: >
+                {%- set station = states('input_select.radio_station') -%}
+                {% if station == 'Rás 1' %}  https://bakendi.spilarinn.is/api/files/10276
+                {% elif station == 'Rás 2' %} https://bakendi.spilarinn.is/api/files/10271
+                {% elif station =='Kiss FM' %} https://bakendi.spilarinn.is/api/files/10455
+                {% elif station == "X-ið" %} https://bakendi.spilarinn.is/api/files/99
+                {% elif station == "Bylgjan" %} https://bakendi.spilarinn.is/api/files/10058
+                {% elif station == "FM 957" %} https://bakendi.spilarinn.is/api/files/87
+                {% endif %}                
+              stream_type: LIVE
+  
+  input_select:
+    radio_player:
+      name: Spilari
+      initial: Kitchen
+      options:
+        - Living room
+        - Kitchen
+  #      - Garage
+      icon: mdi:speaker 
+    radio_station:
+      name: 'Stöð'
+      icon: mdi:radio
+      initial: VRT Studio Brussel
+      options:
+        - Rás 1
+        - Rás 2
+        - Kiss FM
+        - X-ið
+        - Bylgjan
+        - FM 957
