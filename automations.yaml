@@ -1,0 +1,44 @@
+- id: '1627228682907'
+  alias: Zone Notification
+  description: ''
+  use_blueprint:
+    path: homeassistant/notify_leaving_zone.yaml
+    input:
+      person_entity: person.jens
+      zone_entity: zone.home
+      notify_device: 76291b9b208742b49ce4d8bf9c0daaed
+- id: '1671135850098'
+  alias: Office lights
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: eecc76532a424fd3902418a9453b2ec4
+    type: action
+    subtype: single_left
+    discovery_id: 0x00158d000237e77d action_single_left
+  - platform: device
+    domain: mqtt
+    device_id: eecc76532a424fd3902418a9453b2ec4
+    type: click
+    subtype: left
+    discovery_id: 0x00158d000237e77d click_left
+  - platform: device
+    domain: mqtt
+    device_id: eecc76532a424fd3902418a9453b2ec4
+    type: click
+    subtype: right
+    discovery_id: 0x00158d000237e77d click_right
+  - platform: device
+    domain: mqtt
+    device_id: eecc76532a424fd3902418a9453b2ec4
+    type: action
+    subtype: single_right
+    discovery_id: 0x00158d000237e77d action_single_right
+  condition: []
+  action:
+  - type: toggle
+    device_id: 11339d5c37f44bfcba682ffb52f60d42
+    entity_id: light.garage_ofiice
+    domain: light
+  mode: single

@@ -36,3 +36,13 @@ secrets.yaml
 known_devices.yaml
 Home-assistant-google-home.json
 .vscode
+.spotify-token-cache
+.HA_VERSION
+.shopping_list.json
+
+# Logs
+logs
+*.log
+# Python cache
+__pycache__
+*.pyc
