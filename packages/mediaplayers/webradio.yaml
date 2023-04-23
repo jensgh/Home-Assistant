@@ -54,7 +54,7 @@ webradio:
     radio_station:
       name: 'Stöð'
       icon: mdi:radio
-      initial: VRT Studio Brussel
+      initial: Bylgjan
       options:
         - Rás 1
         - Rás 2
