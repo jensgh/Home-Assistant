@@ -57,7 +57,7 @@ webradio:
   input_select:
     radio_player:
       name: Spilari
-      initial: Kitchen
+      initial: Eldhús
       options:
         - Eldhús
         - Sjónvarp
