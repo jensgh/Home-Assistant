@@ -1,204 +1,205 @@
-automation:
-  ###################
-  ## Toggle the light
-  ###################
-  - id: bathroom_wireless_controller_toggle
-    alias: Bathroom Ikea Controller - Toggle
-    trigger:
-      - platform: state
+bathroom_viewless:
+  automation:
+    ###################
+    ## Toggle the light
+    ###################
+    - id: bathroom_wireless_controller_toggle
+      alias: Bathroom Ikea Controller - Toggle
+      trigger:
+        - platform: state
+          entity_id: sensor.bathroom_wireless_switch_action
+          to: "toggle"
+      action:
+        - service: light.toggle
+          data:
+            entity_id: light.badherbergi
+
+    ###########################################
+    ## Dim up/down and warm up/down with clicks
+    ###########################################
+    - id: bathroom_wireless_controller_dim_up
+      alias: Bathroom Ikea Controller dim up
+      trigger:
+        platform: state
         entity_id: sensor.bathroom_wireless_switch_action
-        to: "toggle"
-    action:
-      - service: light.toggle
-        data:
+        to: brightness_up_click
+      action:
+        data_template:
           entity_id: light.badherbergi
+          brightness: "{{ state_attr('light.badherbergi', 'brightness') + 50 | int }}"
+        service: light.turn_on
 
-  ###########################################
-  ## Dim up/down and warm up/down with clicks
-  ###########################################
-  - id: bathroom_wireless_controller_dim_up
-    alias: Bathroom Ikea Controller dim up
-    trigger:
-      platform: state
-      entity_id: sensor.bathroom_wireless_switch_action
-      to: brightness_up_click
-    action:
-      data_template:
-        entity_id: light.badherbergi
-        brightness: "{{ state_attr('light.badherbergi', 'brightness') + 50 | int }}"
-      service: light.turn_on
-
-  - id: bathroom_wireless_controller_dim_down
-    alias: Bathroom Ikea Controller dim down
-    trigger:
-      platform: state
-      entity_id: sensor.bathroom_wireless_switch_action
-      to: brightness_down_click
-    action:
-      data_template:
-        entity_id: light.badherbergi
-        brightness: "{{ [state_attr('light.badherbergi', 'brightness') - 50, 1] | max }}"
-      service: light.turn_on
-
-  - id: bathroom_wireless_controller_warm_up
-    alias: Bathroom Ikea Controller warm up
-    trigger:
-      platform: state
-      entity_id: sensor.bathroom_wireless_switch_action
-      to: arrow_right_click
-    action:
-      data_template:
-        entity_id: light.badherbergi
-        color_temp: "{{ state_attr('light.badherbergi', 'color_temp') + 75 }}"
-      service: light.turn_on
-
-  - id: bathroom_wireless_controller_warm_down
-    alias: Bathroom Ikea Controller warm down
-    trigger:
-      platform: state
-      entity_id: sensor.bathroom_wireless_switch_action
-      to: arrow_left_click
-    action:
-      data_template:
-        entity_id: light.badherbergi
-        color_temp: "{{ state_attr('light.badherbergi', 'color_temp') - 75 }}"
-      service: light.turn_on
-
-  ###############################################
-  ## Dim up/down with long press
-  ###############################################
-
-  - id: bathroom_wireless_controller_brighten_on
-    alias: Bathroom Ikea Controller - Brighten on
-    trigger:
-      - platform: state
+    - id: bathroom_wireless_controller_dim_down
+      alias: Bathroom Ikea Controller dim down
+      trigger:
+        platform: state
         entity_id: sensor.bathroom_wireless_switch_action
-        to: brightness_up_hold
-    condition:
-      - condition: state
-        entity_id: light.badherbergi
-        state: "on"
-    action:
-      - service: input_boolean.turn_on
-        entity_id: input_boolean.bathroom_light_brightness
-      - service: python_script.change_attribute_light_smoothly
-        data:
-          light_id: light.badherbergi
-          input_boolean: input_boolean.bathroom_light_brightness
-          delta: 20
-  - id: bathroom_wireless_controller_dim_on
-    alias: Bathroom Ikea Controller - Dim on
-    trigger:
-      - platform: state
-        entity_id: sensor.bathroom_wireless_switch_action
-        to: brightness_down_hold
-    condition:
-      - condition: state
-        entity_id: light.badherbergi
-        state: "on"
-    action:
-      - service: input_boolean.turn_on
-        entity_id: input_boolean.bathroom_light_brightness
-      - service: python_script.change_attribute_light_smoothly
-        data:
-          light_id: light.badherbergi
-          input_boolean: input_boolean.bathroom_light_brightness
-          delta: -20
+        to: brightness_down_click
+      action:
+        data_template:
+          entity_id: light.badherbergi
+          brightness: "{{ [state_attr('light.badherbergi', 'brightness') - 50, 1] | max }}"
+        service: light.turn_on
 
-  - id: bathroom_wireless_controller_brighten_dim_off
-    alias: Bathroom Ikea Controller - Brighten/Dim off
-    initial_state: on
-    trigger:
-      - platform: state
+    - id: bathroom_wireless_controller_warm_up
+      alias: Bathroom Ikea Controller warm up
+      trigger:
+        platform: state
         entity_id: sensor.bathroom_wireless_switch_action
-        to: brightness_up_release
-      - platform: state
+        to: arrow_right_click
+      action:
+        data_template:
+          entity_id: light.badherbergi
+          color_temp: "{{ state_attr('light.badherbergi', 'color_temp') + 75 }}"
+        service: light.turn_on
+
+    - id: bathroom_wireless_controller_warm_down
+      alias: Bathroom Ikea Controller warm down
+      trigger:
+        platform: state
         entity_id: sensor.bathroom_wireless_switch_action
-        to: brightness_down_release
-    condition:
-      condition: and
-      conditions:
+        to: arrow_left_click
+      action:
+        data_template:
+          entity_id: light.badherbergi
+          color_temp: "{{ state_attr('light.badherbergi', 'color_temp') - 75 }}"
+        service: light.turn_on
+
+    ###############################################
+    ## Dim up/down with long press
+    ###############################################
+
+    - id: bathroom_wireless_controller_brighten_on
+      alias: Bathroom Ikea Controller - Brighten on
+      trigger:
+        - platform: state
+          entity_id: sensor.bathroom_wireless_switch_action
+          to: brightness_up_hold
+      condition:
         - condition: state
+          entity_id: light.badherbergi
+          state: "on"
+      action:
+        - service: input_boolean.turn_on
           entity_id: input_boolean.bathroom_light_brightness
-          state: "on"
+        - service: python_script.change_attribute_light_smoothly
+          data:
+            light_id: light.badherbergi
+            input_boolean: input_boolean.bathroom_light_brightness
+            delta: 20
+    - id: bathroom_wireless_controller_dim_on
+      alias: Bathroom Ikea Controller - Dim on
+      trigger:
+        - platform: state
+          entity_id: sensor.bathroom_wireless_switch_action
+          to: brightness_down_hold
+      condition:
         - condition: state
           entity_id: light.badherbergi
           state: "on"
-    action:
-      - service: input_boolean.turn_off
-        entity_id: input_boolean.bathroom_light_brightness
+      action:
+        - service: input_boolean.turn_on
+          entity_id: input_boolean.bathroom_light_brightness
+        - service: python_script.change_attribute_light_smoothly
+          data:
+            light_id: light.badherbergi
+            input_boolean: input_boolean.bathroom_light_brightness
+            delta: -20
 
-  ###############################################
-  ## Warm up/down with long press
-  ###############################################
+    - id: bathroom_wireless_controller_brighten_dim_off
+      alias: Bathroom Ikea Controller - Brighten/Dim off
+      initial_state: on
+      trigger:
+        - platform: state
+          entity_id: sensor.bathroom_wireless_switch_action
+          to: brightness_up_release
+        - platform: state
+          entity_id: sensor.bathroom_wireless_switch_action
+          to: brightness_down_release
+      condition:
+        condition: and
+        conditions:
+          - condition: state
+            entity_id: input_boolean.bathroom_light_brightness
+            state: "on"
+          - condition: state
+            entity_id: light.badherbergi
+            state: "on"
+      action:
+        - service: input_boolean.turn_off
+          entity_id: input_boolean.bathroom_light_brightness
 
-  - id: bathroom_wireless_controller_warm_on
-    alias: Bathroom Ikea Controller - Warm on
-    trigger:
-      - platform: state
-        entity_id: sensor.bathroom_wireless_switch_action
-        to: arrow_right_hold
-    condition:
-      - condition: state
-        entity_id: light.badherbergi
-        state: "on"
-    action:
-      - service: input_boolean.turn_on
-        entity_id: input_boolean.bathroom_light_color_temp
-      - service: python_script.change_attribute_light_smoothly
-        data:
-          input_boolean: input_boolean.bathroom_light_color_temp
-          light_id: light.badherbergi
-          light_attribute: color_temp
-          delta: 40
-  - id: bathroom_wireless_controller_col_on
-    alias: Bathroom Ikea Controller - Cold on
-    trigger:
-      - platform: state
-        entity_id: sensor.bathroom_wireless_switch_action
-        to: arrow_left_hold
-    condition:
-      - condition: state
-        entity_id: light.badherbergi
-        state: "on"
-    action:
-      - service: input_boolean.turn_on
-        entity_id: input_boolean.bathroom_light_color_temp
-      - service: python_script.change_attribute_light_smoothly
-        data:
-          light_id: light.badherbergi
-          input_boolean: input_boolean.bathroom_light_color_temp
-          light_attribute: color_temp
-          delta: -40
+    ###############################################
+    ## Warm up/down with long press
+    ###############################################
 
-  - id: bathroom_wireless_controller_warm_cold_off
-    alias: Bathroom Ikea Controller - Warm/Cold off
-    initial_state: on
-    trigger:
-      - platform: state
-        entity_id: sensor.bathroom_wireless_switch_action
-        to: arrow_left_release
-      - platform: state
-        entity_id: sensor.bathroom_wireless_switch_action
-        to: arrow_right_release
-    condition:
-      condition: and
-      conditions:
+    - id: bathroom_wireless_controller_warm_on
+      alias: Bathroom Ikea Controller - Warm on
+      trigger:
+        - platform: state
+          entity_id: sensor.bathroom_wireless_switch_action
+          to: arrow_right_hold
+      condition:
         - condition: state
+          entity_id: light.badherbergi
+          state: "on"
+      action:
+        - service: input_boolean.turn_on
           entity_id: input_boolean.bathroom_light_color_temp
-          state: "on"
+        - service: python_script.change_attribute_light_smoothly
+          data:
+            input_boolean: input_boolean.bathroom_light_color_temp
+            light_id: light.badherbergi
+            light_attribute: color_temp
+            delta: 40
+    - id: bathroom_wireless_controller_col_on
+      alias: Bathroom Ikea Controller - Cold on
+      trigger:
+        - platform: state
+          entity_id: sensor.bathroom_wireless_switch_action
+          to: arrow_left_hold
+      condition:
         - condition: state
           entity_id: light.badherbergi
           state: "on"
-    action:
-      - service: input_boolean.turn_off
-        entity_id: input_boolean.bathroom_light_color_temp
+      action:
+        - service: input_boolean.turn_on
+          entity_id: input_boolean.bathroom_light_color_temp
+        - service: python_script.change_attribute_light_smoothly
+          data:
+            light_id: light.badherbergi
+            input_boolean: input_boolean.bathroom_light_color_temp
+            light_attribute: color_temp
+            delta: -40
+
+    - id: bathroom_wireless_controller_warm_cold_off
+      alias: Bathroom Ikea Controller - Warm/Cold off
+      initial_state: on
+      trigger:
+        - platform: state
+          entity_id: sensor.bathroom_wireless_switch_action
+          to: arrow_left_release
+        - platform: state
+          entity_id: sensor.bathroom_wireless_switch_action
+          to: arrow_right_release
+      condition:
+        condition: and
+        conditions:
+          - condition: state
+            entity_id: input_boolean.bathroom_light_color_temp
+            state: "on"
+          - condition: state
+            entity_id: light.badherbergi
+            state: "on"
+      action:
+        - service: input_boolean.turn_off
+          entity_id: input_boolean.bathroom_light_color_temp
 
 
-input_boolean:
-  bathroom_light_brightness:
-    name: Light brigthness
-    initial: off
-  bathroom_light_color_temp:
-    name: Light color temperature
-    initial: off
+  input_boolean:
+    bathroom_light_brightness:
+      name: Light brigthness
+      initial: off
+    bathroom_light_color_temp:
+      name: Light color temperature
+      initial: off
