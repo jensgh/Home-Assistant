@@ -8,18 +8,30 @@
 webradio:
   script:
     play_radio:
-      alias: Play radio
+      alias: Spila
       icon: mdi:play
       description: Play web radio on Chromecast
       mode: restart
       sequence:
         - service: media_player.volume_set
           data:
-            entity_id: media_player.kitchen_display
+            #entity_id: media_player.google_mini_kitchen_speaker
+            entity_id: >
+              {%- set station = states('input_select.radio_player') -%}
+              {% if station == "Sjónvarp" %} media_player.sony_bravia_tv
+              {% elif station == "Eldhús" %} media_player.kitchen_display
+              {% elif station == "Mini" %} media_player.google_mini_kitchen_speaker
+              {% endif %}           
             volume_level: 0.20
         - service: media_player.play_media
           data:
-            entity_id: media_player.kitchen_display
+            entity_id: >
+              {%- set station = states('input_select.radio_player') -%}
+              {% if station == "Sjónvarp" %} media_player.sony_bravia_tv
+              {% elif station == "Eldhús" %} media_player.kitchen_display
+              {% elif station == "Mini" %} media_player.google_mini_kitchen_speaker
+              {% endif %}              
+            #entity_id: media_player.kitchen_display
             media_content_type: music
             media_content_id: >
               {%- set station = states('input_select.radio_station') -%}
@@ -47,10 +59,11 @@ webradio:
       name: Spilari
       initial: Kitchen
       options:
-        - Living room
-        - Kitchen
-  #      - Garage
-      icon: mdi:speaker 
+        - Eldhús
+        - Sjónvarp
+        - Mini
+      icon: mdi:speaker
+
     radio_station:
       name: 'Stöð'
       icon: mdi:radio
