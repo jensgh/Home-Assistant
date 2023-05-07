@@ -1,0 +1,29 @@
+hottub:
+  script:
+    fill_hot_tub:
+      alias: Fill up
+      icon: mdi:bathtub
+      description: Láta renna í pottinn
+      mode: single
+      sequence:
+        - service: switch.turn_on
+          data:
+            entity_id: switch.water_hot_tub_on
+        - alias: "Wait 5s"
+          delay: 5
+        - service: switch.turn_on
+          data:
+            entity_id: switch.pottur_loka_nidurfalli
+
+    empty_hot_tub:
+      alias: Empty
+      icon: mdi:bathtub-outline
+      description: Tæma pottinn
+      mode: single
+      sequence:
+        - service: switch.turn_off
+          data:
+            entity_id: switch.water_hot_tub_on
+        - service: switch.turn_on
+          data:
+            entity_id: switch.pottur_opna_nidurfalli
