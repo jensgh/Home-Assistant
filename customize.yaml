@@ -20,3 +20,6 @@ person.olga:
   entity_picture: /local/olga.jpg
 device_tracker.xiaomi_gateway:
   icon: mdi:access-point
+light.stairs:
+  icon: mdi:stairs
+  friendly_name: Stigi
