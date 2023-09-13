@@ -13,7 +13,7 @@ hottub:
           delay: 5
         - service: switch.turn_on
           data:
-            entity_id: switch.pottur_loka_nidurfalli
+            entity_id: switch.botnloki_loka
 
     empty_hot_tub:
       alias: Empty
@@ -26,4 +26,4 @@ hottub:
             entity_id: switch.water_hot_tub_on
         - service: switch.turn_on
           data:
-            entity_id: switch.pottur_opna_nidurfalli
+            entity_id: switch.botnloki_opna
