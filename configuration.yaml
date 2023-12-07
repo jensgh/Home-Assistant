@@ -239,6 +239,6 @@ input_boolean: !include input_booleans.yaml
 
 camera:
   - platform: uvc
-    nvr: 192.168.1.225
+    nvr: 172.20.0.6
     key: !secret uvc-apikey
     password: !secret uvc-camerapass
