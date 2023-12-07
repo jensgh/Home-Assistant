@@ -12,7 +12,7 @@ http:
     #- 172.30.33.3 # ?
     - 127.0.0.1
     - ::1
-    - 172.20.0.7
+    - 172.20.0.6
 #   base_url: example.duckdns.org:8123
 mobile_app:
 
@@ -239,6 +239,6 @@ input_boolean: !include input_booleans.yaml
 
 camera:
   - platform: uvc
-    nvr: 172.20.0.6
+    nvr: 192.168.1.225
     key: !secret uvc-apikey
     password: !secret uvc-camerapass
