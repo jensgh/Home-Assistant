@@ -103,6 +103,20 @@
       - light.eldhus
       - light.stairs_master_bedroom
       - light.stairs
+
+  - platform: stairs_group
+    name: Stigi ljós
+    entities:
+      - light.stairs_l1
+      - light.stairs_l2
+      - light.stairs_l3
+      - light.stairs_l4
+      - light.stairs_l5
+      - light.stairs_r1
+      - light.stairs_r2
+      - light.stairs_r3
+      - light.stairs_r4
+      - light.stairs_r5
         
   # - platform: mqtt
   #   schema: template
