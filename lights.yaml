@@ -104,7 +104,7 @@
       - light.stairs_master_bedroom
       - light.stairs
 
-  - platform: stairs_group
+  - platform: group
     name: Stigi ljós
     entities:
       - light.stairs_l1
