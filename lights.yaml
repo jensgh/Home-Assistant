@@ -106,6 +106,7 @@
 
   - platform: group
     name: Stigi ljós
+    unique_id: 8df1c68f-6001-4ad8-90f9-c4d9fbde31d7
     entities:
       - light.stairs_l1
       - light.stairs_l2
