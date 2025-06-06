@@ -12,7 +12,7 @@ http:
     #- 172.30.33.3 # ?
     - 127.0.0.1
     - ::1
-    - 172.19.0.6
+    - 172.19.0.4
 #   base_url: example.duckdns.org:8123
 mobile_app:
 
