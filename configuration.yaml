@@ -238,7 +238,6 @@ webhook:
 input_boolean: !include input_booleans.yaml
 
 camera:
-  - platform: uvc
-    nvr: 192.168.1.225
-    key: !secret uvc-apikey
-    password: !secret uvc-camerapass
+  - platform: generic
+    name: "Bílaplan"
+    stream_source: "rtsp://192.168.1.9:7447/631cf01736b0e0424e3aac17_0"
