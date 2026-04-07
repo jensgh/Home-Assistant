@@ -239,5 +239,5 @@ input_boolean: !include input_booleans.yaml
 
 camera:
   - platform: generic
-    name: "UVC G3 Flex"
-    stream_source: "rtsp://192.168.1.9:7447/0786a7f8-2c91-4d94-9523-83c4dbf2fee0"
+    name: "Bílaplan"
+    stream_source: "rtsp://192.168.1.9:7447/631cf01736b0e0424e3aac17_0"
