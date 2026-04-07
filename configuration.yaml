@@ -9,10 +9,9 @@ frontend:
 http:
   use_x_forwarded_for: true
   trusted_proxies:
-    #- 172.30.33.3 # ?
     - 127.0.0.1
     - ::1
-    - 172.19.0.7
+    - 172.16.0.0/12  # Docker networks (covers all 172.16-31.x.x ranges)
 #   base_url: example.duckdns.org:8123
 mobile_app:
 
