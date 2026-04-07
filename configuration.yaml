@@ -1,5 +1,6 @@
 
 # Configure a default setup of Home Assistant (frontend, api, etc)
+# Includes: mobile_app, discovery, cloud, webhook, shopping_list, python_script
 default_config:
 
 frontend:
@@ -12,13 +13,7 @@ http:
     - 127.0.0.1
     - ::1
     - 172.16.0.0/12  # Docker networks (covers all 172.16-31.x.x ranges)
-#   base_url: example.duckdns.org:8123
-mobile_app:
 
-discovery:
-  # ignore:
-  #   - igd
-    
 # https://www.home-assistant.io/integrations/recorder/
 recorder:
   # purge_interval: 2
@@ -38,37 +33,29 @@ switch: !include switches.yaml
 
 # https://github.com/StyraHem/ShellyForHASS/issues/72
 # shelly:
-#   discovery: true  #add all devices (default)
-#   sensors: #sensors to show, can be override on each device
+#   discovery: true
+#   sensors:
 #     - all
-#   devices:  #configure devices
+#   devices:
 #     - id: "D0E58B"
-#       light_switch: true  #add this switch as a light
+#       light_switch: true
 #       name: "Gangur shelly"
-#     - id: "98f4abf283d7"
+#     - id: "98f4abac783d7"
 #       name: "Vifta"
-#   #     sensors: [ switch ] #Override the global sensor
-#   #   - id: "7BD5F3"
 
-cloud:
-# Text to speech
-tts:
-  - platform: google_translate
+# TTS is now configured via UI: Settings -> Integrations -> Text-to-speech
+# google_translate is available there without YAML config
 
 group: !include groups.yaml
 automation: !include_dir_merge_list automations
-# automation: !include automations.yaml
 script: !include_dir_merge_named scripts
-# script: !include scripts.yaml
 
 homeassistant:
   media_dirs:
     local: /media
   customize: !include customize.yaml
-#  packages: !include_dir_named packages
   packages: !include_dir_merge_named packages/
-python_script:
-shopping_list:
+
 xiaomi_aqara:
   discovery_retry: 5
   gateways:
@@ -81,9 +68,6 @@ sensor: !include sensors.yaml
   # - platform: spotify
   #   client_id: !secret spotify_client_id
   #   client_secret: !secret spotify_client_secret
-    # aliases:
-    #     abc123def456: 'Living Room'
-    #     9183abas000: 'Bed Room'
 
 # spotify:
 #   client_id: !secret spotify_client_id
@@ -107,20 +91,9 @@ alarm_control_panel:
     arming_time: 0
     disarmed:
       trigger_time: 0
-    # armed_night:
-    #   pending_time: 0
-    #   delay_time: 0
     armed_away:
       arming_time: 60
       delay_time: 60
-
-
-#ombi:
-#  host: !secret ombi_host
-#  username: !secret ombi_username
-#  api_key: !secret ombi_api_key
-#  port: 3579
-  # ssl: true
 
 # https://www.home-assistant.io/integrations/speedtestdotnet
 #speedtestdotnet:
@@ -132,63 +105,15 @@ alarm_control_panel:
 #    - download
 #    - upload
 
-binary_sensor:
-#   - platform: ping
-#     host: 10.0.0.17
-#     name: 'Hertz'
-#   - platform: ping
-#     host: 10.0.0.7
-#     name: 'Xiaomi Gateway'
-#   - platform: ping
-#     host: 10.0.0.10
-#     name: 'Wifi Extender'
-#   - platform: ping
-#     host: !secret hue_hub_ip
-#     name: 'Hue Gateway'
-#   - platform: ping
-#     host: 10.0.0.12
-#     name: 'Bytes'
-#   - platform: ping
-#     host: 10.0.0.8
-#     name: 'Ioniq'
-
-    #Hass Groups
-  - platform: template
-    sensors:
-      garage_motion:
-        friendly_name: "Bílskúr hreyfing"
-        # entity_id:
-        #   - group.garage_motion
+# Template binary sensors (replaces deprecated binary_sensor: platform: template)
+template:
+  - binary_sensor:
+      - name: "Bílskúr hreyfing"
         device_class: motion
-        value_template: "{{ is_state('group.garage_motion', 'on')}}"
-      hallway_motion:
-        friendly_name: "Gangur hreyfing"
-        # entity_id:
-        #   - group.hallway_motion
+        state: "{{ is_state('group.garage_motion', 'on') }}"
+      - name: "Gangur hreyfing"
         device_class: motion
-        value_template: "{{ is_state('group.hallway_motion', 'on')}}"
-  # - platform: mqtt
-    # name: Shelly Gangur
-    # state_topic: “shellies/shellydimmer-D0E58B/relay/0”
-    # qos: 0
-    # payload_on: “on”
-    # payload_off: “off”
-
-  # - platform: mqtt
-  #   schema: template
-  #   name:  Shelly Dimmer
-  #   state_topic: "shellies/shellydimmer-XXXXXX/light/0/status"
-  #   state_template: '{% if value_json.ison %} on {% else %} off {% endif %}'
-  #   command_topic: "shellies/shellydimmer-XXXXXX/light/0/set"
-  #   command_on_template: '{"turn": "on"{% if brightness is defined %}, "brightness": {{(brightness | float * 0.3882 + 1) | round(0)}}{% endif %}}'
-  #   command_off_template: '{"turn": "off"}'
-  #   brightness_template: '{{ (value_json.brightness | float * 2.55) | round(0) }}'
-    # retain: true
-    # optimistic: false
-    
-# shell_command:
-#   update: /config/shell_scripts/gitpull.sh
-
+        state: "{{ is_state('group.hallway_motion', 'on') }}"
 
 # google:
 #   client_id: !secret google_client_id
@@ -201,34 +126,11 @@ google_assistant:
   exposed_domains:
     - switch
     - light
-  # entity_config:
-  #   switch.kitchen:
-  #     name: CUSTOM_NAME_FOR_GOOGLE_ASSISTANT
-  #     aliases:
-  #       - BRIGHT_LIGHTS
-  #       - ENTRY_LIGHTS
-  #   light.living_room:
-  #     expose: false
-  #     room: LIVING_ROOM
-
-
-# mqtt:
-#   discovery: true
-#   broker: !secret mqtt_ip
-#   birth_message:
-#     topic: 'hass/status'
-#     payload: 'online'
-#   will_message:
-#     topic: 'hass/status'
-#     payload: 'offline'
 
 # hacs:
 #   token: !secret hacs_git_token
 
-webhook:
-
 # zigbee2mqtt_networkmap:
-#   #topic: your topic (optional, default zigbee2mqtt)
 # panel_iframe:
 #   networkmap:
 #     title: 'Zigbee Map'

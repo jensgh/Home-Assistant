@@ -1,24 +1,25 @@
+# flux switch replaced by Adaptive Lighting (HACS)
+# Install via HACS -> Integrations -> Adaptive Lighting
 # - platform: flux
-  lights:
-    - light.forstofa
-    - light.bilskur
-    - light.gangur
-    - light.stairs
-    - light.stofa_i
-    - light.stofa_u
-    - light.eldhus
-    - light.eyja
-    - light.matarbord
-    - light.stairs_master_bedroom
-  name: Fluxer
-  start_time: '7:00'
-  stop_time: '23:00'
-  start_colortemp: 3500
-  sunset_colortemp: 2700
-  stop_colortemp: 1900
-  brightness: 185
-  disable_brightness_adjust: true
-  mode: mired
-  transition: 30
-  interval: 120
-
+#   lights:
+#     - light.forstofa
+#     - light.bilskur
+#     - light.gangur
+#     - light.stairs
+#     - light.stofa_i
+#     - light.stofa_u
+#     - light.eldhus
+#     - light.eyja
+#     - light.matarbord
+#     - light.stairs_master_bedroom
+#   name: Fluxer
+#   start_time: '7:00'
+#   stop_time: '23:00'
+#   start_colortemp: 3500
+#   sunset_colortemp: 2700
+#   stop_colortemp: 1900
+#   brightness: 185
+#   disable_brightness_adjust: true
+#   mode: mired
+#   transition: 30
+#   interval: 120
