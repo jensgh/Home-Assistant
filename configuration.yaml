@@ -237,7 +237,5 @@ webhook:
 
 input_boolean: !include input_booleans.yaml
 
-camera:
-  - platform: generic
-    name: "Bílaplan"
-    stream_source: "rtsp://192.168.1.9:7447/631cf01736b0e0424e3aac17_0"
+# camera: configured via UI (Settings → Devices & Services → Generic Camera)
+# stream_source: rtsp://192.168.1.9:7447/631cf01736b0e0424e3aac17_0
