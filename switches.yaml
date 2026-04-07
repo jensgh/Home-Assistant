@@ -1,4 +1,4 @@
-- platform: flux
+# - platform: flux
   lights:
     - light.forstofa
     - light.bilskur
