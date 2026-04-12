@@ -1,8 +1,3 @@
-  - platform: qbittorrent
-    url: !secret qbittorent_host
-    username: !secret qbittorrent_username
-    password: !secret qbittorrent_password
-    
   - platform: time_date
     display_options:
       - 'date_time_iso'
@@ -26,28 +21,6 @@
   #   - diskspace
   #   days: 30
 
-# https://www.home-assistant.io/integrations/systemmonitor
-  - platform: systemmonitor
-    resources:
-      - type: disk_use_percent
-        arg: /
-      - type: memory_use_percent
-      - type: processor_use
-      - type: last_boot
-      - type: swap_use_percent
-      - type: load_15m
-      - type: network_in
-        arg: eth0
-      - type: network_out
-        arg: eth0
-      - type: throughput_network_in
-        arg: eth0
-      - type: throughput_network_out
-        arg: eth0
-      - type: packets_in
-        arg: eth0
-      - type: packets_out
-        arg: eth0
 
   # - platform: template
   #   sensors: 

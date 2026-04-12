@@ -152,21 +152,6 @@ binary_sensor:
 #     host: 10.0.0.8
 #     name: 'Ioniq'
 
-    #Hass Groups
-  - platform: template
-    sensors:
-      garage_motion:
-        friendly_name: "Bílskúr hreyfing"
-        # entity_id:
-        #   - group.garage_motion
-        device_class: motion
-        value_template: "{{ is_state('group.garage_motion', 'on')}}"
-      hallway_motion:
-        friendly_name: "Gangur hreyfing"
-        # entity_id:
-        #   - group.hallway_motion
-        device_class: motion
-        value_template: "{{ is_state('group.hallway_motion', 'on')}}"
   # - platform: mqtt
     # name: Shelly Gangur
     # state_topic: “shellies/shellydimmer-D0E58B/relay/0”
@@ -186,6 +171,17 @@ binary_sensor:
     # retain: true
     # optimistic: false
     
+template:
+  - binary_sensor:
+    - device_class: motion
+      default_entity_id: binary_sensor.garage_motion
+      name: Bílskúr hreyfing
+      state: "{{ is_state('group.garage_motion', 'on')}}"
+    - device_class: motion
+      default_entity_id: binary_sensor.hallway_motion
+      name: Gangur hreyfing
+      state: "{{ is_state('group.hallway_motion', 'on')}}"
+
 # shell_command:
 #   update: /config/shell_scripts/gitpull.sh
 
@@ -237,7 +233,5 @@ webhook:
 
 input_boolean: !include input_booleans.yaml
 
-camera:
-  - platform: generic
-    name: "Bílaplan"
-    stream_source: "rtsp://192.168.1.9:7447/631cf01736b0e0424e3aac17_0"
+# camera: configured via UI (Settings → Devices & Services → Generic Camera)
+# stream_source: rtsp://192.168.1.9:7447/631cf01736b0e0424e3aac17_0
