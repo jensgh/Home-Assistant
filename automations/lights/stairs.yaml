@@ -1,0 +1,11 @@
+- alias: Stairs lights always start at 30%
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: light.stigi_lights_zigbee_group
+    to: 'on'
+  action:
+    service: light.turn_on
+    data:
+      entity_id: light.stigi_lights_zigbee_group
+      brightness_pct: 30
