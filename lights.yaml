@@ -104,20 +104,21 @@
       - light.stairs_master_bedroom
       - light.stairs
 
-  - platform: group
-    name: Stigi ljós
-    unique_id: 8df1c68f-6001-4ad8-90f9-c4d9fbde31d7
-    entities:
-      - light.stairs_l1
-      - light.stairs_l2
-      - light.stairs_l3
-      - light.stairs_l4
-      - light.stairs_l5
-      - light.stairs_r1
-      - light.stairs_r2
-      - light.stairs_r3
-      - light.stairs_r4
-      - light.stairs_r5
+# zigbee group now
+  # - platform: group
+  #   name: Stigi ljós
+  #   unique_id: 8df1c68f-6001-4ad8-90f9-c4d9fbde31d7
+  #   entities:
+  #     - light.stairs_l1
+  #     - light.stairs_l2
+  #     - light.stairs_l3
+  #     - light.stairs_l4
+  #     - light.stairs_l5
+  #     - light.stairs_r1
+  #     - light.stairs_r2
+  #     - light.stairs_r3
+  #     - light.stairs_r4
+  #     - light.stairs_r5
         
   # - platform: mqtt
   #   schema: template
