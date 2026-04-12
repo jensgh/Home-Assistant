@@ -4,12 +4,15 @@
       - 'date_time'
       - 'time_date'
 
+  # time_date: configure via UI - Settings -> Integrations -> Time & Date
+
+  # tautulli: configure via UI - Settings -> Integrations -> Tautulli
   # - platform: tautulli
   #   api_key: !secret tautulli_aki_key
   #   host: !secret tautulli_host
-  #   # ssl: true
   #   port: 8181
 
+  # radarr: configure via UI - Settings -> Integrations -> Radarr
   # - platform: radarr
   #   api_key: !secret radarr_api_key
   #   host: 192.168.1.9
@@ -185,7 +188,4 @@
 #     name: "test overload"
 #     state_topic: "shellies/shellydimmer-D0E58B/overload"
 
-# # reports error
-#   - platform: mqtt
-#     name: "test loaderror"
-#     state_topic: "shellies/shellydimmer-D0E58B/loaderror"
+  # systemmonitor: configure via UI - Settings -> Integrations -> System Monitor
