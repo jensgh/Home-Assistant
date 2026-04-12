@@ -23,3 +23,9 @@ device_tracker.xiaomi_gateway:
 light.stairs:
   icon: mdi:stairs
   friendly_name: Stigi
+binary_sensor.garage_motion:
+  friendly_name: Bílskúr hreyfing
+  icon: mdi:motion-sensor
+binary_sensor.hallway_motion:
+  friendly_name: Gangur hreyfing
+  icon: mdi:motion-sensor

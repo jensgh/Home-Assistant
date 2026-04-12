@@ -147,10 +147,10 @@ binary_sensor:
 # Template binary sensors (replaces deprecated binary_sensor: platform: template)
 template:
   - binary_sensor:
-      - name: “Bílskúr hreyfing”
+      - name: “garage motion”
         device_class: motion
         state: “{{ is_state('group.garage_motion', 'on') }}”
-      - name: “Gangur hreyfing”
+      - name: “hallway motion”
         device_class: motion
         state: “{{ is_state('group.hallway_motion', 'on') }}”
 
