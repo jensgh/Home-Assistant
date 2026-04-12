@@ -105,15 +105,57 @@ alarm_control_panel:
 #    - download
 #    - upload
 
+binary_sensor:
+#   - platform: ping
+#     host: 10.0.0.17
+#     name: 'Hertz'
+#   - platform: ping
+#     host: 10.0.0.7
+#     name: 'Xiaomi Gateway'
+#   - platform: ping
+#     host: 10.0.0.10
+#     name: 'Wifi Extender'
+#   - platform: ping
+#     host: !secret hue_hub_ip
+#     name: 'Hue Gateway'
+#   - platform: ping
+#     host: 10.0.0.12
+#     name: 'Bytes'
+#   - platform: ping
+#     host: 10.0.0.8
+#     name: 'Ioniq'
+
+  # - platform: mqtt
+    # name: Shelly Gangur
+    # state_topic: “shellies/shellydimmer-D0E58B/relay/0”
+    # qos: 0
+    # payload_on: “on”
+    # payload_off: “off”
+
+  # - platform: mqtt
+  #   schema: template
+  #   name:  Shelly Dimmer
+  #   state_topic: “shellies/shellydimmer-XXXXXX/light/0/status”
+  #   state_template: '{% if value_json.ison %} on {% else %} off {% endif %}'
+  #   command_topic: “shellies/shellydimmer-XXXXXX/light/0/set”
+  #   command_on_template: '{“turn”: “on”{% if brightness is defined %}, “brightness”: {{(brightness | float * 0.3882 + 1) | round(0)}}{% endif %}}'
+  #   command_off_template: '{“turn”: “off”}'
+  #   brightness_template: '{{ (value_json.brightness | float * 2.55) | round(0) }}'
+    # retain: true
+    # optimistic: false
+
 # Template binary sensors (replaces deprecated binary_sensor: platform: template)
 template:
   - binary_sensor:
-      - name: "Bílskúr hreyfing"
+      - name: “Bílskúr hreyfing”
         device_class: motion
-        state: "{{ is_state('group.garage_motion', 'on') }}"
-      - name: "Gangur hreyfing"
+        state: “{{ is_state('group.garage_motion', 'on') }}”
+      - name: “Gangur hreyfing”
         device_class: motion
-        state: "{{ is_state('group.hallway_motion', 'on') }}"
+        state: “{{ is_state('group.hallway_motion', 'on') }}”
+
+# shell_command:
+#   update: /config/shell_scripts/gitpull.sh
 
 # google:
 #   client_id: !secret google_client_id
@@ -139,7 +181,5 @@ google_assistant:
 
 input_boolean: !include input_booleans.yaml
 
-camera:
-  - platform: generic
-    name: "Bílaplan"
-    stream_source: "rtsp://192.168.1.9:7447/631cf01736b0e0424e3aac17_0"
+# camera: configured via UI (Settings → Devices & Services → Generic Camera)
+# stream_source: rtsp://192.168.1.9:7447/631cf01736b0e0424e3aac17_0
