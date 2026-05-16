@@ -1,122 +1,119 @@
-
 # --- Verkefna staðan ---
 
-input_boolean:
-  # --- DAGLEGA ---
-  task_elda_kvoldmat:
-    name: "Elda kvöldmat"
-    icon: mdi:pot-steam
-  task_hreinsa_eldhus:
-    name: "Hreinsa eldhús eftir mat"
-    icon: mdi:silverware-clean
-  task_uppthottavel:
-    name: "Setja í og tæma uppþvottavél"
-    icon: mdi:dishwasher
-  task_thurka_yfirbord:
-    name: "Þurrka af yfirborðum"
-    icon: mdi:spray-bottle
-  task_post_og_reikningar:
-    name: "Fara yfir póst og reikninga"
-    icon: mdi:email-open
-  task_skolahlutar:
-    name: "Skólahlutar / töskur tilbúnar"
-    icon: mdi:bag-personal
+# --- DAGLEGA ---
+task_elda_kvoldmat:
+  name: "Elda kvöldmat"
+  icon: mdi:pot-steam
+task_hreinsa_eldhus:
+  name: "Hreinsa eldhús eftir mat"
+  icon: mdi:silverware-clean
+task_uppthottavel:
+  name: "Setja í og tæma uppþvottavél"
+  icon: mdi:dishwasher
+task_thurka_yfirbord:
+  name: "Þurrka af yfirborðum"
+  icon: mdi:spray-bottle
+task_post_og_reikningar:
+  name: "Fara yfir póst og reikninga"
+  icon: mdi:email-open
+task_skolahlutar:
+  name: "Skólahlutar / töskur tilbúnar"
+  icon: mdi:bag-personal
 
-  # --- VIKULEGA ---
-  task_thvo_thvott:
-    name: "Þvo þvott"
-    icon: mdi:washing-machine
-  task_brjota_saman_thvott:
-    name: "Brjóta saman og ganga frá þvotti"
-    icon: mdi:tshirt-crew
-  task_ryksuga:
-    name: "Ryksuga öll gólf"
-    icon: mdi:vacuum
-  task_moppa:
-    name: "Moppa gólf"
-    icon: mdi:floor-lamp-torchiere
-  task_hreinsa_badherbergi:
-    name: "Hreinsa baðherbergi"
-    icon: mdi:shower
-  task_skipta_rumfot:
-    name: "Skipta um rúmföt"
-    icon: mdi:bed
-  task_panta_matvaeli:
-    name: "Panta / kaupa matvæli"
-    icon: mdi:cart
-  task_skipuleggja_matsedil:
-    name: "Skipuleggja matseðil vikunnar"
-    icon: mdi:food-apple
-  task_ruslid_ut:
-    name: "Fara með ruslið út"
-    icon: mdi:delete
-  task_idrottamot_barna:
-    name: "Sundlaugar / íþróttamöt barna"
-    icon: mdi:swim
-  task_vikuleg_skipulagsfundur:
-    name: "Vikuleg skipulagsfundur"
-    icon: mdi:calendar-check
+# --- VIKULEGA ---
+task_thvo_thvott:
+  name: "Þvo þvott"
+  icon: mdi:washing-machine
+task_brjota_saman_thvott:
+  name: "Brjóta saman og ganga frá þvotti"
+  icon: mdi:tshirt-crew
+task_ryksuga:
+  name: "Ryksuga öll gólf"
+  icon: mdi:vacuum
+task_moppa:
+  name: "Moppa gólf"
+  icon: mdi:floor-lamp-torchiere
+task_hreinsa_badherbergi:
+  name: "Hreinsa baðherbergi"
+  icon: mdi:shower
+task_skipta_rumfot:
+  name: "Skipta um rúmföt"
+  icon: mdi:bed
+task_panta_matvaeli:
+  name: "Panta / kaupa matvæli"
+  icon: mdi:cart
+task_skipuleggja_matsedil:
+  name: "Skipuleggja matseðil vikunnar"
+  icon: mdi:food-apple
+task_ruslid_ut:
+  name: "Fara með ruslið út"
+  icon: mdi:delete
+task_idrottamot_barna:
+  name: "Sundlaugar / íþróttamöt barna"
+  icon: mdi:swim
+task_vikuleg_skipulagsfundur:
+  name: "Vikuleg skipulagsfundur"
+  icon: mdi:calendar-check
 
-  # --- MÁNAÐARLEGA ---
-  task_thrifa_isskap:
-    name: "Þrífa ísskáp og frysti"
-    icon: mdi:fridge
-  task_thrifa_ofn:
-    name: "Þrífa ofn og örbylgjuofn"
-    icon: mdi:microwave
-  task_thurka_rykid:
-    name: "Þurrka rykið af hillum og skápum"
-    icon: mdi:bookshelf
-  task_thvo_glugga_innan:
-    name: "Þvo glugga að innan"
-    icon: mdi:window-closed-variant
-  task_yfirfara_fjarmal:
-    name: "Yfirfara fjármál / reikninga"
-    icon: mdi:cash-multiple
-  task_eldvarnarbunadur:
-    name: "Athuga eldvarnarbúnað"
-    icon: mdi:fire-extinguisher
-  task_hreinsa_thvottavel:
-    name: "Hreinsa þvottavél og þurrkara"
-    icon: mdi:tumble-dryer
+# --- MÁNAÐARLEGA ---
+task_thrifa_isskap:
+  name: "Þrífa ísskáp og frysti"
+  icon: mdi:fridge
+task_thrifa_ofn:
+  name: "Þrífa ofn og örbylgjuofn"
+  icon: mdi:microwave
+task_thurka_rykid:
+  name: "Þurrka rykið af hillum og skápum"
+  icon: mdi:bookshelf
+task_thvo_glugga_innan:
+  name: "Þvo glugga að innan"
+  icon: mdi:window-closed-variant
+task_yfirfara_fjarmal:
+  name: "Yfirfara fjármál / reikninga"
+  icon: mdi:cash-multiple
+task_eldvarnarbunadur:
+  name: "Athuga eldvarnarbúnað"
+  icon: mdi:fire-extinguisher
+task_hreinsa_thvottavel:
+  name: "Hreinsa þvottavél og þurrkara"
+  icon: mdi:tumble-dryer
 
-  # --- ÁRSTÍÐABUNDIÐ ---
-  task_thrifa_gard:
-    name: "Þrífa garð / verönd"
-    icon: mdi:flower
-  task_thvo_glugga_utan:
-    name: "Þvo glugga að utan"
-    icon: mdi:window-open-variant
-  task_skipuleggja_fataskapur:
-    name: "Skipuleggja fataskápa (árstíðaskipti)"
-    icon: mdi:wardrobe
-  task_djupthrif:
-    name: "Djúpþrif á heimilinu"
-    icon: mdi:broom
-  task_athuga_lagnir:
-    name: "Athuga lagnir / hita / loftræsingu"
-    icon: mdi:pipe-wrench
-  task_snjomokstur:
-    name: "Snjómokstur / garðvinna"
-    icon: mdi:snowflake
+# --- ÁRSTÍÐABUNDIÐ ---
+task_thrifa_gard:
+  name: "Þrífa garð / verönd"
+  icon: mdi:flower
+task_thvo_glugga_utan:
+  name: "Þvo glugga að utan"
+  icon: mdi:window-open-variant
+task_skipuleggja_fataskapur:
+  name: "Skipuleggja fataskápa (árstíðaskipti)"
+  icon: mdi:wardrobe
+task_djupthrif:
+  name: "Djúpþrif á heimilinu"
+  icon: mdi:broom
+task_athuga_lagnir:
+  name: "Athuga lagnir / hita / loftræsingu"
+  icon: mdi:pipe-wrench
+task_snjomokstur:
+  name: "Snjómokstur / garðvinna"
+  icon: mdi:snowflake
 
-  # --- ÁRLEGA ---
-  task_endurnyja_tryggingar:
-    name: "Endurnýja tryggingar"
-    icon: mdi:shield-check
-  task_skattframtal:
-    name: "Skattframtal"
-    icon: mdi:file-document-edit
-  task_vidhald_bils:
-    name: "Viðhald bíls (skoðun, dekk)"
-    icon: mdi:car-wrench
-  task_yfirfara_askriftir:
-    name: "Fara yfir áskriftir og samninga"
-    icon: mdi:file-sign
-  task_skipuleggja_sumarfri:
-    name: "Skipuleggja sumarfrí"
-    icon: mdi:airplane
-  task_afmaelisaaetlanir:
-    name: "Afmælisáætlanir barna"
-    icon: mdi:cake-variant
-
+# --- ÁRLEGA ---
+task_endurnyja_tryggingar:
+  name: "Endurnýja tryggingar"
+  icon: mdi:shield-check
+task_skattframtal:
+  name: "Skattframtal"
+  icon: mdi:file-document-edit
+task_vidhald_bils:
+  name: "Viðhald bíls (skoðun, dekk)"
+  icon: mdi:car-wrench
+task_yfirfara_askriftir:
+  name: "Fara yfir áskriftir og samninga"
+  icon: mdi:file-sign
+task_skipuleggja_sumarfri:
+  name: "Skipuleggja sumarfrí"
+  icon: mdi:airplane
+task_afmaelisaaetlanir:
+  name: "Afmælisáætlanir barna"
+  icon: mdi:cake-variant
