@@ -42,3 +42,66 @@
     entity_id: light.garage_ofiice
     domain: light
   mode: single
+
+
+
+
+# --- Verkefnalisti automations ---
+
+- alias: "Endurstilla dagleg verkefni"
+  trigger:
+    - platform: time
+      at: "00:00:00"
+  action:
+    - service: input_boolean.turn_off
+      target:
+        entity_id:
+          - input_boolean.task_elda_kvoldmat
+          - input_boolean.task_hreinsa_eldhus
+          - input_boolean.task_uppthottavel
+          - input_boolean.task_thurka_yfirbord
+          - input_boolean.task_post_og_reikningar
+          - input_boolean.task_skolahlutar
+
+- alias: "Endurstilla vikuleg verkefni"
+  trigger:
+    - platform: time
+      at: "00:00:00"
+  condition:
+    - condition: time
+      weekday:
+        - sun
+  action:
+    - service: input_boolean.turn_off
+      target:
+        entity_id:
+          - input_boolean.task_thvo_thvott
+          - input_boolean.task_brjota_saman_thvott
+          - input_boolean.task_ryksuga
+          - input_boolean.task_moppa
+          - input_boolean.task_hreinsa_badherbergi
+          - input_boolean.task_skipta_rumfot
+          - input_boolean.task_panta_matvaeli
+          - input_boolean.task_skipuleggja_matsedil
+          - input_boolean.task_ruslid_ut
+          - input_boolean.task_idrottamot_barna
+          - input_boolean.task_vikuleg_skipulagsfundur
+
+- alias: "Endurstilla mánaðarleg verkefni"
+  trigger:
+    - platform: time
+      at: "00:00:00"
+  condition:
+    - condition: template
+      value_template: "{{ now().day == 1 }}"
+  action:
+    - service: input_boolean.turn_off
+      target:
+        entity_id:
+          - input_boolean.task_thrifa_isskap
+          - input_boolean.task_thrifa_ofn
+          - input_boolean.task_thurka_rykid
+          - input_boolean.task_thvo_glugga_innan
+          - input_boolean.task_yfirfara_fjarmal
+          - input_boolean.task_eldvarnarbunadur
+          - input_boolean.task_hreinsa_thvottavel
