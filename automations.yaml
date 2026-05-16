@@ -60,8 +60,8 @@
           - input_boolean.task_hreinsa_eldhus
           - input_boolean.task_uppthottavel
           - input_boolean.task_thurka_yfirbord
-          - input_boolean.task_post_og_reikningar
           - input_boolean.task_skolahlutar
+          - input_boolean.task_lesa_heimavinna
 
 - alias: "Endurstilla vikuleg verkefni"
   trigger:
@@ -102,6 +102,6 @@
           - input_boolean.task_thrifa_ofn
           - input_boolean.task_thurka_rykid
           - input_boolean.task_thvo_glugga_innan
-          - input_boolean.task_yfirfara_fjarmal
+          - input_boolean.task_thrifa_innrettingar
           - input_boolean.task_eldvarnarbunadur
           - input_boolean.task_hreinsa_thvottavel
